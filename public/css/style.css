@@ -1,0 +1,178 @@
+.font{
+    color: white;
+    margin-top: 10%;
+}
+
+.container-fluid{
+    margin-top: 5%;
+}
+
+.btn{
+    width: 200px;
+    margin: 7px;
+    border-radius: 30px;
+    border: 1px solid #152238;
+    color: #152238;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: rgb(219, 219, 219);
+}
+
+.btn-login{
+    width: 200px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.reg{
+    width: 200px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn-login:hover{
+    background-color: white;
+}
+
+.btn-forgot{
+    color: #152238;
+}
+
+.card-header{
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+}
+
+.email{
+    color: #152238;
+    font-size: 20px;
+}
+
+#email{
+    background-color: transparent;
+    color: #152238;
+    border-radius: 30px;
+    border: 1px solid #152238;
+}
+
+#password{
+    background-color: transparent;
+    color: #152238;
+    border-radius: 30px;
+    border: 1px solid #152238;
+}
+
+.passwor{
+    color: #152238;
+    font-size: 20px;
+}
+
+.remember{
+    float: left;
+    color: #152238;
+}
+
+.card{
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+.namae{
+    color: white;
+}
+
+#name{
+    background-color: transparent;
+    color: #152238;
+    border-radius: 30px;
+    border: 1px solid #152238;
+}
+
+.namae{
+    color: #152238;
+    font-weight: bold;
+}
+
+.card-header{
+    color: #152238;
+    font-weight: bold;
+}
+
+.maile{
+    color: #152238;
+    font-weight: bold;
+}
+
+.pword{
+    color: #152238;
+    font-weight: bold;
+}
+
+.passconr{
+    color: #152238;
+    font-weight: bold;
+}
+
+/* .passconr{
+    color: white;
+}
+
+.maile{
+    color: white;
+}
+
+.pword{
+    color: white;
+} */
+
+#password-confirm{
+    background-color: transparent;
+    color: #152238;
+    border-radius: 30px;
+    border: 1px solid #152238;
+}
+
+/* .reg{
+    background-color: grey;
+} */
+
+/* .reg:hover{
+    color: white;
+} */
+
+body, html{
+    background-image: url('../img/bbvet3.jpeg');
+    font-family: 'Nunito';
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.cont-login{
+    width: 850px; 
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+}
+
+.deskrips h1{
+    color: #152238;
+    text-shadow: 0px 0px 9px #ffff;
+}
+
+.deskrips h3{
+    color: #152238;
+    text-shadow: 0px 0px 9px #ffff;
+    font-style: italic;
+}
+
+.logg a{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
