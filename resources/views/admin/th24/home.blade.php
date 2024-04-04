@@ -1519,7 +1519,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-sm-6">
-                <h5>Perjanjian Kinerja Tahun 2023 <span id="yKinerja"></span> </h5>
+                <h5>Perjanjian Kinerja Tahun 2024 <span id="yKinerja"></span> </h5>
               </div>
             </div>
           </div>
