@@ -17,8 +17,8 @@
         <li class="header">KONTRAK KINERJA</li>
         <li><a href="/v23/home" class="text-decoration-none"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
         <li><a href="/v23/IndeksKepuasanMasyarakat" class="text-decoration-none"><i class="fa fa-book"></i> <span>Indeks Kepuasan Masyarakat atas layanan Balai Besar Veteriner Denpasar yang diberikan</span></a></li>
-        {{-- <li><a href="/PelayananKesehatanHewan23" class="text-decoration-none"><i class="fa fa-book"></i> <span>Pelayanan Kesehatan Hewan</span></a></li> --}}
-        <li><a href="/PengamatanPenyakitHewan23" class="text-decoration-none"><i class="fa fa-book"></i> <span>Pengamatan dan Identifikasi Penyakit Hewan</span></a></li>
+        {{-- <li><a href="v23/PelayananKesehatanHewan" class="text-decoration-none"><i class="fa fa-book"></i> <span>Pelayanan Kesehatan Hewan</span></a></li> --}}
+        <li><a href="/v23/PengamatanPenyakitHewan" class="text-decoration-none"><i class="fa fa-book"></i> <span>Pengamatan dan Identifikasi Penyakit Hewan</span></a></li>
         <li><a href="/SaranaBidang23" class="text-decoration-none"><i class="fa fa-book"></i> <span>Sarana Bidang Kesehatan Hewan</span></a></li>
         <li><a href="/TernakRuminansia23" class="text-decoration-none"><i class="fa fa-book"></i> <span>Ternak Ruminansia Potong</span></a></li>
         <li><a href="/TernakUnggas23" class="text-decoration-none"><i class="fa fa-book"></i> <span>Ternak Unggas dan Aneka Ternak</span></a></li>

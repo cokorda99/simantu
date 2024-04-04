@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\th22;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\th22\Piphewan;
-use App\Models\th22\Penyakit;
-use App\Models\th22\Rabies;
+use App\Models\Piphewan;
+use App\Models\penyakits\Rabies;
 use App\Models\th22\Avian;
 use App\Models\th22\Brucellosis;
 use App\Models\th22\Anthraxs;
@@ -25,12 +24,11 @@ class PiphewanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index22()
     {
-        //
+        $tahun ='2022';
         $data_piphewan= Piphewan::all();
-        $data_penyakit= Penyakit::all();
-        $data_rabies= Rabies::all();
+        $data_rabies = Rabies::where('Tahun', $tahun)->get();
         $data_avian= Avian::all();
         $data_brucellosis= Brucellosis::all();
         $data_anthraxs= Anthraxs::all();
@@ -44,9 +42,53 @@ class PiphewanController extends Controller
         return view('admin.th22.PengamatanPenyakitHewan', [
                 "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
             ], compact(
-            'data_piphewan','data_penyakit','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_penyakitlain','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk'
+            'data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_penyakitlain','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk'
         ));
-        // return view('admin.th22.PengamatanPenyakitHewan' , [
+    }
+    public function index23()
+    {
+        //
+        $tahun ='2023';
+        $data_piphewan= Piphewan::all();
+        $data_rabies = Rabies::where('Tahun', $tahun)->get();
+        $data_avian= Avian::all();
+        $data_brucellosis= Brucellosis::all();
+        $data_anthraxs= Anthraxs::all();
+        $data_hcholera= Hcholera::all();
+        $data_penyakitlain= Penyakitlain::all();
+        $data_asf= Asf::all();
+        $data_penyakitviral= Penyakitviral::all();
+        $data_penyakitbakterial= Penyakitbakterial::all();
+        $data_pmk= Pmk::all();
+
+        return view('admin.th23.PengamatanPenyakitHewan', [
+                "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
+            ], compact(
+            'data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_penyakitlain','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk'
+        ));
+    }
+    public function index24()
+    {
+        //
+        $tahun ='2024';
+        $data_piphewan= Piphewan::all();
+        $data_rabies = Rabies::where('Tahun', $tahun)->get();
+        $data_avian= Avian::all();
+        $data_brucellosis= Brucellosis::all();
+        $data_anthraxs= Anthraxs::all();
+        $data_hcholera= Hcholera::all();
+        $data_penyakitlain= Penyakitlain::all();
+        $data_asf= Asf::all();
+        $data_penyakitviral= Penyakitviral::all();
+        $data_penyakitbakterial= Penyakitbakterial::all();
+        $data_pmk= Pmk::all();
+
+        return view('admin.th24.PengamatanPenyakitHewan', [
+                "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
+            ], compact(
+            'data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_penyakitlain','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk'
+        ));
+        // return view('admin.th24.PengamatanPenyakitHewan' , [
         //     "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
         // ]);
     }

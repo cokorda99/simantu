@@ -5,9 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\IkmController;
 use App\Http\Controllers\PkhewanController;
+use App\Http\Controllers\PiphewanController;
+use App\Http\Controllers\penyakits\RabiesController;
 
-
-use App\Http\Controllers\th22\PiphewanController;
 use App\Http\Controllers\th22\SbkhewanController;
 use App\Http\Controllers\th22\TernakpotongController;
 use App\Http\Controllers\th22\TernakunggasController;
@@ -20,7 +20,7 @@ use App\Http\Controllers\th22\DukunganmanajemenController;
 use App\Http\Controllers\th22\SdmController;
 use App\Http\Controllers\th22\DetailpenyakitController;
 use App\Http\Controllers\th22\DinasluarController;
-use App\Http\Controllers\th22\RabiesController;
+
 use App\Http\Controllers\th22\AvianController;
 use App\Http\Controllers\th22\BrucellosisController;
 use App\Http\Controllers\th22\AnthraxsController;
@@ -34,7 +34,6 @@ use App\Http\Controllers\th22\MasukanController;
 use App\Http\Controllers\th22\JenispilihanpenyakitController;
 use App\Http\Controllers\th22\PmkController;
 
-use App\Http\Controllers\th23\Piphewan23Controller;
 use App\Http\Controllers\th23\Sbkhewan23Controller;
 use App\Http\Controllers\th23\Ternakpotong23Controller;
 use App\Http\Controllers\th23\Ternakungga23Controller;
@@ -48,7 +47,6 @@ use App\Http\Controllers\th23\Dukunganmanajemen23Controller;
 use App\Http\Controllers\th23\Sdm23Controller;
 use App\Http\Controllers\th23\Detailpenyakit23Controller;
 use App\Http\Controllers\th23\Dinasluar23Controller;
-use App\Http\Controllers\th23\Rabie23Controller;
 use App\Http\Controllers\th23\Avian23Controller;
 use App\Http\Controllers\th23\Brucellose23Controller;
 use App\Http\Controllers\th23\Anthrax23Controller;
@@ -99,6 +97,9 @@ Route::prefix('v22')->group(function () {
     Route::get('home', [DashboardController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'IndeksKepuasanMasyarakat', [IkmController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'PelayananKesehatanHewan', [PkhewanController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'PengamatanPenyakitHewan', [PiphewanController::class, 'index22']);
+    // TURUNAN PENGAMATAN & IDENTIFIKASI PENYAKIT HEWAN
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Rabies', [RabiesController::class, 'index22']);
 });
 
 // VERSION 2.0 (2023)
@@ -106,6 +107,9 @@ Route::prefix('v23')->group(function () {
     Route::get('home', [DashboardController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'IndeksKepuasanMasyarakat', [IkmController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'PelayananKesehatanHewan', [PkhewanController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'PengamatanPenyakitHewan', [PiphewanController::class, 'index23']);
+    // TURUNAN PENGAMATAN & IDENTIFIKASI PENYAKIT HEWAN
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Rabies', [RabiesController::class, 'index23']);
 });
 
 // VERSION 3.0 (2024)
@@ -113,6 +117,9 @@ Route::prefix('v24')->group(function () {
     Route::get('home', [DashboardController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'IndeksKepuasanMasyarakat', [IkmController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'PelayananKesehatanHewan', [PkhewanController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'PengamatanPenyakitHewan', [PiphewanController::class, 'index24']);
+    // TURUNAN PENGAMATAN & IDENTIFIKASI PENYAKIT HEWAN
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Rabies', [RabiesController::class, 'index24']);
 });
 
 
@@ -129,7 +136,8 @@ Route::resource('/anggaran_DukunganManajemen',DukunganmanajemenController::class
 Route::resource('/sdm_sdm',SdmController::class);
 Route::resource('/DetailPenyakitHewan',DetailpenyakitController::class);
 Route::resource('/sdm_dinasluar',DinasluarController::class);
-Route::resource('/Penyakit_Rabies',RabiesController::class);
+
+// Route::resource('/Penyakit_Rabies',RabiesController::class);
 Route::resource('/Penyakit_Avian',AvianController::class);
 Route::resource('/Penyakit_Brucellosis',BrucellosisController::class);
 Route::resource('/Penyakit_Anthraxs',AnthraxsController::class);

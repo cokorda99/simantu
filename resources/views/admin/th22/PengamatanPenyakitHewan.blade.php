@@ -258,7 +258,7 @@
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td><a href="/Penyakit_Rabies">Rabies</a></td>
+                  <td><a href="/v22/Penyakit_Rabies">Rabies</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Rabies);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Rabies);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Rabies);</script>";?></td>

@@ -18,7 +18,7 @@
         <li><a href="/v22/home" class="text-decoration-none"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
         <li><a href="/v22/IndeksKepuasanMasyarakat" class="text-decoration-none"><i class="fa fa-book"></i> <span>Indeks Kepuasan Masyarakat atas layanan Balai Besar Veteriner Denpasar yang diberikan</span></a></li>
         <li><a href="/v22/PelayananKesehatanHewan" class="text-decoration-none"><i class="fa fa-book"></i> <span>Pelayanan Kesehatan Hewan</span></a></li>
-        <li><a href="/PengamatanPenyakitHewan" class="text-decoration-none"><i class="fa fa-book"></i> <span>Pengamatan dan Identifikasi Penyakit Hewan</span></a></li>
+        <li><a href="/v22/PengamatanPenyakitHewan" class="text-decoration-none"><i class="fa fa-book"></i> <span>Pengamatan dan Identifikasi Penyakit Hewan</span></a></li>
         {{-- <li><a href="/SaranaBidang" class="text-decoration-none"><i class="fa fa-book"></i> <span>Sarana Bidang Kesehatan Hewan</span></a></li> --}}
         <li><a href="/TernakRuminansia" class="text-decoration-none"><i class="fa fa-book"></i> <span>Ternak Ruminansia Potong</span></a></li>
         <li><a href="/TernakUnggas" class="text-decoration-none"><i class="fa fa-book"></i> <span>Ternak Unggas dan Aneka Ternak</span></a></li>

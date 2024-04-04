@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Ikm;
 use App\Models\pkhewan;
-use App\Models\th22\Piphewan;
+use App\Models\Piphewan;
 // MODEL TURUNAN PIP HEWAN
-use App\Models\th22\Penyakit;
-use App\Models\th22\Rabies;
+use App\Models\penyakits\Rabies;
 use App\Models\th22\Avian;
 use App\Models\th22\Brucellosis;
 use App\Models\th22\Anthraxs;
@@ -41,7 +40,6 @@ use App\Models\th22\Penyakit5year;
 use App\Models\th23\Piphewan23;
 // MODEL TURUNAN PIP HEWAN
 use App\Models\th23\Penyakit23;
-use App\Models\th23\Rabie23;
 use App\Models\th23\Avian23;
 use App\Models\th23\Brucellose23;
 use App\Models\th23\Anthrax23;
@@ -106,8 +104,7 @@ class DashboardController extends Controller
         $data_pkhewan = pkhewan::where('Tahun', $tahun)->get();
         $data_piphewan= Piphewan::all();
         // DATA TURUNAN PIP HEWAN 
-        $data_penyakit= Penyakit::all();
-        $data_rabies= Rabies::all();
+        $data_rabies= Rabies::where('Tahun', $tahun)->get();
         $data_avian= Avian::all();
         $data_brucellosis= Brucellosis::all();
         $data_anthraxs= Anthraxs::all();
@@ -140,7 +137,7 @@ class DashboardController extends Controller
         return view('admin.th22.home', [
             "title" => 'Home | SIMANTU 2022'
             ], compact(
-            'data_ikm','data_pkhewan','data_piphewan','data_penyakit','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_penyakitlain','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk','data_sbkhewan','data_ternakpotong','data_ternakunggas','data_keamananproduk','data_layanan','data_pengendalianpenyakit','data_penyediaanbenih','data_kesehatanventeriner','data_dukunganmanajemen', 'data_sdm' ,'data_penyakit5year'
+            'data_ikm','data_pkhewan','data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_penyakitlain','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk','data_sbkhewan','data_ternakpotong','data_ternakunggas','data_keamananproduk','data_layanan','data_pengendalianpenyakit','data_penyediaanbenih','data_kesehatanventeriner','data_dukunganmanajemen', 'data_sdm' ,'data_penyakit5year'
         ));
     }
 
@@ -149,11 +146,10 @@ class DashboardController extends Controller
         $tahun ='2023';
         $data_ikm = Ikm::where('Tahun', $tahun)->get();
         $data_internal = Kepuasaninternal23::all();
-        $data_pkhewan = pkhewan23::all();
-        $data_piphewan= Piphewan23::all();
+        $data_pkhewan = pkhewan::where('Tahun', $tahun)->get();
+        $data_piphewan= Piphewan::all();
         // DATA TURUNAN PIP HEWAN 
-        $data_penyakit= Penyakit23::all();
-        $data_rabies= Rabie23::all();
+        $data_rabies= Rabies::where('Tahun', $tahun)->get();
         $data_avian= Avian23::all();
         $data_brucellosis= Brucellose23::all();
         $data_anthraxs= Anthrax23::all();
@@ -194,7 +190,7 @@ class DashboardController extends Controller
         return view('admin.th23.home', [
             "title" => 'Home | SIMANTU 2023'
             ], compact(
-            'data_ikm','data_internal','data_pkhewan','data_piphewan','data_penyakit','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk','data_parasiter', 'data_lsd', 'data_inveswabah','data_sbkhewan','data_ternakpotong','data_ternakunggas','data_keamananproduk','data_layanan','data_layanankinerja','data_pengendalianpenyakit','data_penyediaanbenih','data_kesehatanventeriner','data_dukunganmanajemen', 'data_sdm' ,'data_penyakit5year','data_amrnasional23','data_keamananprodukhewan23'
+            'data_ikm','data_internal','data_pkhewan','data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk','data_parasiter', 'data_lsd', 'data_inveswabah','data_sbkhewan','data_ternakpotong','data_ternakunggas','data_keamananproduk','data_layanan','data_layanankinerja','data_pengendalianpenyakit','data_penyediaanbenih','data_kesehatanventeriner','data_dukunganmanajemen', 'data_sdm' ,'data_penyakit5year','data_amrnasional23','data_keamananprodukhewan23'
         ));
     }
 
@@ -203,11 +199,10 @@ class DashboardController extends Controller
         $tahun ='2024';
         $data_ikm = Ikm::where('Tahun', $tahun)->get();
         $data_internal = Kepuasaninternal23::all();
-        $data_pkhewan = pkhewan23::all();
-        $data_piphewan= Piphewan23::all();
+        $data_pkhewan = pkhewan::where('Tahun', $tahun)->get();
+        $data_piphewan= Piphewan::all();
         // DATA TURUNAN PIP HEWAN 
-        $data_penyakit= Penyakit23::all();
-        $data_rabies= Rabie23::all();
+        $data_rabies= Rabies::where('Tahun', $tahun)->get();
         $data_avian= Avian23::all();
         $data_brucellosis= Brucellose23::all();
         $data_anthraxs= Anthrax23::all();
@@ -248,7 +243,7 @@ class DashboardController extends Controller
         return view('admin.th24.home', [
             "title" => 'Home | SIMANTU 2024'
             ], compact(
-            'data_ikm','data_internal','data_pkhewan','data_piphewan','data_penyakit','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk','data_parasiter', 'data_lsd', 'data_inveswabah','data_sbkhewan','data_ternakpotong','data_ternakunggas','data_keamananproduk','data_layanan','data_layanankinerja','data_pengendalianpenyakit','data_penyediaanbenih','data_kesehatanventeriner','data_dukunganmanajemen', 'data_sdm' ,'data_penyakit5year','data_amrnasional23','data_keamananprodukhewan23'
+            'data_ikm','data_internal','data_pkhewan','data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk','data_parasiter', 'data_lsd', 'data_inveswabah','data_sbkhewan','data_ternakpotong','data_ternakunggas','data_keamananproduk','data_layanan','data_layanankinerja','data_pengendalianpenyakit','data_penyediaanbenih','data_kesehatanventeriner','data_dukunganmanajemen', 'data_sdm' ,'data_penyakit5year','data_amrnasional23','data_keamananprodukhewan23'
         ));
     }
 }

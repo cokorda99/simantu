@@ -847,49 +847,49 @@ var realisasibulan12_asf = parseInt(data_asf[11].Realisasi);
   var targetbulan12_penyakitviral = parseInt(data_penyakitviral[11].Target);
   var realisasibulan12_penyakitviral = parseInt(data_penyakitviral[11].Realisasi);
 
-  //  PENYAKIT PARASITER
-  var data_parasiter= {!! json_encode($data_parasiter-> toArray())!!};
-  var total_Target_Parasiter = 0;
-  var total_Realisasi_Parasiter = 0;
-  for (let index = 0; index < data_parasiter.length; index++) {
-    var Target_Parasiter = parseInt(data_parasiter[index].Target);
-    var Realisasi_Parasiter = parseInt(data_parasiter[index].Realisasi);
-    total_Target_Parasiter += Target_Parasiter;
-    total_Realisasi_Parasiter += Realisasi_Parasiter;
-  }
+  // //  PENYAKIT PARASITER
+  // var data_parasiter= {!! json_encode($data_parasiter-> toArray())!!};
+  // var total_Target_Parasiter = 0;
+  // var total_Realisasi_Parasiter = 0;
+  // for (let index = 0; index < data_parasiter.length; index++) {
+  //   var Target_Parasiter = parseInt(data_parasiter[index].Target);
+  //   var Realisasi_Parasiter = parseInt(data_parasiter[index].Realisasi);
+  //   total_Target_Parasiter += Target_Parasiter;
+  //   total_Realisasi_Parasiter += Realisasi_Parasiter;
+  // }
 
-  var rata_totalTarget_Parasiter  = total_Target_Parasiter /12;
-  var tampil_totalTarget_Parasiter = String(rata_totalTarget_Parasiter);
-  var tampil_totalRealisasi_Parasiter = String(total_Realisasi_Parasiter);
-  // console.log(tampil_totalTarget_Parasiter, tampil_totalRealisasi_Parasiter)
-  var tampil_Persentase = (parseInt(total_Realisasi_Parasiter) / parseInt(rata_totalTarget_Parasiter)) * 100;
-  var tampil_PersentaseFix_Parasiter = tampil_Persentase.toFixed(2) + ' %'
+  // var rata_totalTarget_Parasiter  = total_Target_Parasiter /12;
+  // var tampil_totalTarget_Parasiter = String(rata_totalTarget_Parasiter);
+  // var tampil_totalRealisasi_Parasiter = String(total_Realisasi_Parasiter);
+  // // console.log(tampil_totalTarget_Parasiter, tampil_totalRealisasi_Parasiter)
+  // var tampil_Persentase = (parseInt(total_Realisasi_Parasiter) / parseInt(rata_totalTarget_Parasiter)) * 100;
+  // var tampil_PersentaseFix_Parasiter = tampil_Persentase.toFixed(2) + ' %'
 
   // PENYAKIT PARASITER PER BULAN 
-  var targetbulan1_parasiter= parseInt(data_parasiter[0].Target);
-  var realisasibulan1_parasiter= parseInt(data_parasiter[0].Realisasi);
-  var targetbulan2_parasiter= parseInt(data_parasiter[1].Target);
-  var realisasibulan2_parasiter= parseInt(data_parasiter[1].Realisasi);
-  var targetbulan3_parasiter= parseInt(data_parasiter[2].Target);
-  var realisasibulan3_parasiter= parseInt(data_parasiter[2].Realisasi);
-  var targetbulan4_parasiter= parseInt(data_parasiter[3].Target);
-  var realisasibulan4_parasiter= parseInt(data_parasiter[3].Realisasi);
-  var targetbulan5_parasiter= parseInt(data_parasiter[4].Target);
-  var realisasibulan5_parasiter= parseInt(data_parasiter[4].Realisasi);
-  var targetbulan6_parasiter= parseInt(data_parasiter[5].Target);
-  var realisasibulan6_parasiter= parseInt(data_parasiter[5].Realisasi);
-  var targetbulan7_parasiter= parseInt(data_parasiter[6].Target);
-  var realisasibulan7_parasiter= parseInt(data_parasiter[6].Realisasi);
-  var targetbulan8_parasiter= parseInt(data_parasiter[7].Target);
-  var realisasibulan8_parasiter= parseInt(data_parasiter[7].Realisasi);
-  var targetbulan9_parasiter= parseInt(data_parasiter[8].Target);
-  var realisasibulan9_parasiter= parseInt(data_parasiter[8].Realisasi);
-  var targetbulan10_parasiter= parseInt(data_parasiter[9].Target);
-  var realisasibulan10_parasiter= parseInt(data_parasiter[9].Realisasi);
-  var targetbulan11_parasiter= parseInt(data_parasiter[10].Target);
-  var realisasibulan11_parasiter= parseInt(data_parasiter[10].Realisasi);
-  var targetbulan12_parasiter= parseInt(data_parasiter[11].Target);
-  var realisasibulan12_parasiter= parseInt(data_parasiter[11].Realisasi);
+  // var targetbulan1_parasiter= parseInt(data_parasiter[0].Target);
+  // var realisasibulan1_parasiter= parseInt(data_parasiter[0].Realisasi);
+  // var targetbulan2_parasiter= parseInt(data_parasiter[1].Target);
+  // var realisasibulan2_parasiter= parseInt(data_parasiter[1].Realisasi);
+  // var targetbulan3_parasiter= parseInt(data_parasiter[2].Target);
+  // var realisasibulan3_parasiter= parseInt(data_parasiter[2].Realisasi);
+  // var targetbulan4_parasiter= parseInt(data_parasiter[3].Target);
+  // var realisasibulan4_parasiter= parseInt(data_parasiter[3].Realisasi);
+  // var targetbulan5_parasiter= parseInt(data_parasiter[4].Target);
+  // var realisasibulan5_parasiter= parseInt(data_parasiter[4].Realisasi);
+  // var targetbulan6_parasiter= parseInt(data_parasiter[5].Target);
+  // var realisasibulan6_parasiter= parseInt(data_parasiter[5].Realisasi);
+  // var targetbulan7_parasiter= parseInt(data_parasiter[6].Target);
+  // var realisasibulan7_parasiter= parseInt(data_parasiter[6].Realisasi);
+  // var targetbulan8_parasiter= parseInt(data_parasiter[7].Target);
+  // var realisasibulan8_parasiter= parseInt(data_parasiter[7].Realisasi);
+  // var targetbulan9_parasiter= parseInt(data_parasiter[8].Target);
+  // var realisasibulan9_parasiter= parseInt(data_parasiter[8].Realisasi);
+  // var targetbulan10_parasiter= parseInt(data_parasiter[9].Target);
+  // var realisasibulan10_parasiter= parseInt(data_parasiter[9].Realisasi);
+  // var targetbulan11_parasiter= parseInt(data_parasiter[10].Target);
+  // var realisasibulan11_parasiter= parseInt(data_parasiter[10].Realisasi);
+  // var targetbulan12_parasiter= parseInt(data_parasiter[11].Target);
+  // var realisasibulan12_parasiter= parseInt(data_parasiter[11].Realisasi);
 
 
   //  PENYAKIT LSD
