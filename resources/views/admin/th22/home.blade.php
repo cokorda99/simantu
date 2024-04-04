@@ -1545,7 +1545,7 @@
                     <td>
                       <table>
                         <tr>
-                          <td><a href="/IndeksKepuasanMasyarakat">1. Indeks Kepuasan Masyarakat atas Layanan Balai Besar
+                          <td><a href="IndeksKepuasanMasyarakat">1. Indeks Kepuasan Masyarakat atas Layanan Balai Besar
                               Veteriner Denpasar yang diberikan</a></td>
                         </tr>
                       </table>

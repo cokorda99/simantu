@@ -103,7 +103,8 @@ class DashboardController extends Controller
      */
     public function index22()
     {
-        $data_ikm = Ikm::all();
+        $tahun ='2022';
+        $data_ikm = Ikm::where('Tahun', $tahun)->get();
         $data_pkhewan = pkhewan::all();
         $data_piphewan= Piphewan::all();
         // DATA TURUNAN PIP HEWAN 
@@ -147,7 +148,8 @@ class DashboardController extends Controller
 
     public function index23()
     {
-        $data_ikm = Ikm23::all();
+        $tahun ='2023';
+        $data_ikm = Ikm::where('Tahun', $tahun)->get();
         $data_internal = Kepuasaninternal23::all();
         $data_pkhewan = pkhewan23::all();
         $data_piphewan= Piphewan23::all();

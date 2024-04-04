@@ -112,7 +112,7 @@ Route::prefix('v23')->group(function () {
 // VERSION 3.0 (2024)
 Route::prefix('v24')->group(function () {
     Route::get('home', [DashboardController::class, 'index24']);
-    Route::get('IndeksKepuasanMasyarakat', [IkmController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'IndeksKepuasanMasyarakat', [IkmController::class, 'index24']);
 });
 
 

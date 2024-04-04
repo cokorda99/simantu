@@ -109,14 +109,53 @@ class IkmController extends Controller
             return response()->json(['message' => 'Method not allowed'], 405);
         }
     }
-    public function index24()
+    public function index24(Request $request)
     {
-        $data_ikm23 = Ikm23::all();
-        return view('admin.th24.IndeksKepuasanMasyarakat', [
-                "title" => 'Indeks Kepuasan Masyarakat | SIMANTU'
-            ], compact(
-            'data_ikm23',
-        ));
+        if ($request->isMethod('post')) {
+
+            //CREATE
+            $data_ikm  = new Ikm;
+            $data_ikm->Bulan = $request->Bulan;
+            $data_ikm->Target = $request->Target;
+            $data_ikm->Realisasi = $request->Realisasi;
+            $data_ikm->Tahun = '2024';
+            $data_ikm->updateAll = '1';
+            $data_ikm ->save();
+            return redirect('/v24/IndeksKepuasanMasyarakat');
+
+        } elseif ($request->isMethod('get')) {
+            //READ
+            $tahun ='2024';
+            // $data_ikm = Ikm::all();
+            $data_ikm = Ikm::where('Tahun', $tahun)->get();
+            
+            return view('admin.th24.IndeksKepuasanMasyarakat', [
+                    "title" => 'Indeks Kepuasan Masyarakat | SIMANTU'
+                ], compact(
+                'data_ikm','tahun'
+            ));
+        } elseif ($request->isMethod('patch')) {
+            $tahun ='2024';
+            if($request->get('forUpdateAll') == "forUpdateAllValue"){
+                $question = Ikm::where('updateAll',1)
+                ->where('Tahun', $tahun)
+                    ->update([
+                        'Target' => $request->get('valueUpdateAll')
+                    ]);
+                    return redirect('/v24/IndeksKepuasanMasyarakat');
+                }else {
+                    $model = Ikm::find($request->id);
+                    $model->Bulan = $request->Bulan;
+                    $model->Target = $request->Target;
+                    $model->Realisasi = $request->Realisasi;
+            
+                    $model->save();
+                    return redirect('/v24/IndeksKepuasanMasyarakat');
+                }
+        } else {
+            // Handle other methods
+            return response()->json(['message' => 'Method not allowed'], 405);
+        }
     }
 
     /**
