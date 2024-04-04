@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\th22\HomeController;
+use App\Http\Controllers\IkmController;
+use App\Http\Controllers\HomeController;
 
-use App\Http\Controllers\th22\Hometh22Controller;
-use App\Http\Controllers\th22\IkmController;
+
+// use App\Http\Controllers\th22\IkmController;
 use App\Http\Controllers\th22\pkhewanController;
 use App\Http\Controllers\th22\PiphewanController;
 use App\Http\Controllers\th22\SbkhewanController;
@@ -34,8 +35,7 @@ use App\Http\Controllers\th22\MasukanController;
 use App\Http\Controllers\th22\JenispilihanpenyakitController;
 use App\Http\Controllers\th22\PmkController;
 
-use App\Http\Controllers\th23\Hometh23Controller;
-use App\Http\Controllers\th23\Ikm23Controller;
+// use App\Http\Controllers\th23\Ikm23Controller;
 use App\Http\Controllers\th23\pkhewan23Controller;
 use App\Http\Controllers\th23\Piphewan23Controller;
 use App\Http\Controllers\th23\Sbkhewan23Controller;
@@ -100,20 +100,23 @@ Route::resource('/home',HomeController::class);
 // VERSION 1.0 (2022)
 Route::prefix('v22')->group(function () {
     Route::get('home', [DashboardController::class, 'index22']);
+    Route::get('IndeksKepuasanMasyarakat', [IkmController::class, 'index22']);
 });
 
 // VERSION 2.0 (2023)
 Route::prefix('v23')->group(function () {
     Route::get('home', [DashboardController::class, 'index23']);
+    Route::get('IndeksKepuasanMasyarakat', [IkmController::class, 'index23']);
 });
 
 // VERSION 3.0 (2024)
 Route::prefix('v24')->group(function () {
     Route::get('home', [DashboardController::class, 'index24']);
+    Route::get('IndeksKepuasanMasyarakat', [IkmController::class, 'index24']);
 });
 
 
-Route::resource('/IndeksKepuasanMasyarakat',IkmController::class);
+// Route::resource('/IndeksKepuasanMasyarakat',IkmController::class);
 Route::resource('/PelayananKesehatanHewan',pkhewanController::class);
 Route::resource('/PengamatanPenyakitHewan',PiphewanController::class);
 Route::resource('/SaranaBidang',SbkhewanController::class);
