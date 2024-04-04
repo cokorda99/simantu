@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\th22\HomeController;
+
 use App\Http\Controllers\th22\Hometh22Controller;
 use App\Http\Controllers\th22\IkmController;
 use App\Http\Controllers\th22\pkhewanController;
@@ -68,7 +69,6 @@ use App\Http\Controllers\th23\Pmk23Controller;
 
 use App\Http\Controllers\th23\Amrnasional23Controller;
 use App\Http\Controllers\th23\Keamananprodukhewan23Controller;
-
 use App\Http\Controllers\th23\Kepuasanlayananinternal23Controller;
 
 
@@ -94,19 +94,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', function () {
-//     return view('admin.th22.home' , [
-//         "title" => 'Home | SIMANTU'
-//     ]);
-// });
-
-// Route::get('/DetailPenyakitHewan', function () {
-//     return view('admin.th22.DetailPenyakitHewan' , [
-//         "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
-//     ]);
-// });
-
 Route::resource('/home',HomeController::class);
+
+// VERSION 1.0 (2022)
+Route::prefix('v22')->group(function () {
+    Route::get('home', [Hometh22Controller::class, 'index']);
+});
+
+// VERSION 2.0 (2023)
+Route::prefix('v23')->group(function () {
+    Route::get('home', [Hometh23Controller::class, 'index']);
+});
+
 Route::resource('/home2022',Hometh22Controller::class);
 Route::resource('/IndeksKepuasanMasyarakat',IkmController::class);
 Route::resource('/PelayananKesehatanHewan',pkhewanController::class);
@@ -146,15 +145,12 @@ Route::resource('/TernakRuminansia23',Ternakpotong23Controller::class);
 Route::resource('/TernakUnggas23',Ternakungga23Controller::class);
 Route::resource('/KeamananProduk23',Keamananproduk23Controller::class);
 Route::resource('/LayananDukungan23',Layanan23Controller::class);
-
 Route::resource('/LayananManajemenKinerja23',Layanankinerja23Controller::class);
-
 Route::resource('/anggaran_PengendalianPenyakit23',Pengendalianpenyakit23Controller::class);
 Route::resource('/anggaran_PenyedianBenih23',Penyediaanbenih23Controller::class);
 Route::resource('/anggaran_KesehatanVeteriner23',Kesehatanventeriner23Controller::class);
 Route::resource('/anggaran_DukunganManajemen23',Dukunganmanajemen23Controller::class);
 Route::resource('/sdm_sdm23',Sdm23Controller::class);
-
 Route::resource('/DetailPenyakitHewan23',Detailpenyakit23Controller::class);
 Route::resource('/sdm_dinasluar23',Dinasluar23Controller::class);
 Route::resource('/Penyakit_Rabies23',Rabie23Controller::class);
@@ -162,11 +158,9 @@ Route::resource('/Penyakit_Avian23',Avian23Controller::class);
 Route::resource('/Penyakit_Brucellosis23',Brucellose23Controller::class);
 Route::resource('/Penyakit_Anthraxs23',Anthrax23Controller::class);
 Route::resource('/Penyakit_HogCholera23',Hcholera23Controller::class);
-
 Route::resource('/Penyakit_Parasiter23',Parasiter23Controller::class);
 Route::resource('/LSD23',Lsd23Controller::class);
 Route::resource('/Investigasi_Wabah23',Inveswabah23Controller::class);
-
 Route::resource('/Penyakit_HewanLaninnya23',Penyakitlain23Controller::class);
 Route::resource('/Penyakit_Asf23',Asf23Controller::class);
 Route::resource('/Penyakit_Viral23',Penyakitviral23Controller::class);
@@ -175,16 +169,6 @@ Route::resource('/pengaturan_Penyakit_terakhir23',Penyakit5year23Controller::cla
 Route::resource('/masukanBalai23',Masukan23Controller::class);
 Route::resource('/data_Pilihan_Penyakit23',Jenispilihanpenyakit23Controller::class);
 Route::resource('/Penyakit_Pmk23',Pmk23Controller::class);
-
 Route::resource('/AMR_Nasional23',Amrnasional23Controller::class);
 Route::resource('/Keamanan_ProdukHewan23',Keamananprodukhewan23Controller::class);
-
 Route::resource('/kepuasanlayanan_internal23', Kepuasanlayananinternal23Controller::class);
-
-
-
-
-
-
-
-// Route::get('/home', [App\Http\Controllers\th22\HomeController::class, 'index'])->name('home');

@@ -15,6 +15,8 @@
                 <a href="/home2022"><input type="submit" class="btn btn-outline-light btn-lg btn-block" value="Data Tahun 2022" name="tahun_2022" style="border-radius: 25px;"></a>
                 <br>
                 <a href="/home2023"><input type="submit" class="btn btn-outline-light btn-lg btn-block" value="Data Tahun 2023" name="tahun_2023" style="border-radius: 25px;"></a>
+                <br>
+                <a href="/home2023"><input type="submit" class="btn btn-outline-light btn-lg btn-block" value="Data Tahun 2024" name="tahun_2023" style="border-radius: 25px;"></a>
             </div>
         </div>
       </div>
