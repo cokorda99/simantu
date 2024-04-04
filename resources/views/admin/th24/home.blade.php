@@ -1794,7 +1794,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-sm-6">
-                <h5>Realisasi Serapan Angaran Tahun 2023<span id="yAnggaran"></span> </h5>
+                <h5>Realisasi Serapan Angaran Tahun 2024 <span id="yAnggaran"></span> </h5>
               </div>
             </div>
           </div>

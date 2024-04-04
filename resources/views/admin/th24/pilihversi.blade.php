@@ -10,7 +10,7 @@
             <h3 class="fw-bold">Sistem Pemantauan Kinerja Balai Besar Veteriner Denpasar</h3>
             <br>
             <br>
-            <a href="/home2022"><button>2022</button></a>
+            <a href="/v22/home"><button>2022</button></a>
             
             <br>
             <br>

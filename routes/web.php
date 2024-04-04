@@ -113,7 +113,6 @@ Route::prefix('v24')->group(function () {
 });
 
 
-Route::resource('/home2022',Hometh22Controller::class);
 Route::resource('/IndeksKepuasanMasyarakat',IkmController::class);
 Route::resource('/PelayananKesehatanHewan',pkhewanController::class);
 Route::resource('/PengamatanPenyakitHewan',PiphewanController::class);
@@ -143,7 +142,6 @@ Route::resource('/masukanBalai',MasukanController::class);
 Route::resource('/data_Pilihan_Penyakit',JenispilihanpenyakitController::class);
 Route::resource('/Penyakit_Pmk',PmkController::class);
 
-Route::resource('/home2023',Hometh23Controller::class);
 Route::resource('/IndeksKepuasanMasyarakat23',Ikm23Controller::class);
 Route::resource('/PelayananKesehatanHewan23',pkhewan23Controller::class);
 Route::resource('/PengamatanPenyakitHewan23',Piphewan23Controller::class);
