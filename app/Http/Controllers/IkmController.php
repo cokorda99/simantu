@@ -30,7 +30,6 @@ class IkmController extends Controller
         } elseif ($request->isMethod('get')) {
             //READ
             $tahun ='2022';
-            // $data_ikm = Ikm::all();
             $data_ikm = Ikm::where('Tahun', $tahun)->get();
             
             return view('admin.th22.IndeksKepuasanMasyarakat', [
@@ -78,7 +77,6 @@ class IkmController extends Controller
         } elseif ($request->isMethod('get')) {
             //READ
             $tahun ='2023';
-            // $data_ikm = Ikm::all();
             $data_ikm = Ikm::where('Tahun', $tahun)->get();
             
             return view('admin.th23.IndeksKepuasanMasyarakat', [
@@ -126,7 +124,6 @@ class IkmController extends Controller
         } elseif ($request->isMethod('get')) {
             //READ
             $tahun ='2024';
-            // $data_ikm = Ikm::all();
             $data_ikm = Ikm::where('Tahun', $tahun)->get();
             
             return view('admin.th24.IndeksKepuasanMasyarakat', [
@@ -156,116 +153,5 @@ class IkmController extends Controller
             // Handle other methods
             return response()->json(['message' => 'Method not allowed'], 405);
         }
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        $model = new Ikm;
-
-        return view('admin.th22.IndeksKepuasanMasyarakat', [
-            "title" => 'Indeks Kepuasan Masyarakat | SIMANTU'
-        ], compact(
-        'model',
-    ));
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        $model = new Ikm;
-        $model->Bulan = $request->Bulan;
-        $model->Target = $request->Target;
-        $model->Realisasi = $request->Realisasi;
-        $model->Tahun = '2022';
-
-        $model->save();
-
-        return view('admin.th22.IndeksKepuasanMasyarakat', [
-            "title" => 'Indeks Kepuasan Masyarakat | SIMANTU'
-        ], compact(
-        'model',
-    ));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-         //
-         $model = Ikm::find($id);
-
-         return view('admin.th22.IndeksKepuasanMasyarakat', [
-             "title" => 'Indeks Kepuasan Masyarakat | SIMANTU'
-         ], compact(
-         'model',
-     ));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-        if($request->get('forUpdateAll') == "forUpdateAllValue"){
-            $question = Ikm::where('updateAll',$id)
-                ->update([
-                    'Target' => $request->get('valueUpdateAll')
-                ]);
-                return redirect('/IndeksKepuasanMasyarakat');
-        }else {
-            //other code ( update for unique record ) 
-            $model = Ikm::find($id);
-            $model->Bulan = $request->Bulan;
-            $model->Target = $request->Target;
-            $model->Realisasi = $request->Realisasi;
-    
-            $model->save();
-            return redirect('/IndeksKepuasanMasyarakat');
-            // return redirect('/IndeksKepuasanMasyarakat')->with('message' , 'Data berhasil diUpdate');
-        }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
