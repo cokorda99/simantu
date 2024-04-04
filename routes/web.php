@@ -1,13 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\IkmController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PkhewanController;
 
 
-// use App\Http\Controllers\th22\IkmController;
-use App\Http\Controllers\th22\pkhewanController;
 use App\Http\Controllers\th22\PiphewanController;
 use App\Http\Controllers\th22\SbkhewanController;
 use App\Http\Controllers\th22\TernakpotongController;
@@ -35,8 +34,6 @@ use App\Http\Controllers\th22\MasukanController;
 use App\Http\Controllers\th22\JenispilihanpenyakitController;
 use App\Http\Controllers\th22\PmkController;
 
-// use App\Http\Controllers\th23\Ikm23Controller;
-use App\Http\Controllers\th23\pkhewan23Controller;
 use App\Http\Controllers\th23\Piphewan23Controller;
 use App\Http\Controllers\th23\Sbkhewan23Controller;
 use App\Http\Controllers\th23\Ternakpotong23Controller;
@@ -101,23 +98,24 @@ Route::resource('/home',HomeController::class);
 Route::prefix('v22')->group(function () {
     Route::get('home', [DashboardController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'IndeksKepuasanMasyarakat', [IkmController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'PelayananKesehatanHewan', [PkhewanController::class, 'index22']);
 });
 
 // VERSION 2.0 (2023)
 Route::prefix('v23')->group(function () {
     Route::get('home', [DashboardController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'IndeksKepuasanMasyarakat', [IkmController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'PelayananKesehatanHewan', [PkhewanController::class, 'index23']);
 });
 
 // VERSION 3.0 (2024)
 Route::prefix('v24')->group(function () {
     Route::get('home', [DashboardController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'IndeksKepuasanMasyarakat', [IkmController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'PelayananKesehatanHewan', [PkhewanController::class, 'index24']);
 });
 
 
-// Route::resource('/IndeksKepuasanMasyarakat',IkmController::class);
-Route::resource('/PelayananKesehatanHewan',pkhewanController::class);
 Route::resource('/PengamatanPenyakitHewan',PiphewanController::class);
 Route::resource('/SaranaBidang',SbkhewanController::class);
 Route::resource('/TernakRuminansia',TernakpotongController::class);
@@ -145,8 +143,6 @@ Route::resource('/masukanBalai',MasukanController::class);
 Route::resource('/data_Pilihan_Penyakit',JenispilihanpenyakitController::class);
 Route::resource('/Penyakit_Pmk',PmkController::class);
 
-Route::resource('/IndeksKepuasanMasyarakat23',Ikm23Controller::class);
-Route::resource('/PelayananKesehatanHewan23',pkhewan23Controller::class);
 Route::resource('/PengamatanPenyakitHewan23',Piphewan23Controller::class);
 Route::resource('/SaranaBidang23',Sbkhewan23Controller::class);
 Route::resource('/TernakRuminansia23',Ternakpotong23Controller::class);

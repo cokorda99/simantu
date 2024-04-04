@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Ikm;
-use App\Models\th22\pkhewan;
+use App\Models\pkhewan;
 use App\Models\th22\Piphewan;
 // MODEL TURUNAN PIP HEWAN
 use App\Models\th22\Penyakit;
@@ -38,8 +38,6 @@ use App\Models\th22\Penyakit5year;
 
 
 // LOAD MODEL 2023
-use App\Models\th23\Ikm23;
-use App\Models\th23\pkhewan23;
 use App\Models\th23\Piphewan23;
 // MODEL TURUNAN PIP HEWAN
 use App\Models\th23\Penyakit23;
@@ -105,7 +103,7 @@ class DashboardController extends Controller
     {
         $tahun ='2022';
         $data_ikm = Ikm::where('Tahun', $tahun)->get();
-        $data_pkhewan = pkhewan::all();
+        $data_pkhewan = pkhewan::where('Tahun', $tahun)->get();
         $data_piphewan= Piphewan::all();
         // DATA TURUNAN PIP HEWAN 
         $data_penyakit= Penyakit::all();
@@ -202,7 +200,8 @@ class DashboardController extends Controller
 
     public function index24()
     {
-        $data_ikm = Ikm23::all();
+        $tahun ='2024';
+        $data_ikm = Ikm::where('Tahun', $tahun)->get();
         $data_internal = Kepuasaninternal23::all();
         $data_pkhewan = pkhewan23::all();
         $data_piphewan= Piphewan23::all();
