@@ -12,11 +12,11 @@
             <h5 style="text-align: center; color: white;">Silahkan Pilih Tahun Anggaran yang Akan Ditampilkan</h5>
             <br>
             <div class="container" style="padding-left: 50px; padding-right: 50px;">
-                <a href="/home2022"><input type="submit" class="btn btn-outline-light btn-lg btn-block" value="Data Tahun 2022" name="tahun_2022" style="border-radius: 25px;"></a>
+                <a href="/v22/home"><input type="submit" class="btn btn-outline-light btn-lg btn-block" value="Data Tahun 2022" name="tahun_2022" style="border-radius: 25px;"></a>
                 <br>
-                <a href="/home2023"><input type="submit" class="btn btn-outline-light btn-lg btn-block" value="Data Tahun 2023" name="tahun_2023" style="border-radius: 25px;"></a>
+                <a href="/v23/home"><input type="submit" class="btn btn-outline-light btn-lg btn-block" value="Data Tahun 2023" name="tahun_2023" style="border-radius: 25px;"></a>
                 <br>
-                <a href="/home2023"><input type="submit" class="btn btn-outline-light btn-lg btn-block" value="Data Tahun 2024" name="tahun_2023" style="border-radius: 25px;"></a>
+                <a href="/v24/home"><input type="submit" class="btn btn-outline-light btn-lg btn-block" value="Data Tahun 2024" name="tahun_2023" style="border-radius: 25px;"></a>
             </div>
         </div>
       </div>
