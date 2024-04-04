@@ -18,6 +18,8 @@ class CreateIkmsTable extends Migration
             $table->text('Bulan');
             $table->text('Target');
             $table->text('Realisasi');
+            $table->text('Tahun');
+            $table->text('updateAll');
             $table->timestamps();
         });
     }

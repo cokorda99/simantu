@@ -1,11 +1,11 @@
-@extends('admin/th23/layouts/main')
+@extends('admin/th24/layouts/main')
 
 @section('content')
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      Indeks Kepuasan Masyarakat atas Layanan Balai Besar Veteriner (BB-VET) Denpasar yang diberikan Tahun 2023
+      Indeks Kepuasan Masyarakat atas Layanan Balai Besar Veteriner (BB-VET) Denpasar yang diberikan Tahun 2024
       <?php ?>
     </h1>
     <p>Update at :

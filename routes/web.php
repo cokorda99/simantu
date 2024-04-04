@@ -100,13 +100,13 @@ Route::resource('/home',HomeController::class);
 // VERSION 1.0 (2022)
 Route::prefix('v22')->group(function () {
     Route::get('home', [DashboardController::class, 'index22']);
-    Route::get('IndeksKepuasanMasyarakat', [IkmController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'IndeksKepuasanMasyarakat', [IkmController::class, 'index22']);
 });
 
 // VERSION 2.0 (2023)
 Route::prefix('v23')->group(function () {
     Route::get('home', [DashboardController::class, 'index23']);
-    Route::get('IndeksKepuasanMasyarakat', [IkmController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'IndeksKepuasanMasyarakat', [IkmController::class, 'index23']);
 });
 
 // VERSION 3.0 (2024)

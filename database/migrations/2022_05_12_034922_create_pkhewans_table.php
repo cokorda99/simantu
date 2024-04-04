@@ -18,6 +18,7 @@ class CreatePkhewansTable extends Migration
             $table->text('Bulan');
             $table->text('Target');
             $table->text('Realisasi');
+            $table->text('Tahun');
             $table->timestamps();
         });
     }
