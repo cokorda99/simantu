@@ -4,7 +4,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="float-start image">
-          <img src="assets/dist/img/avatar5.png" class="rounded-circle" alt="User Image">
+          <img src="../assets/dist/img/avatar5.png" class="rounded-circle" alt="User Image">
         </div>
         <div class="float-start info">
           <p>{{ Auth::user()->name }}</p>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\th22\HomeController;
 
 use App\Http\Controllers\th22\Hometh22Controller;
@@ -98,13 +99,19 @@ Route::resource('/home',HomeController::class);
 
 // VERSION 1.0 (2022)
 Route::prefix('v22')->group(function () {
-    Route::get('home', [Hometh22Controller::class, 'index']);
+    Route::get('home', [DashboardController::class, 'index22']);
 });
 
 // VERSION 2.0 (2023)
 Route::prefix('v23')->group(function () {
-    Route::get('home', [Hometh23Controller::class, 'index']);
+    Route::get('home', [DashboardController::class, 'index23']);
 });
+
+// VERSION 3.0 (2024)
+Route::prefix('v24')->group(function () {
+    Route::get('home', [DashboardController::class, 'index24']);
+});
+
 
 Route::resource('/home2022',Hometh22Controller::class);
 Route::resource('/IndeksKepuasanMasyarakat',IkmController::class);

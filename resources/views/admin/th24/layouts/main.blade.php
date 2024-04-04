@@ -15,10 +15,10 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="../assets/bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../assets/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../assets/dist/css/AdminLTE24.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../assets/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../assets/dist/css/skins/_all-skins24.min.css">
   <!-- Morris chart -->
   <link rel="stylesheet" href="../assets/bower_components/morris.js/morris.css">
   <!-- jvectormap -->
@@ -83,13 +83,13 @@
 <body class="hold-transition skin-blue sidebar-mini">
 
   <div class="wrapper">
-    @include('admin/th22/layouts/header')
+    @include('admin/th24/layouts/header')
     <!-- Left side column. contains the logo and sidebar -->
-    @include('admin/th22/layouts/sidebar')
+    @include('admin/th24/layouts/sidebar')
     <!-- Content Wrapper. Contains page content -->
     @yield('content')
     <!-- /.content-wrapper -->
-    @include('admin/th22/layouts/footer')
+    @include('admin/th24/layouts/footer')
     <!-- ./wrapper -->
 
     @include('scripts.google-maps')
