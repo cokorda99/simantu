@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Piphewan;
 use App\Models\penyakits\Rabies;
-use App\Models\th22\Avian;
-use App\Models\th22\Brucellosis;
+use App\Models\penyakits\Avian;
+use App\Models\penyakits\Brucellosis;
 use App\Models\th22\Anthraxs;
 use App\Models\th22\Hcholera;
 use App\Models\th22\Penyakitlain;
@@ -29,7 +29,7 @@ class PiphewanController extends Controller
         $tahun ='2022';
         $data_piphewan= Piphewan::all();
         $data_rabies = Rabies::where('Tahun', $tahun)->get();
-        $data_avian= Avian::all();
+        $data_avian= Avian::where('Tahun', $tahun)->get();
         $data_brucellosis= Brucellosis::all();
         $data_anthraxs= Anthraxs::all();
         $data_hcholera= Hcholera::all();
@@ -51,7 +51,7 @@ class PiphewanController extends Controller
         $tahun ='2023';
         $data_piphewan= Piphewan::all();
         $data_rabies = Rabies::where('Tahun', $tahun)->get();
-        $data_avian= Avian::all();
+        $data_avian= Avian::where('Tahun', $tahun)->get();
         $data_brucellosis= Brucellosis::all();
         $data_anthraxs= Anthraxs::all();
         $data_hcholera= Hcholera::all();
@@ -73,7 +73,7 @@ class PiphewanController extends Controller
         $tahun ='2024';
         $data_piphewan= Piphewan::all();
         $data_rabies = Rabies::where('Tahun', $tahun)->get();
-        $data_avian= Avian::all();
+        $data_avian= Avian::where('Tahun', $tahun)->get();
         $data_brucellosis= Brucellosis::all();
         $data_anthraxs= Anthraxs::all();
         $data_hcholera= Hcholera::all();

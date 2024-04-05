@@ -22,7 +22,7 @@
               @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com' || auth::user()->email == 'adminepi@gmail.com')
               <div class="col-lg-2">
                 <div class="float-end">
-                  <a href="/pengaturan_Penyakit_terakhir"><button class="btn btn-sm btn-success"><i class="fa fa-plus"></i></button></a>
+                  <a href="pengaturan_Penyakit_terakhir"><button class="btn btn-sm btn-success"><i class="fa fa-plus"></i></button></a>
                 </div>
               </div>
               @endif
@@ -1566,13 +1566,13 @@
                     <td>
                       <table>
                         <tr>
-                          <td><a href="/PelayananKesehatanHewan">2. Pelayanan Kesehatan Hewan</a></td>
+                          <td><a href="PelayananKesehatanHewan">2. Pelayanan Kesehatan Hewan</a></td>
                         </tr>
                         <tr>
-                          <td><a href="/PengamatanPenyakitHewan">3. Pengamatan dan Identifikasi Penyakit Hewan</a></td>
+                          <td><a href="PengamatanPenyakitHewan">3. Pengamatan dan Identifikasi Penyakit Hewan</a></td>
                         </tr>
                         {{-- <tr>
-                          <td><a href="/SaranaBidang">4. Sarana Bidang Kesehatan Hewan</a></td>
+                          <td><a href="SaranaBidang">4. Sarana Bidang Kesehatan Hewan</a></td>
                         </tr> --}}
                       </table>
                     </td>
@@ -1641,10 +1641,10 @@
                     <td>
                       <table>
                         <tr>
-                          <td><a href="/TernakRuminansia">4. Ternak Ruminansia Potong</a></td>
+                          <td><a href="TernakRuminansia">4. Ternak Ruminansia Potong</a></td>
                         </tr>
                         <tr>
-                          <td><a href="/TernakUnggas">5. Ternak Unggas dan Aneka Ternak</a></td>
+                          <td><a href="TernakUnggas">5. Ternak Unggas dan Aneka Ternak</a></td>
                         </tr>
                       </table>
                     </td>
@@ -1697,7 +1697,7 @@
                     <td>
                       <table>
                         <tr>
-                          <td><a href="/KeamananProduk">6. Keamanan Produk dan Mutu Produk Hewan</a></td>
+                          <td><a href="KeamananProduk">6. Keamanan Produk dan Mutu Produk Hewan</a></td>
                         </tr>
                       </table>
                     </td>
@@ -1737,7 +1737,7 @@
                     <td>
                       <table>
                         <tr>
-                          <td><a href="/LayananDukungan">7. Layanan Dukungan Manajemen Internal</a></td>
+                          <td><a href="LayananDukungan">7. Layanan Dukungan Manajemen Internal</a></td>
                         </tr>
                       </table>
                     </td>
@@ -1795,7 +1795,7 @@
                 <tbody>
                   <tr>
                     <td class="table-warning">1</td>
-                    <td class="table-light"><a href="/anggaran_PengendalianPenyakit">Pengendalian dan Penanggulangan
+                    <td class="table-light"><a href="anggaran_PengendalianPenyakit">Pengendalian dan Penanggulangan
                         Penyakit Hewan</a></td>
                     <td class="table-info">Rp.
                       <?php echo "<script>document.writeln(tampil_totalTarget_Pengendalianpenyakit);</script>"; ?>
@@ -1809,7 +1809,7 @@
                   </tr>
                   <tr>
                     <td class="table-warning">2</td>
-                    <td class="table-light"><a href="/anggaran_PenyedianBenih">Penyediaan Benih dan Bibit Serta
+                    <td class="table-light"><a href="anggaran_PenyedianBenih">Penyediaan Benih dan Bibit Serta
                         Peningkatan Produksi
                         Ternak</a></td>
                     <td class="table-info">Rp.
@@ -1824,7 +1824,7 @@
                   </tr>
                   <tr>
                     <td class="table-warning">3</td>
-                    <td class="table-light"><a href="/anggaran_KesehatanVeteriner">Peningkatan Kesehatan Masyarakat
+                    <td class="table-light"><a href="anggaran_KesehatanVeteriner">Peningkatan Kesehatan Masyarakat
                         Veteriner</a></td>
                     <td class="table-info">Rp.
                       <?php echo "<script>document.writeln(tampil_totalTarget_Kesehatanventeriner);</script>"; ?>
@@ -1838,7 +1838,7 @@
                   </tr>
                   <tr>
                     <td class="table-warning">4</td>
-                    <td class="table-light"><a href="/anggaran_DukunganManajemen">Dukungan Manajemen dan Dukungan Teknis
+                    <td class="table-light"><a href="anggaran_DukunganManajemen">Dukungan Manajemen dan Dukungan Teknis
                         Lainnya Ditjen
                         Peternakan dan Kesehatan
                         Hewan</a></td>
@@ -1984,11 +1984,11 @@
                 </tbody>
               </table>
             </div>
-            <a href="/sdm_dinasluar">
+            <a href="sdm_dinasluar">
               <h5 style="font-weight: bold;">4. Dinas Luar</h5>
             </a>
 
-            <a href="/masukanBalai">
+            <a href="masukanBalai">
               <h5 style="font-weight: bold;">5. Koreksi Kepala Balai</h5>
             </a>
 

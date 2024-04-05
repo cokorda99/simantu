@@ -9,8 +9,9 @@ use App\Models\pkhewan;
 use App\Models\Piphewan;
 // MODEL TURUNAN PIP HEWAN
 use App\Models\penyakits\Rabies;
-use App\Models\th22\Avian;
-use App\Models\th22\Brucellosis;
+use App\Models\penyakits\Avian;
+use App\Models\penyakits\Brucellosis;
+
 use App\Models\th22\Anthraxs;
 use App\Models\th22\Hcholera;
 use App\Models\th22\Penyakitlain;
@@ -40,8 +41,6 @@ use App\Models\th22\Penyakit5year;
 use App\Models\th23\Piphewan23;
 // MODEL TURUNAN PIP HEWAN
 use App\Models\th23\Penyakit23;
-use App\Models\th23\Avian23;
-use App\Models\th23\Brucellose23;
 use App\Models\th23\Anthrax23;
 use App\Models\th23\Hcholera23;
 use App\Models\th23\Penyakitlain23;

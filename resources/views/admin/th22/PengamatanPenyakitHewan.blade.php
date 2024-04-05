@@ -265,14 +265,14 @@
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td><a href="/Penyakit_Avian">Avian Influenza</a></td>
+                  <td><a href="/v22/Penyakit_Avian">Avian Influenza</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Avian);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Avian);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Avian);</script>";?></td>
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td><a href="/Penyakit_Brucellosis">Brucellosis</a></td>
+                  <td><a href="/v22/Penyakit_Brucellosis">Brucellosis</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Brucellosis);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Brucellosis);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Brucellosis);</script>";?></td>
