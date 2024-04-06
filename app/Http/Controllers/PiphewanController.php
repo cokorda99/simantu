@@ -8,13 +8,14 @@ use App\Models\Piphewan;
 use App\Models\penyakits\Rabies;
 use App\Models\penyakits\Avian;
 use App\Models\penyakits\Brucellosis;
-use App\Models\th22\Anthraxs;
-use App\Models\th22\Hcholera;
-use App\Models\th22\Penyakitlain;
-use App\Models\th22\Asf;
-use App\Models\th22\Penyakitviral;
-use App\Models\th22\Penyakitbakterial;
-use App\Models\th22\Pmk;
+use App\Models\penyakits\Anthraxs;
+use App\Models\penyakits\Hcholera;
+use App\Models\penyakits\Penyakitlain;
+use App\Models\penyakits\Asf;
+use App\Models\penyakits\Pmk;
+use App\Models\penyakits\Penyakitviral;
+use App\Models\penyakits\Penyakitbakterial;
+
 
 
 class PiphewanController extends Controller
@@ -30,14 +31,14 @@ class PiphewanController extends Controller
         $data_piphewan= Piphewan::all();
         $data_rabies = Rabies::where('Tahun', $tahun)->get();
         $data_avian= Avian::where('Tahun', $tahun)->get();
-        $data_brucellosis= Brucellosis::all();
-        $data_anthraxs= Anthraxs::all();
-        $data_hcholera= Hcholera::all();
-        $data_penyakitlain= Penyakitlain::all();
-        $data_asf= Asf::all();
-        $data_penyakitviral= Penyakitviral::all();
-        $data_penyakitbakterial= Penyakitbakterial::all();
-        $data_pmk= Pmk::all();
+        $data_brucellosis= Brucellosis::where('Tahun', $tahun)->get();
+        $data_anthraxs= Anthraxs::where('Tahun', $tahun)->get();
+        $data_hcholera= Hcholera::where('Tahun', $tahun)->get();
+        $data_penyakitlain= Penyakitlain::where('Tahun', $tahun)->get();
+        $data_asf= Asf::where('Tahun', $tahun)->get();
+        $data_penyakitviral= Penyakitviral::where('Tahun', $tahun)->get();
+        $data_penyakitbakterial= Penyakitbakterial::where('Tahun', $tahun)->get();
+        $data_pmk= Pmk::where('Tahun', $tahun)->get();
 
         return view('admin.th22.PengamatanPenyakitHewan', [
                 "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
@@ -52,14 +53,14 @@ class PiphewanController extends Controller
         $data_piphewan= Piphewan::all();
         $data_rabies = Rabies::where('Tahun', $tahun)->get();
         $data_avian= Avian::where('Tahun', $tahun)->get();
-        $data_brucellosis= Brucellosis::all();
-        $data_anthraxs= Anthraxs::all();
-        $data_hcholera= Hcholera::all();
-        $data_penyakitlain= Penyakitlain::all();
-        $data_asf= Asf::all();
-        $data_penyakitviral= Penyakitviral::all();
-        $data_penyakitbakterial= Penyakitbakterial::all();
-        $data_pmk= Pmk::all();
+        $data_brucellosis= Brucellosis::where('Tahun', $tahun)->get();
+        $data_anthraxs= Anthraxs::where('Tahun', $tahun)->get();
+        $data_hcholera= Hcholera::where('Tahun', $tahun)->get();
+        $data_penyakitlain= Penyakitlain::where('Tahun', $tahun)->get();
+        $data_asf= Asf::where('Tahun', $tahun)->get();
+        $data_penyakitviral= Penyakitviral::where('Tahun', $tahun)->get();
+        $data_penyakitbakterial= Penyakitbakterial::where('Tahun', $tahun)->get();
+        $data_pmk= Pmk::where('Tahun', $tahun)->get();
 
         return view('admin.th23.PengamatanPenyakitHewan', [
                 "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
@@ -74,14 +75,14 @@ class PiphewanController extends Controller
         $data_piphewan= Piphewan::all();
         $data_rabies = Rabies::where('Tahun', $tahun)->get();
         $data_avian= Avian::where('Tahun', $tahun)->get();
-        $data_brucellosis= Brucellosis::all();
-        $data_anthraxs= Anthraxs::all();
-        $data_hcholera= Hcholera::all();
-        $data_penyakitlain= Penyakitlain::all();
-        $data_asf= Asf::all();
-        $data_penyakitviral= Penyakitviral::all();
-        $data_penyakitbakterial= Penyakitbakterial::all();
-        $data_pmk= Pmk::all();
+        $data_brucellosis= Brucellosis::where('Tahun', $tahun)->get();
+        $data_anthraxs= Anthraxs::where('Tahun', $tahun)->get();
+        $data_hcholera= Hcholera::where('Tahun', $tahun)->get();
+        $data_penyakitlain= Penyakitlain::where('Tahun', $tahun)->get();
+        $data_asf= Asf::where('Tahun', $tahun)->get();
+        $data_penyakitviral= Penyakitviral::where('Tahun', $tahun)->get();
+        $data_penyakitbakterial= Penyakitbakterial::where('Tahun', $tahun)->get();
+        $data_pmk= Pmk::where('Tahun', $tahun)->get();
 
         return view('admin.th24.PengamatanPenyakitHewan', [
                 "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'

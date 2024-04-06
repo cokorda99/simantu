@@ -11,14 +11,13 @@ use App\Models\Piphewan;
 use App\Models\penyakits\Rabies;
 use App\Models\penyakits\Avian;
 use App\Models\penyakits\Brucellosis;
-
-use App\Models\th22\Anthraxs;
-use App\Models\th22\Hcholera;
-use App\Models\th22\Penyakitlain;
-use App\Models\th22\Asf;
-use App\Models\th22\Penyakitviral;
-use App\Models\th22\Penyakitbakterial;
-use App\Models\th22\Pmk;
+use App\Models\penyakits\Anthraxs;
+use App\Models\penyakits\Hcholera;
+use App\Models\penyakits\Penyakitlain;
+use App\Models\penyakits\Asf;
+use App\Models\penyakits\Pmk;
+use App\Models\penyakits\Penyakitviral;
+use App\Models\penyakits\Penyakitbakterial;
 
 
 use App\Models\th22\Sbkhewan;
@@ -41,7 +40,6 @@ use App\Models\th22\Penyakit5year;
 use App\Models\th23\Piphewan23;
 // MODEL TURUNAN PIP HEWAN
 use App\Models\th23\Penyakit23;
-use App\Models\th23\Anthrax23;
 use App\Models\th23\Hcholera23;
 use App\Models\th23\Penyakitlain23;
 use App\Models\th23\Asf23;
@@ -104,10 +102,10 @@ class DashboardController extends Controller
         $data_piphewan= Piphewan::all();
         // DATA TURUNAN PIP HEWAN 
         $data_rabies= Rabies::where('Tahun', $tahun)->get();
-        $data_avian= Avian::all();
-        $data_brucellosis= Brucellosis::all();
-        $data_anthraxs= Anthraxs::all();
-        $data_hcholera= Hcholera::all();
+        $data_avian= Avian::where('Tahun', $tahun)->get();
+        $data_brucellosis= Brucellosis::where('Tahun', $tahun)->get();
+        $data_anthraxs= Anthraxs::where('Tahun', $tahun)->get();
+        $data_hcholera= Hcholera::where('Tahun', $tahun)->get();
         $data_penyakitlain= Penyakitlain::all();
         $data_asf= Asf::all();
         $data_penyakitviral= Penyakitviral::all();
@@ -149,10 +147,10 @@ class DashboardController extends Controller
         $data_piphewan= Piphewan::all();
         // DATA TURUNAN PIP HEWAN 
         $data_rabies= Rabies::where('Tahun', $tahun)->get();
-        $data_avian= Avian23::all();
-        $data_brucellosis= Brucellose23::all();
-        $data_anthraxs= Anthrax23::all();
-        $data_hcholera= Hcholera23::all();
+        $data_avian= Avian::where('Tahun', $tahun)->get();
+        $data_brucellosis= Brucellosis::where('Tahun', $tahun)->get();
+        $data_anthraxs= Anthraxs::where('Tahun', $tahun)->get();
+        $data_hcholera= Hcholera::where('Tahun', $tahun)->get();
         // $data_penyakitlain= Penyakitlain23::all();
         $data_asf= Asf23::all();
         $data_penyakitviral= Penyakitviral23::all();
@@ -202,10 +200,10 @@ class DashboardController extends Controller
         $data_piphewan= Piphewan::all();
         // DATA TURUNAN PIP HEWAN 
         $data_rabies= Rabies::where('Tahun', $tahun)->get();
-        $data_avian= Avian23::all();
-        $data_brucellosis= Brucellose23::all();
-        $data_anthraxs= Anthrax23::all();
-        $data_hcholera= Hcholera23::all();
+        $data_avian= Avian::where('Tahun', $tahun)->get();
+        $data_brucellosis= Brucellosis::where('Tahun', $tahun)->get();
+        $data_anthraxs= Anthraxs::where('Tahun', $tahun)->get();
+        $data_hcholera= Hcholera::where('Tahun', $tahun)->get();
         // $data_penyakitlain= Penyakitlain23::all();
         $data_asf= Asf23::all();
         $data_penyakitviral= Penyakitviral23::all();

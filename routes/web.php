@@ -10,6 +10,13 @@ use App\Http\Controllers\PiphewanController;
 use App\Http\Controllers\penyakits\RabiesController;
 use App\Http\Controllers\penyakits\AvianController;
 use App\Http\Controllers\penyakits\BrucellosisController;
+use App\Http\Controllers\penyakits\AnthraxsController;
+use App\Http\Controllers\penyakits\HcholeraController;
+use App\Http\Controllers\penyakits\PenyakitlainController;
+use App\Http\Controllers\penyakits\AsfController;
+use App\Http\Controllers\penyakits\PmkController;
+use App\Http\Controllers\penyakits\PenyakitviralController;
+use App\Http\Controllers\penyakits\PenyakitBakterialController;
 
 use App\Http\Controllers\th22\SbkhewanController;
 use App\Http\Controllers\th22\TernakpotongController;
@@ -26,16 +33,12 @@ use App\Http\Controllers\th22\DinasluarController;
 
 
 
-use App\Http\Controllers\th22\AnthraxsController;
-use App\Http\Controllers\th22\HcholeraController;
-use App\Http\Controllers\th22\PenyakitlainController;
-use App\Http\Controllers\th22\AsfController;
-use App\Http\Controllers\th22\PenyakitviralController;
-use App\Http\Controllers\th22\PenyakitBakterialController;
+
+
+
 use App\Http\Controllers\th22\Penyakit5yearController;
 use App\Http\Controllers\th22\MasukanController;
 use App\Http\Controllers\th22\JenispilihanpenyakitController;
-use App\Http\Controllers\th22\PmkController;
 
 use App\Http\Controllers\th23\Sbkhewan23Controller;
 use App\Http\Controllers\th23\Ternakpotong23Controller;
@@ -51,14 +54,10 @@ use App\Http\Controllers\th23\Sdm23Controller;
 use App\Http\Controllers\th23\Detailpenyakit23Controller;
 use App\Http\Controllers\th23\Dinasluar23Controller;
 
-use App\Http\Controllers\th23\Anthrax23Controller;
-use App\Http\Controllers\th23\Hcholera23Controller;
 use App\Http\Controllers\th23\Parasiter23Controller;
 use App\Http\Controllers\th23\Lsd23Controller;
 use App\Http\Controllers\th23\Inveswabah23Controller;
-use App\Http\Controllers\th23\Penyakitlain23Controller;
-use App\Http\Controllers\th23\Asf23Controller;
-use App\Http\Controllers\th23\Penyakitviral23Controller;
+
 use App\Http\Controllers\th23\Penyakitbakterial23Controller;
 use App\Http\Controllers\th23\Penyakit5year23Controller;
 use App\Http\Controllers\th23\Masukan23Controller;
@@ -104,6 +103,14 @@ Route::prefix('v22')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Rabies', [RabiesController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Avian', [AvianController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Brucellosis', [BrucellosisController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Anthraxs', [AnthraxsController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_HogCholera', [HcholeraController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_HewanLaninnya', [PenyakitlainController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Asf', [AsfController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Pmk', [PmkController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Viral', [PenyakitviralController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Bakterial', [PenyakitBakterialController::class, 'index22']);
+    
 });
 
 // VERSION 2.0 (2023)
@@ -116,6 +123,14 @@ Route::prefix('v23')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Rabies', [RabiesController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Avian', [AvianController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Brucellosis', [BrucellosisController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Anthraxs', [AnthraxsController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_HogCholera', [HcholeraController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_HewanLaninnya', [PenyakitlainController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Asf', [AsfController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Pmk', [PmkController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Viral', [PenyakitviralController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Bakterial', [PenyakitBakterialController::class, 'index23']);
+
 });
 
 // VERSION 3.0 (2024)
@@ -128,10 +143,17 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Rabies', [RabiesController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Avian', [AvianController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Brucellosis', [BrucellosisController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Anthraxs', [AnthraxsController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_HogCholera', [HcholeraController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_HewanLaninnya', [PenyakitlainController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Asf', [AsfController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Pmk', [PmkController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Viral', [PenyakitviralController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Bakterial', [PenyakitBakterialController::class, 'index24']);
+
 });
 
 
-Route::resource('/PengamatanPenyakitHewan',PiphewanController::class);
 Route::resource('/SaranaBidang',SbkhewanController::class);
 Route::resource('/TernakRuminansia',TernakpotongController::class);
 Route::resource('/TernakUnggas',TernakunggasController::class);
@@ -146,17 +168,10 @@ Route::resource('/DetailPenyakitHewan',DetailpenyakitController::class);
 Route::resource('/sdm_dinasluar',DinasluarController::class);
 
 
-
-Route::resource('/Penyakit_Anthraxs',AnthraxsController::class);
-Route::resource('/Penyakit_HogCholera',HcholeraController::class);
-Route::resource('/Penyakit_HewanLaninnya',PenyakitlainController::class);
-Route::resource('/Penyakit_Asf',AsfController::class);
-Route::resource('/Penyakit_Viral',PenyakitviralController::class);
-Route::resource('/Penyakit_Bakterial',PenyakitBakterialController::class);
 Route::resource('/pengaturan_Penyakit_terakhir',Penyakit5yearController::class);
 Route::resource('/masukanBalai',MasukanController::class);
 Route::resource('/data_Pilihan_Penyakit',JenispilihanpenyakitController::class);
-Route::resource('/Penyakit_Pmk',PmkController::class);
+
 
 Route::resource('/SaranaBidang23',Sbkhewan23Controller::class);
 Route::resource('/TernakRuminansia23',Ternakpotong23Controller::class);
@@ -173,14 +188,10 @@ Route::resource('/DetailPenyakitHewan23',Detailpenyakit23Controller::class);
 Route::resource('/sdm_dinasluar23',Dinasluar23Controller::class);
 
 
-Route::resource('/Penyakit_Anthraxs23',Anthrax23Controller::class);
-Route::resource('/Penyakit_HogCholera23',Hcholera23Controller::class);
 Route::resource('/Penyakit_Parasiter23',Parasiter23Controller::class);
 Route::resource('/LSD23',Lsd23Controller::class);
 Route::resource('/Investigasi_Wabah23',Inveswabah23Controller::class);
-Route::resource('/Penyakit_HewanLaninnya23',Penyakitlain23Controller::class);
-Route::resource('/Penyakit_Asf23',Asf23Controller::class);
-Route::resource('/Penyakit_Viral23',Penyakitviral23Controller::class);
+
 Route::resource('/Penyakit_Bakterial23',Penyakitbakterial23Controller::class);
 Route::resource('/pengaturan_Penyakit_terakhir23',Penyakit5year23Controller::class);
 Route::resource('/masukanBalai23',Masukan23Controller::class);

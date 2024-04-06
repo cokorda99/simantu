@@ -1,12 +1,12 @@
-@extends('admin/th23/layouts/main')
+@extends('admin/th24/layouts/main')
 
 @section('content')
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      DATA PENYAKIT PMK
-      <?php ?>
+      DATA PENYAKIT Pmk TAHUN
+      <?php echo $tahun ?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -90,7 +90,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-lg-6">
-                  <h5>Data Penyakit PMK</h5>
+                  <h5>Data Penyakit Pmk</h5>
               </div>
               <div class="col-lg-6">
                 <div class="float-end">
@@ -99,10 +99,10 @@
                     Edit Target
                   </button>
                   @endif
-{{-- 
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                     Tambah
-                  </button> --}}
+                  </button>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -130,7 +130,7 @@
                 </thead>
                 <tbody>
                   <p hidden> {{ $i = 1 }}</p>
-                  @foreach ($data_pmk23 as $key=>$value)
+                  @foreach ($data_pmk as $key=>$value)
                   <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $value-> Bulan}}</td>
@@ -152,7 +152,7 @@
     <div class="col-lg-7">
       <div class="card">
         <div class="card-header">
-          <h5>Grafik Realisasi Penyakit PMK</h5>
+          <h5>Grafik Realisasi Penyakit Pmk</h5>
         </div>
         <div class="card-body">
           <canvas id="myChart" width="100" height="50"></canvas>
@@ -173,7 +173,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('Penyakit_Pmk23') }}" method="POST">
+        <form action="{{ url('v24/Penyakit_Pmk') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
@@ -200,7 +200,7 @@
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
             <div class="col-xl-10">
-              <input type="text" name="Target" class="form-control">
+              <input type="text" name="Target" class="form-control" value ="0">
             </div>
           </div>
           <div class="form-group row mb-3">
@@ -232,7 +232,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('Penyakit_Pmk23/1') }}" method="POST">
+        <form action="{{ url('v24/Penyakit_Pmk') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -264,10 +264,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('Penyakit_Pmk23') }}" method="POST" id="editForm">
+        <form action="{{ url('v24/Penyakit_Pmk') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
+            <div class="col-xl-10">
+              <input type="text" name="id" class="form-control" id="idEdit" value="" readonly>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
             <div class="col-xl-10">
@@ -306,23 +312,24 @@
 
 {{-- MODAL EDIT --}}
 <script>
-  var data_pkhewan = {!! json_encode($data_pmk23 -> toArray())!!};
+  var data_pkhewan = {!! json_encode($data_pmk -> toArray())!!};
         function updateData(id)
         {
           var result = data_pkhewan.filter( obj => obj.id === id)[0];
           console.log(result.Bulan);
+          document.getElementById("idEdit").value = result.id;
           document.getElementById("BulanEdit").value = result.Bulan;
           document.getElementById("TargetEdit").value = result.Target;
           document.getElementById("RealisasiEdit").value = result.Realisasi;
 
-          $('#editForm').attr('action', '/Penyakit_Pmk23/' + id)
+          $('#editForm').attr('action', 'Penyakit_Pmk')
         }
 </script>
 
 
 {{-- SCRIPT BAGIAN ATAS --}}
 <script>
-   var data_pkhewan = {!! json_encode($data_pmk23 -> toArray())!!};
+   var data_pkhewan = {!! json_encode($data_pmk -> toArray())!!};
   //  console.log('TES', data_pkhewan);
   var total_Target = 0;
   var total_Realisasi = 0 ;
@@ -347,7 +354,7 @@
 
 {{-- SCRIPT GRAFIK --}}
 <script>
-  var data_pkhewan = {!! json_encode($data_pmk23 -> toArray())!!};
+  var data_pkhewan = {!! json_encode($data_pmk -> toArray())!!};
   // console.log('TES', data_pkhewan);
   document.addEventListener("DOMContentLoaded", function (event) {
     var Januari = parseInt(data_pkhewan[0].Realisasi);

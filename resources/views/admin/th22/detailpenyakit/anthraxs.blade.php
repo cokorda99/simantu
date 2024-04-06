@@ -5,8 +5,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      DATA PENYAKIT Anthraxs
-      <?php ?>
+      DATA PENYAKIT Anthraxs TAHUN
+      <?php echo $tahun ?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -99,10 +99,10 @@
                     Edit Target
                   </button>
                   @endif
-       
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                     Tambah
-                  </button> --}}
+                  </button>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -138,7 +138,7 @@
                     <td>{{ $value-> Realisasi}}</td>
                     @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com' || auth::user()->email == 'adminepi@gmail.com')
                     <td> <a title="Edit" class="updateData btn bg-warning text-light" onclick="updateData({{$value->id}});"
-                      data-bs-toggle="modal" data-bs-target="#modal_edit"><i class="fa fa-edit"></i></a></td>  
+                      data-bs-toggle="modal" data-bs-target="#modal_edit"><i class="fa fa-edit"></i></a></td>
                     @endif
                   </tr>
             </div>
@@ -173,7 +173,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('Penyakit_Anthraxs') }}" method="POST">
+        <form action="{{ url('v22/Penyakit_Anthraxs') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
@@ -232,7 +232,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('Penyakit_Anthraxs/1') }}" method="POST">
+        <form action="{{ url('v22/Penyakit_Anthraxs') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -264,10 +264,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('Penyakit_Anthraxs') }}" method="POST" id="editForm">
+        <form action="{{ url('v22/Penyakit_Anthraxs') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
+            <div class="col-xl-10">
+              <input type="text" name="id" class="form-control" id="idEdit" value="" readonly>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
             <div class="col-xl-10">
@@ -311,11 +317,12 @@
         {
           var result = data_pkhewan.filter( obj => obj.id === id)[0];
           console.log(result.Bulan);
+          document.getElementById("idEdit").value = result.id;
           document.getElementById("BulanEdit").value = result.Bulan;
           document.getElementById("TargetEdit").value = result.Target;
           document.getElementById("RealisasiEdit").value = result.Realisasi;
 
-          $('#editForm').attr('action', '/Penyakit_Anthraxs/' + id)
+          $('#editForm').attr('action', 'Penyakit_Anthraxs')
         }
 </script>
 
