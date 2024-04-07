@@ -202,10 +202,9 @@ class DashboardController extends Controller
         $data_penyakitviral= Penyakitviral::where('Tahun', $tahun)->get();
         $data_penyakitbakterial= Penyakitbakterial::where('Tahun', $tahun)->get();
         $data_pmk= Pmk::where('Tahun', $tahun)->get();
-
-        $data_parasiter= Parasiter23::all();
-        $data_lsd= Lsd23::all();
-        $data_inveswabah= Inveswabah23::all();
+        $data_parasiter= Parasiter::where('Tahun', $tahun)->get();
+        $data_lsd= Lsd::where('Tahun', $tahun)->get();
+        $data_inveswabah= Inveswabah::where('Tahun', $tahun)->get();
 
 
         $data_sbkhewan= Sbkhewan23::all();
