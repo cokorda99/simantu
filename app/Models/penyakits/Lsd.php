@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\th23;
+namespace App\Models\penyakits;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Inveswabah23 extends Model
+class Lsd extends Model
 {
     use HasFactory;
 }

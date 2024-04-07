@@ -15,6 +15,10 @@ use App\Models\penyakits\Asf;
 use App\Models\penyakits\Pmk;
 use App\Models\penyakits\Penyakitviral;
 use App\Models\penyakits\Penyakitbakterial;
+// TAMBAHAN TURUNAN PENYAKIT2023
+use App\Models\penyakits\Parasiter;
+use App\Models\penyakits\Lsd;
+use App\Models\penyakits\Inveswabah;
 
 
 
@@ -61,11 +65,14 @@ class PiphewanController extends Controller
         $data_penyakitviral= Penyakitviral::where('Tahun', $tahun)->get();
         $data_penyakitbakterial= Penyakitbakterial::where('Tahun', $tahun)->get();
         $data_pmk= Pmk::where('Tahun', $tahun)->get();
+        $data_parasiter= Parasiter::where('Tahun', $tahun)->get();
+        $data_lsd= Lsd::where('Tahun', $tahun)->get();
+        $data_inveswabah= Inveswabah::where('Tahun', $tahun)->get();
 
         return view('admin.th23.PengamatanPenyakitHewan', [
                 "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
             ], compact(
-            'data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_penyakitlain','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk'
+            'data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_penyakitlain','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk','data_parasiter', 'data_lsd' , 'data_inveswabah','tahun'
         ));
     }
     public function index24()
@@ -83,111 +90,14 @@ class PiphewanController extends Controller
         $data_penyakitviral= Penyakitviral::where('Tahun', $tahun)->get();
         $data_penyakitbakterial= Penyakitbakterial::where('Tahun', $tahun)->get();
         $data_pmk= Pmk::where('Tahun', $tahun)->get();
+        $data_parasiter= Parasiter::where('Tahun', $tahun)->get();
+        $data_lsd= Lsd::where('Tahun', $tahun)->get();
+        $data_inveswabah= Inveswabah::where('Tahun', $tahun)->get();
 
         return view('admin.th24.PengamatanPenyakitHewan', [
-                "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
-            ], compact(
-            'data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_penyakitlain','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk'
-        ));
-        // return view('admin.th24.PengamatanPenyakitHewan' , [
-        //     "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
-        // ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        $model = new Piphewan;
-
-        return view('admin.th22.PengamatanPenyakitHewan', [
             "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
         ], compact(
-        'model',
+        'data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_penyakitlain','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk','data_parasiter', 'data_lsd' , 'data_inveswabah','tahun'
     ));
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        $model = new Piphewan;
-        $model->Bulan = $request->Bulan;
-        $model->Target = $request->Target;
-        $model->Realisasi = $request->Realisasi;
-
-        $model->save();
-
-        return redirect('/PengamatanPenyakitHewan')->with('success' , 'Data berhasil ditambah');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-         //
-         $model = Piphewan::find($id);
-
-    //      return view('admin.th22.PengamatanPenyakitHewan', [
-    //          "title" => 'Pengamatan dan Identifikasi Penyakit Hewan | SIMANTU'
-    //      ], compact(
-    //      'model',
-    //  ));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-        $model = Piphewan::find($id);
-        $model->Bulan = $request->Bulan;
-        $model->Target = $request->Target;
-        $model->Realisasi = $request->Realisasi;
-
-        $model->save();
-
-        return redirect('/PengamatanPenyakitHewan')->with('success' , 'Data berhasil diUpdate');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

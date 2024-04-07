@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInveswabah23sTable extends Migration
+class CreateLsdsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateInveswabah23sTable extends Migration
      */
     public function up()
     {
-        Schema::create('inveswabah23s', function (Blueprint $table) {
+        Schema::create('lsds', function (Blueprint $table) {
             $table->id();
             $table->text('Bulan');
             $table->text('Target');
             $table->text('Realisasi');
+            $table->text('Tahun');
+            $table->text('updateAll');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateInveswabah23sTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inveswabah23s');
+        Schema::dropIfExists('lsds');
     }
 }

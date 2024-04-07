@@ -17,6 +17,9 @@ use App\Http\Controllers\penyakits\AsfController;
 use App\Http\Controllers\penyakits\PmkController;
 use App\Http\Controllers\penyakits\PenyakitviralController;
 use App\Http\Controllers\penyakits\PenyakitBakterialController;
+use App\Http\Controllers\penyakits\ParasiterController;
+use App\Http\Controllers\penyakits\LsdController;
+use App\Http\Controllers\penyakits\InveswabahController;
 
 use App\Http\Controllers\th22\SbkhewanController;
 use App\Http\Controllers\th22\TernakpotongController;
@@ -54,15 +57,11 @@ use App\Http\Controllers\th23\Sdm23Controller;
 use App\Http\Controllers\th23\Detailpenyakit23Controller;
 use App\Http\Controllers\th23\Dinasluar23Controller;
 
-use App\Http\Controllers\th23\Parasiter23Controller;
-use App\Http\Controllers\th23\Lsd23Controller;
-use App\Http\Controllers\th23\Inveswabah23Controller;
 
-use App\Http\Controllers\th23\Penyakitbakterial23Controller;
+
 use App\Http\Controllers\th23\Penyakit5year23Controller;
 use App\Http\Controllers\th23\Masukan23Controller;
 use App\Http\Controllers\th23\Jenispilihanpenyakit23Controller;
-use App\Http\Controllers\th23\Pmk23Controller;
 
 use App\Http\Controllers\th23\Amrnasional23Controller;
 use App\Http\Controllers\th23\Keamananprodukhewan23Controller;
@@ -110,6 +109,9 @@ Route::prefix('v22')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Pmk', [PmkController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Viral', [PenyakitviralController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Bakterial', [PenyakitBakterialController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Parasiter', [ParasiterController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Lsd', [LsdController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'Investigasi_Wabah', [InveswabahController::class, 'index22']);
     
 });
 
@@ -130,6 +132,9 @@ Route::prefix('v23')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Pmk', [PmkController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Viral', [PenyakitviralController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Bakterial', [PenyakitBakterialController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Parasiter', [ParasiterController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Lsd', [LsdController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'Investigasi_Wabah', [InveswabahController::class, 'index23']);
 
 });
 
@@ -150,6 +155,9 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Pmk', [PmkController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Viral', [PenyakitviralController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Bakterial', [PenyakitBakterialController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Parasiter', [ParasiterController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Lsd', [LsdController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'Investigasi_Wabah', [InveswabahController::class, 'index24']);
 
 });
 
@@ -188,9 +196,6 @@ Route::resource('/DetailPenyakitHewan23',Detailpenyakit23Controller::class);
 Route::resource('/sdm_dinasluar23',Dinasluar23Controller::class);
 
 
-Route::resource('/Penyakit_Parasiter23',Parasiter23Controller::class);
-Route::resource('/LSD23',Lsd23Controller::class);
-Route::resource('/Investigasi_Wabah23',Inveswabah23Controller::class);
 
 Route::resource('/Penyakit_Bakterial23',Penyakitbakterial23Controller::class);
 Route::resource('/pengaturan_Penyakit_terakhir23',Penyakit5year23Controller::class);

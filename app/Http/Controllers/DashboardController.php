@@ -18,6 +18,9 @@ use App\Models\penyakits\Asf;
 use App\Models\penyakits\Pmk;
 use App\Models\penyakits\Penyakitviral;
 use App\Models\penyakits\Penyakitbakterial;
+use App\Models\penyakits\Parasiter;
+use App\Models\penyakits\Lsd;
+use App\Models\penyakits\Inveswabah;
 
 
 use App\Models\th22\Sbkhewan;
@@ -40,16 +43,7 @@ use App\Models\th22\Penyakit5year;
 use App\Models\th23\Piphewan23;
 // MODEL TURUNAN PIP HEWAN
 use App\Models\th23\Penyakit23;
-use App\Models\th23\Hcholera23;
-use App\Models\th23\Penyakitlain23;
-use App\Models\th23\Asf23;
-use App\Models\th23\Penyakitviral23;
-use App\Models\th23\Penyakitbakterial23;
-use App\Models\th23\Pmk23;
 
-use App\Models\th23\Lsd23;
-use App\Models\th23\Parasiter23;
-use App\Models\th23\Inveswabah23;
 
 
 use App\Models\th23\Sbkhewan23;
@@ -106,11 +100,11 @@ class DashboardController extends Controller
         $data_brucellosis= Brucellosis::where('Tahun', $tahun)->get();
         $data_anthraxs= Anthraxs::where('Tahun', $tahun)->get();
         $data_hcholera= Hcholera::where('Tahun', $tahun)->get();
-        $data_penyakitlain= Penyakitlain::all();
-        $data_asf= Asf::all();
-        $data_penyakitviral= Penyakitviral::all();
-        $data_penyakitbakterial= Penyakitbakterial::all();
-        $data_pmk= Pmk::all();
+        $data_penyakitlain= Penyakitlain::where('Tahun', $tahun)->get();
+        $data_asf= Asf::where('Tahun', $tahun)->get();
+        $data_penyakitviral= Penyakitviral::where('Tahun', $tahun)->get();
+        $data_penyakitbakterial= Penyakitbakterial::where('Tahun', $tahun)->get();
+        $data_pmk= Pmk::where('Tahun', $tahun)->get();
 
 
         $data_sbkhewan= Sbkhewan::all();
@@ -151,15 +145,14 @@ class DashboardController extends Controller
         $data_brucellosis= Brucellosis::where('Tahun', $tahun)->get();
         $data_anthraxs= Anthraxs::where('Tahun', $tahun)->get();
         $data_hcholera= Hcholera::where('Tahun', $tahun)->get();
-        // $data_penyakitlain= Penyakitlain23::all();
-        $data_asf= Asf23::all();
-        $data_penyakitviral= Penyakitviral23::all();
-        $data_penyakitbakterial= Penyakitbakterial23::all();
-        $data_pmk= Pmk23::all();
-
-        $data_parasiter= Parasiter23::all();
-        $data_lsd= Lsd23::all();
-        $data_inveswabah= Inveswabah23::all();
+        $data_penyakitlain= Penyakitlain::where('Tahun', $tahun)->get();
+        $data_asf= Asf::where('Tahun', $tahun)->get();
+        $data_penyakitviral= Penyakitviral::where('Tahun', $tahun)->get();
+        $data_penyakitbakterial= Penyakitbakterial::where('Tahun', $tahun)->get();
+        $data_pmk= Pmk::where('Tahun', $tahun)->get();
+        $data_parasiter= Parasiter::where('Tahun', $tahun)->get();
+        $data_lsd= Lsd::where('Tahun', $tahun)->get();
+        $data_inveswabah= Inveswabah::where('Tahun', $tahun)->get();
 
 
         $data_sbkhewan= Sbkhewan23::all();
@@ -204,11 +197,11 @@ class DashboardController extends Controller
         $data_brucellosis= Brucellosis::where('Tahun', $tahun)->get();
         $data_anthraxs= Anthraxs::where('Tahun', $tahun)->get();
         $data_hcholera= Hcholera::where('Tahun', $tahun)->get();
-        // $data_penyakitlain= Penyakitlain23::all();
-        $data_asf= Asf23::all();
-        $data_penyakitviral= Penyakitviral23::all();
-        $data_penyakitbakterial= Penyakitbakterial23::all();
-        $data_pmk= Pmk23::all();
+        $data_penyakitlain= Penyakitlain::where('Tahun', $tahun)->get();
+        $data_asf= Asf::where('Tahun', $tahun)->get();
+        $data_penyakitviral= Penyakitviral::where('Tahun', $tahun)->get();
+        $data_penyakitbakterial= Penyakitbakterial::where('Tahun', $tahun)->get();
+        $data_pmk= Pmk::where('Tahun', $tahun)->get();
 
         $data_parasiter= Parasiter23::all();
         $data_lsd= Lsd23::all();

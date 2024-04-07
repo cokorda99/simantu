@@ -17,7 +17,7 @@
           <div class="box-header">
             <h3 class="box-title">Data Jenis Pilihan Penyakit</h3><br><br>
             @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com')
-            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
               Tambah
             </button>
             @endif

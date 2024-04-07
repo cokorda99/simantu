@@ -16,7 +16,7 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">Data Dinas Luar</h3><br><br>
-            {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+            {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
               Tambah
             </button> --}}
             <div class="input-icons" style="width: 25%; float:right">

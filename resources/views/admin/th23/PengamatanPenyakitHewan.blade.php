@@ -5,8 +5,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      PENGAMATAN DAN IDENTIFIKASI PENYAKIT HEWAN TAHUN 2023
-      <?php ?>
+      PENGAMATAN DAN IDENTIFIKASI PENYAKIT HEWAN TAHUN
+      <?php echo $tahun?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -95,7 +95,7 @@
               </div>
               <div class="col-lg-6">
                 <div class="float-end">
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
                     Tambah
                   </button> --}}
                 </div>
@@ -219,7 +219,7 @@
             </div>
             {{-- <div class="col-lg-6">
               <div class="float-end">
-                <a href="/DetailPenyakitHewan">
+                <a href="DetailPenyakitHewan">
                   <button class="btn btn-success btn-sm">
                     Detail
                   </button>
@@ -251,56 +251,56 @@
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td><a href="/Penyakit_Rabies23">Rabies</a></td>
+                  <td><a href="Penyakit_Rabies">Rabies</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Rabies);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Rabies);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Rabies);</script>";?></td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td><a href="/Penyakit_Avian23">Avian Influenza</a></td>
+                  <td><a href="Penyakit_Avian">Avian Influenza</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Avian);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Avian);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Avian);</script>";?></td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td><a href="/Penyakit_Brucellosis23">Brucellosis</a></td>
+                  <td><a href="Penyakit_Brucellosis">Brucellosis</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Brucellosis);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Brucellosis);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Brucellosis);</script>";?></td>
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td><a href="/Penyakit_Anthraxs23">Anthrax</a></td>
+                  <td><a href="Penyakit_Anthraxs">Anthrax</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Anthrax);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Anthrax);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Anthrax);</script>";?></td>
                 </tr>
                 <tr>
                   <td>5</td>
-                  <td><a href="/Penyakit_HogCholera23">Hog Cholera</a></td>
+                  <td><a href="Penyakit_HogCholera">Hog Cholera</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Hcholera);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Hcholera);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Hcholera);</script>";?></td>
                 </tr>
                 <tr>
                   <td>6</td>
-                  <td><a href="/Penyakit_Asf23">ASF</a></td>
+                  <td><a href="Penyakit_Asf">ASF</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Asf);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Asf);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Asf);</script>";?></td>
                 </tr>
                 <tr>
                   <td>7</td>
-                  <td><a href="/Penyakit_Viral23">Penyakit Viral Lainnya</a></td>
+                  <td><a href="Penyakit_Viral">Penyakit Viral Lainnya</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Penyakitviral);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Penyakitviral);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Penyakitviral);</script>";?></td>
                 </tr>
                 <tr>
                   <td>8</td>
-                  <td><a href="/Penyakit_Bakterial23">Penyakit Bakterial Lainnya</a></td>
+                  <td><a href="Penyakit_Bakterial">Penyakit Bakterial Lainnya</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Penyakitbakterial);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Penyakitbakterial);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Penyakitbakterial);</script>";?></td>
@@ -308,28 +308,28 @@
 
                 <tr>
                   <td>9</td>
-                  <td><a href="/Penyakit_Parasiter23">Penyakit Parasiter</a></td>
+                  <td><a href="Penyakit_Parasiter">Penyakit Parasiter</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Parasiter);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Parasiter);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Parasiter);</script>";?></td>
                 </tr>
                 <tr>
                   <td>10</td>
-                  <td><a href="/Investigasi_Wabah23">Investigasi Wabah PHMS</a></td>
+                  <td><a href="Investigasi_Wabah">Investigasi Wabah PHMS</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Inveswabah);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Inveswabah);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Inveswabah);</script>";?></td>
                 </tr>
                 <tr>
                   <td>11</td>
-                  <td><a href="/LSD23">LSD</a></td>
+                  <td><a href="Penyakit_Lsd">LSD</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Lsd);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Lsd);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Lsd);</script>";?></td>
                 </tr>
                 <tr>
                   <td>12</td>
-                  <td><a href="/Penyakit_Pmk23">PMK</a></td>
+                  <td><a href="Penyakit_Pmk">PMK</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Pmk);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Pmk);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Pmk);</script>";?></td>
@@ -847,50 +847,49 @@ var realisasibulan12_asf = parseInt(data_asf[11].Realisasi);
   var targetbulan12_penyakitviral = parseInt(data_penyakitviral[11].Target);
   var realisasibulan12_penyakitviral = parseInt(data_penyakitviral[11].Realisasi);
 
-  // //  PENYAKIT PARASITER
-  // var data_parasiter= {!! json_encode($data_parasiter-> toArray())!!};
-  // var total_Target_Parasiter = 0;
-  // var total_Realisasi_Parasiter = 0;
-  // for (let index = 0; index < data_parasiter.length; index++) {
-  //   var Target_Parasiter = parseInt(data_parasiter[index].Target);
-  //   var Realisasi_Parasiter = parseInt(data_parasiter[index].Realisasi);
-  //   total_Target_Parasiter += Target_Parasiter;
-  //   total_Realisasi_Parasiter += Realisasi_Parasiter;
-  // }
+  //  PENYAKIT PARASITER
+  var data_parasiter= {!! json_encode($data_parasiter-> toArray())!!};
+  var total_Target_Parasiter = 0;
+  var total_Realisasi_Parasiter = 0;
+  for (let index = 0; index < data_parasiter.length; index++) {
+    var Target_Parasiter = parseInt(data_parasiter[index].Target);
+    var Realisasi_Parasiter = parseInt(data_parasiter[index].Realisasi);
+    total_Target_Parasiter += Target_Parasiter;
+    total_Realisasi_Parasiter += Realisasi_Parasiter;
+  }
 
-  // var rata_totalTarget_Parasiter  = total_Target_Parasiter /12;
-  // var tampil_totalTarget_Parasiter = String(rata_totalTarget_Parasiter);
-  // var tampil_totalRealisasi_Parasiter = String(total_Realisasi_Parasiter);
-  // // console.log(tampil_totalTarget_Parasiter, tampil_totalRealisasi_Parasiter)
-  // var tampil_Persentase = (parseInt(total_Realisasi_Parasiter) / parseInt(rata_totalTarget_Parasiter)) * 100;
-  // var tampil_PersentaseFix_Parasiter = tampil_Persentase.toFixed(2) + ' %'
+  var rata_totalTarget_Parasiter  = total_Target_Parasiter /12;
+  var tampil_totalTarget_Parasiter = String(rata_totalTarget_Parasiter);
+  var tampil_totalRealisasi_Parasiter = String(total_Realisasi_Parasiter);
+  // console.log(tampil_totalTarget_Parasiter, tampil_totalRealisasi_Parasiter)
+  var tampil_Persentase = (parseInt(total_Realisasi_Parasiter) / parseInt(rata_totalTarget_Parasiter)) * 100;
+  var tampil_PersentaseFix_Parasiter = tampil_Persentase.toFixed(2) + ' %'
 
   // PENYAKIT PARASITER PER BULAN 
-  // var targetbulan1_parasiter= parseInt(data_parasiter[0].Target);
-  // var realisasibulan1_parasiter= parseInt(data_parasiter[0].Realisasi);
-  // var targetbulan2_parasiter= parseInt(data_parasiter[1].Target);
-  // var realisasibulan2_parasiter= parseInt(data_parasiter[1].Realisasi);
-  // var targetbulan3_parasiter= parseInt(data_parasiter[2].Target);
-  // var realisasibulan3_parasiter= parseInt(data_parasiter[2].Realisasi);
-  // var targetbulan4_parasiter= parseInt(data_parasiter[3].Target);
-  // var realisasibulan4_parasiter= parseInt(data_parasiter[3].Realisasi);
-  // var targetbulan5_parasiter= parseInt(data_parasiter[4].Target);
-  // var realisasibulan5_parasiter= parseInt(data_parasiter[4].Realisasi);
-  // var targetbulan6_parasiter= parseInt(data_parasiter[5].Target);
-  // var realisasibulan6_parasiter= parseInt(data_parasiter[5].Realisasi);
-  // var targetbulan7_parasiter= parseInt(data_parasiter[6].Target);
-  // var realisasibulan7_parasiter= parseInt(data_parasiter[6].Realisasi);
-  // var targetbulan8_parasiter= parseInt(data_parasiter[7].Target);
-  // var realisasibulan8_parasiter= parseInt(data_parasiter[7].Realisasi);
-  // var targetbulan9_parasiter= parseInt(data_parasiter[8].Target);
-  // var realisasibulan9_parasiter= parseInt(data_parasiter[8].Realisasi);
-  // var targetbulan10_parasiter= parseInt(data_parasiter[9].Target);
-  // var realisasibulan10_parasiter= parseInt(data_parasiter[9].Realisasi);
-  // var targetbulan11_parasiter= parseInt(data_parasiter[10].Target);
-  // var realisasibulan11_parasiter= parseInt(data_parasiter[10].Realisasi);
-  // var targetbulan12_parasiter= parseInt(data_parasiter[11].Target);
-  // var realisasibulan12_parasiter= parseInt(data_parasiter[11].Realisasi);
-
+  var targetbulan1_parasiter= parseInt(data_parasiter[0].Target);
+  var realisasibulan1_parasiter= parseInt(data_parasiter[0].Realisasi);
+  var targetbulan2_parasiter= parseInt(data_parasiter[1].Target);
+  var realisasibulan2_parasiter= parseInt(data_parasiter[1].Realisasi);
+  var targetbulan3_parasiter= parseInt(data_parasiter[2].Target);
+  var realisasibulan3_parasiter= parseInt(data_parasiter[2].Realisasi);
+  var targetbulan4_parasiter= parseInt(data_parasiter[3].Target);
+  var realisasibulan4_parasiter= parseInt(data_parasiter[3].Realisasi);
+  var targetbulan5_parasiter= parseInt(data_parasiter[4].Target);
+  var realisasibulan5_parasiter= parseInt(data_parasiter[4].Realisasi);
+  var targetbulan6_parasiter= parseInt(data_parasiter[5].Target);
+  var realisasibulan6_parasiter= parseInt(data_parasiter[5].Realisasi);
+  var targetbulan7_parasiter= parseInt(data_parasiter[6].Target);
+  var realisasibulan7_parasiter= parseInt(data_parasiter[6].Realisasi);
+  var targetbulan8_parasiter= parseInt(data_parasiter[7].Target);
+  var realisasibulan8_parasiter= parseInt(data_parasiter[7].Realisasi);
+  var targetbulan9_parasiter= parseInt(data_parasiter[8].Target);
+  var realisasibulan9_parasiter= parseInt(data_parasiter[8].Realisasi);
+  var targetbulan10_parasiter= parseInt(data_parasiter[9].Target);
+  var realisasibulan10_parasiter= parseInt(data_parasiter[9].Realisasi);
+  var targetbulan11_parasiter= parseInt(data_parasiter[10].Target);
+  var realisasibulan11_parasiter= parseInt(data_parasiter[10].Realisasi);
+  var targetbulan12_parasiter= parseInt(data_parasiter[11].Target);
+  var realisasibulan12_parasiter= parseInt(data_parasiter[11].Realisasi);
 
   //  PENYAKIT LSD
   var data_lsd = {!! json_encode($data_lsd -> toArray())!!};
@@ -936,8 +935,8 @@ var realisasibulan12_asf = parseInt(data_asf[11].Realisasi);
   var targetbulan12_lsd = parseInt(data_lsd[11].Target);
   var realisasibulan12_lsd = parseInt(data_lsd[11].Realisasi);
 
-  //  PENYAKIT INVESTIGAS WABAH
-  var data_inveswabah = {!! json_encode($data_inveswabah -> toArray())!!};
+    //  PENYAKIT INVESTIGAS WABAH
+    var data_inveswabah = {!! json_encode($data_inveswabah -> toArray())!!};
   var total_Target_Inveswabah = 0;
   var total_Realisasi_Inveswabah = 0;
   for (let index = 0; index < data_inveswabah.length; index++) {
@@ -979,7 +978,7 @@ var realisasibulan12_asf = parseInt(data_asf[11].Realisasi);
   var realisasibulan11_inveswabah = parseInt(data_inveswabah[10].Realisasi);
   var targetbulan12_inveswabah = parseInt(data_inveswabah[11].Target);
   var realisasibulan12_inveswabah = parseInt(data_inveswabah[11].Realisasi);
-
+  
    //  PENYAKIT Penyakit bakterial
   var data_penyakitbakterial = {!! json_encode($data_penyakitbakterial -> toArray())!!};
   var total_Target_Penyakitbakterial = 0;

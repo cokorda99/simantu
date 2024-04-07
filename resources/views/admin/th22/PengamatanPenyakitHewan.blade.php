@@ -95,7 +95,7 @@
               </div>
               <div class="col-lg-6">
                 <div class="float-end">
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
                     Tambah
                   </button> --}}
                 </div>
