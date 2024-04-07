@@ -847,6 +847,51 @@ var realisasibulan12_asf = parseInt(data_asf[11].Realisasi);
   var targetbulan12_penyakitviral = parseInt(data_penyakitviral[11].Target);
   var realisasibulan12_penyakitviral = parseInt(data_penyakitviral[11].Realisasi);
 
+    //  PENYAKIT Penyakit bakterial
+    var data_penyakitbakterial = {!! json_encode($data_penyakitbakterial -> toArray())!!};
+  var total_Target_Penyakitbakterial = 0;
+  var total_Realisasi_Penyakitbakterial = 0;
+
+  for (let index = 0; index < data_penyakitbakterial.length; index++) {
+    var Target_Penyakitbakterial = parseInt(data_penyakitbakterial[index].Target);
+    var Realisasi_Penyakitbakterial = parseInt(data_penyakitbakterial[index].Realisasi);
+    total_Target_Penyakitbakterial += Target_Penyakitbakterial;
+    total_Realisasi_Penyakitbakterial += Realisasi_Penyakitbakterial;
+  }
+
+  var rata_totalTarget_Penyakitbakterial  = total_Target_Penyakitbakterial /12;
+  var tampil_totalTarget_Penyakitbakterial = String(rata_totalTarget_Penyakitbakterial);
+  var tampil_totalRealisasi_Penyakitbakterial = String(total_Realisasi_Penyakitbakterial);
+  // console.log(tampil_totalTarget_Penyakitbakterial, tampil_totalRealisasi_Penyakitbakterial)
+  var tampil_Persentase = (parseInt(total_Realisasi_Penyakitbakterial) / parseInt(rata_totalTarget_Penyakitbakterial)) * 100;
+  var tampil_PersentaseFix_Penyakitbakterial = tampil_Persentase.toFixed(2) + ' %'
+
+  // PENYAKIT Penyakit bakterial PER BULAN 
+  var targetbulan1_penyakitbakterial = parseInt(data_penyakitbakterial[0].Target);
+  var realisasibulan1_penyakitbakterial = parseInt(data_penyakitbakterial[0].Realisasi);
+  var targetbulan2_penyakitbakterial = parseInt(data_penyakitbakterial[1].Target);
+  var realisasibulan2_penyakitbakterial = parseInt(data_penyakitbakterial[1].Realisasi);
+  var targetbulan3_penyakitbakterial = parseInt(data_penyakitbakterial[2].Target);
+  var realisasibulan3_penyakitbakterial = parseInt(data_penyakitbakterial[2].Realisasi);
+  var targetbulan4_penyakitbakterial = parseInt(data_penyakitbakterial[3].Target);
+  var realisasibulan4_penyakitbakterial = parseInt(data_penyakitbakterial[3].Realisasi);
+  var targetbulan5_penyakitbakterial = parseInt(data_penyakitbakterial[4].Target);
+  var realisasibulan5_penyakitbakterial = parseInt(data_penyakitbakterial[4].Realisasi);
+  var targetbulan6_penyakitbakterial = parseInt(data_penyakitbakterial[5].Target);
+  var realisasibulan6_penyakitbakterial = parseInt(data_penyakitbakterial[5].Realisasi);
+  var targetbulan7_penyakitbakterial = parseInt(data_penyakitbakterial[6].Target);
+  var realisasibulan7_penyakitbakterial = parseInt(data_penyakitbakterial[6].Realisasi);
+  var targetbulan8_penyakitbakterial = parseInt(data_penyakitbakterial[7].Target);
+  var realisasibulan8_penyakitbakterial = parseInt(data_penyakitbakterial[7].Realisasi);
+  var targetbulan9_penyakitbakterial = parseInt(data_penyakitbakterial[8].Target);
+  var realisasibulan9_penyakitbakterial = parseInt(data_penyakitbakterial[8].Realisasi);
+  var targetbulan10_penyakitbakterial = parseInt(data_penyakitbakterial[9].Target);
+  var realisasibulan10_penyakitbakterial = parseInt(data_penyakitbakterial[9].Realisasi);
+  var targetbulan11_penyakitbakterial = parseInt(data_penyakitbakterial[10].Target);
+  var realisasibulan11_penyakitbakterial = parseInt(data_penyakitbakterial[10].Realisasi);
+  var targetbulan12_penyakitbakterial = parseInt(data_penyakitbakterial[11].Target);
+  var realisasibulan12_penyakitbakterial = parseInt(data_penyakitbakterial[11].Realisasi);
+
   //  PENYAKIT PARASITER
   var data_parasiter= {!! json_encode($data_parasiter-> toArray())!!};
   var total_Target_Parasiter = 0;
@@ -891,50 +936,6 @@ var realisasibulan12_asf = parseInt(data_asf[11].Realisasi);
   var targetbulan12_parasiter= parseInt(data_parasiter[11].Target);
   var realisasibulan12_parasiter= parseInt(data_parasiter[11].Realisasi);
 
-  //  PENYAKIT LSD
-  var data_lsd = {!! json_encode($data_lsd -> toArray())!!};
-  var total_Target_Lsd = 0;
-  var total_Realisasi_Lsd = 0;
-  for (let index = 0; index < data_lsd.length; index++) {
-    var Target_Lsd = parseInt(data_lsd[index].Target);
-    var Realisasi_Lsd = parseInt(data_lsd[index].Realisasi);
-    total_Target_Lsd += Target_Lsd;
-    total_Realisasi_Lsd += Realisasi_Lsd;
-  }
-
-  var rata_totalTarget_Lsd  = total_Target_Lsd /12;
-  var tampil_totalTarget_Lsd = String(rata_totalTarget_Lsd);
-  var tampil_totalRealisasi_Lsd = String(total_Realisasi_Lsd);
-  // console.log(tampil_totalTarget_Lsd, tampil_totalRealisasi_Lsd)
-  var tampil_Persentase = (parseInt(total_Realisasi_Lsd) / parseInt(rata_totalTarget_Lsd)) * 100;
-  var tampil_PersentaseFix_Lsd = tampil_Persentase.toFixed(2) + ' %'
-
-  // PENYAKIT LSD PER BULAN 
-  var targetbulan1_lsd = parseInt(data_lsd[0].Target);
-  var realisasibulan1_lsd = parseInt(data_lsd[0].Realisasi);
-  var targetbulan2_lsd = parseInt(data_lsd[1].Target);
-  var realisasibulan2_lsd = parseInt(data_lsd[1].Realisasi);
-  var targetbulan3_lsd = parseInt(data_lsd[2].Target);
-  var realisasibulan3_lsd = parseInt(data_lsd[2].Realisasi);
-  var targetbulan4_lsd = parseInt(data_lsd[3].Target);
-  var realisasibulan4_lsd = parseInt(data_lsd[3].Realisasi);
-  var targetbulan5_lsd = parseInt(data_lsd[4].Target);
-  var realisasibulan5_lsd = parseInt(data_lsd[4].Realisasi);
-  var targetbulan6_lsd = parseInt(data_lsd[5].Target);
-  var realisasibulan6_lsd = parseInt(data_lsd[5].Realisasi);
-  var targetbulan7_lsd = parseInt(data_lsd[6].Target);
-  var realisasibulan7_lsd = parseInt(data_lsd[6].Realisasi);
-  var targetbulan8_lsd = parseInt(data_lsd[7].Target);
-  var realisasibulan8_lsd = parseInt(data_lsd[7].Realisasi);
-  var targetbulan9_lsd = parseInt(data_lsd[8].Target);
-  var realisasibulan9_lsd = parseInt(data_lsd[8].Realisasi);
-  var targetbulan10_lsd = parseInt(data_lsd[9].Target);
-  var realisasibulan10_lsd = parseInt(data_lsd[9].Realisasi);
-  var targetbulan11_lsd = parseInt(data_lsd[10].Target);
-  var realisasibulan11_lsd = parseInt(data_lsd[10].Realisasi);
-  var targetbulan12_lsd = parseInt(data_lsd[11].Target);
-  var realisasibulan12_lsd = parseInt(data_lsd[11].Realisasi);
-
     //  PENYAKIT INVESTIGAS WABAH
     var data_inveswabah = {!! json_encode($data_inveswabah -> toArray())!!};
   var total_Target_Inveswabah = 0;
@@ -978,51 +979,50 @@ var realisasibulan12_asf = parseInt(data_asf[11].Realisasi);
   var realisasibulan11_inveswabah = parseInt(data_inveswabah[10].Realisasi);
   var targetbulan12_inveswabah = parseInt(data_inveswabah[11].Target);
   var realisasibulan12_inveswabah = parseInt(data_inveswabah[11].Realisasi);
-  
-   //  PENYAKIT Penyakit bakterial
-  var data_penyakitbakterial = {!! json_encode($data_penyakitbakterial -> toArray())!!};
-  var total_Target_Penyakitbakterial = 0;
-  var total_Realisasi_Penyakitbakterial = 0;
-  for (let index = 0; index < data_penyakitbakterial.length; index++) {
-    var Target_Penyakitbakterial = parseInt(data_penyakitbakterial[index].Target);
-    var Realisasi_Penyakitbakterial = parseInt(data_penyakitbakterial[index].Realisasi);
-    total_Target_Penyakitbakterial += Target_Penyakitbakterial;
-    total_Realisasi_Penyakitbakterial += Realisasi_Penyakitbakterial;
+
+  //  PENYAKIT LSD
+  var data_lsd = {!! json_encode($data_lsd -> toArray())!!};
+  var total_Target_Lsd = 0;
+  var total_Realisasi_Lsd = 0;
+  for (let index = 0; index < data_lsd.length; index++) {
+    var Target_Lsd = parseInt(data_lsd[index].Target);
+    var Realisasi_Lsd = parseInt(data_lsd[index].Realisasi);
+    total_Target_Lsd += Target_Lsd;
+    total_Realisasi_Lsd += Realisasi_Lsd;
   }
 
-  var rata_totalTarget_Penyakitbakterial  = total_Target_Penyakitbakterial /12;
-  var tampil_totalTarget_Penyakitbakterial = String(rata_totalTarget_Penyakitbakterial);
-  var tampil_totalRealisasi_Penyakitbakterial = String(total_Realisasi_Penyakitbakterial);
-  // console.log(tampil_totalTarget_Penyakitbakterial, tampil_totalRealisasi_Penyakitbakterial)
-  var tampil_Persentase = (parseInt(total_Realisasi_Penyakitbakterial) / parseInt(rata_totalTarget_Penyakitbakterial)) * 100;
-  var tampil_PersentaseFix_Penyakitbakterial = tampil_Persentase.toFixed(2) + ' %'
+  var rata_totalTarget_Lsd  = total_Target_Lsd /12;
+  var tampil_totalTarget_Lsd = String(rata_totalTarget_Lsd);
+  var tampil_totalRealisasi_Lsd = String(total_Realisasi_Lsd);
+  // console.log(tampil_totalTarget_Lsd, tampil_totalRealisasi_Lsd)
+  var tampil_Persentase = (parseInt(total_Realisasi_Lsd) / parseInt(rata_totalTarget_Lsd)) * 100;
+  var tampil_PersentaseFix_Lsd = tampil_Persentase.toFixed(2) + ' %'
 
-  // PENYAKIT Penyakit bakterial PER BULAN 
-  var targetbulan1_penyakitbakterial = parseInt(data_penyakitbakterial[0].Target);
-  var realisasibulan1_penyakitbakterial = parseInt(data_penyakitbakterial[0].Realisasi);
-  var targetbulan2_penyakitbakterial = parseInt(data_penyakitbakterial[1].Target);
-  var realisasibulan2_penyakitbakterial = parseInt(data_penyakitbakterial[1].Realisasi);
-  var targetbulan3_penyakitbakterial = parseInt(data_penyakitbakterial[2].Target);
-  var realisasibulan3_penyakitbakterial = parseInt(data_penyakitbakterial[2].Realisasi);
-  var targetbulan4_penyakitbakterial = parseInt(data_penyakitbakterial[3].Target);
-  var realisasibulan4_penyakitbakterial = parseInt(data_penyakitbakterial[3].Realisasi);
-  var targetbulan5_penyakitbakterial = parseInt(data_penyakitbakterial[4].Target);
-  var realisasibulan5_penyakitbakterial = parseInt(data_penyakitbakterial[4].Realisasi);
-  var targetbulan6_penyakitbakterial = parseInt(data_penyakitbakterial[5].Target);
-  var realisasibulan6_penyakitbakterial = parseInt(data_penyakitbakterial[5].Realisasi);
-  var targetbulan7_penyakitbakterial = parseInt(data_penyakitbakterial[6].Target);
-  var realisasibulan7_penyakitbakterial = parseInt(data_penyakitbakterial[6].Realisasi);
-  var targetbulan8_penyakitbakterial = parseInt(data_penyakitbakterial[7].Target);
-  var realisasibulan8_penyakitbakterial = parseInt(data_penyakitbakterial[7].Realisasi);
-  var targetbulan9_penyakitbakterial = parseInt(data_penyakitbakterial[8].Target);
-  var realisasibulan9_penyakitbakterial = parseInt(data_penyakitbakterial[8].Realisasi);
-  var targetbulan10_penyakitbakterial = parseInt(data_penyakitbakterial[9].Target);
-  var realisasibulan10_penyakitbakterial = parseInt(data_penyakitbakterial[9].Realisasi);
-  var targetbulan11_penyakitbakterial = parseInt(data_penyakitbakterial[10].Target);
-  var realisasibulan11_penyakitbakterial = parseInt(data_penyakitbakterial[10].Realisasi);
-  var targetbulan12_penyakitbakterial = parseInt(data_penyakitbakterial[11].Target);
-  var realisasibulan12_penyakitbakterial = parseInt(data_penyakitbakterial[11].Realisasi);
-
+  // PENYAKIT LSD PER BULAN 
+  var targetbulan1_lsd = parseInt(data_lsd[0].Target);
+  var realisasibulan1_lsd = parseInt(data_lsd[0].Realisasi);
+  var targetbulan2_lsd = parseInt(data_lsd[1].Target);
+  var realisasibulan2_lsd = parseInt(data_lsd[1].Realisasi);
+  var targetbulan3_lsd = parseInt(data_lsd[2].Target);
+  var realisasibulan3_lsd = parseInt(data_lsd[2].Realisasi);
+  var targetbulan4_lsd = parseInt(data_lsd[3].Target);
+  var realisasibulan4_lsd = parseInt(data_lsd[3].Realisasi);
+  var targetbulan5_lsd = parseInt(data_lsd[4].Target);
+  var realisasibulan5_lsd = parseInt(data_lsd[4].Realisasi);
+  var targetbulan6_lsd = parseInt(data_lsd[5].Target);
+  var realisasibulan6_lsd = parseInt(data_lsd[5].Realisasi);
+  var targetbulan7_lsd = parseInt(data_lsd[6].Target);
+  var realisasibulan7_lsd = parseInt(data_lsd[6].Realisasi);
+  var targetbulan8_lsd = parseInt(data_lsd[7].Target);
+  var realisasibulan8_lsd = parseInt(data_lsd[7].Realisasi);
+  var targetbulan9_lsd = parseInt(data_lsd[8].Target);
+  var realisasibulan9_lsd = parseInt(data_lsd[8].Realisasi);
+  var targetbulan10_lsd = parseInt(data_lsd[9].Target);
+  var realisasibulan10_lsd = parseInt(data_lsd[9].Realisasi);
+  var targetbulan11_lsd = parseInt(data_lsd[10].Target);
+  var realisasibulan11_lsd = parseInt(data_lsd[10].Realisasi);
+  var targetbulan12_lsd = parseInt(data_lsd[11].Target);
+  var realisasibulan12_lsd = parseInt(data_lsd[11].Realisasi);
 
 
   // TOTAL PERBULAN 

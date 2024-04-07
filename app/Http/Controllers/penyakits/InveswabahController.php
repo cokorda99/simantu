@@ -32,7 +32,7 @@ class InveswabahController extends Controller
             $data_inveswabah = Inveswabah::where('Tahun', $tahun)->get();
             
             return view('admin.th22.detailpenyakit.inveswabah', [
-                    "title" => 'Penyakit Lsd | SIMANTU'
+                    "title" => 'Investigasi Wabah | SIMANTU'
                 ], compact(
                 'data_inveswabah','tahun'
             ));
@@ -79,7 +79,7 @@ class InveswabahController extends Controller
             $data_inveswabah = Inveswabah::where('Tahun', $tahun)->get();
             
             return view('admin.th23.detailpenyakit.inveswabah', [
-                    "title" => 'Penyakit Lsd | SIMANTU'
+                    "title" => 'Investigasi Wabah | SIMANTU'
                 ], compact(
                 'data_inveswabah','tahun'
             ));
@@ -126,7 +126,7 @@ class InveswabahController extends Controller
             $data_inveswabah = Inveswabah::where('Tahun', $tahun)->get();
             
             return view('admin.th24.detailpenyakit.inveswabah', [
-                    "title" => 'Penyakit Lsd | SIMANTU'
+                    "title" => 'Investigasi Wabah | SIMANTU'
                 ], compact(
                 'data_inveswabah','tahun'
             ));
