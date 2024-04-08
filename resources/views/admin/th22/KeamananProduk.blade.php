@@ -5,8 +5,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      Keamanan Produk dan Mutu Produk Hewan tahun
-      <?php ?>
+      DATA Keamanan Produk & Mutu Produk Hewan TAHUN
+      <?php echo $tahun ?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -47,7 +47,7 @@
               echo "<script>document.writeln(tampil_totalRealisasi);</script>";
               ?>
             </h5>
-            <p>REALISASI KEAMANAN PRODUK & MUTU PRODUK</p>
+            <p>REALISASI PELAYANAN KESEHATAN HEWAN</p>
             <hr>
             {{-- <h5>Rp. 13.832.000.000</h5>
             <p>PIUTANG PNBP PENJUALAN</p>
@@ -90,7 +90,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-lg-6">
-                  <h5>Data Keamanan Produk &  Mutu Produk Hewan</h5>
+                  <h5>Data Keamanan Produk & Mutu Produk Hewan</h5>
               </div>
               <div class="col-lg-6">
                 <div class="float-end">
@@ -99,9 +99,10 @@
                     Edit Target
                   </button>
                   @endif
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                     Tambah
-                  </button> --}}
+                  </button>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -137,7 +138,7 @@
                     <td>{{ $value-> Realisasi}}</td>
                     @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com' || auth::user()->email == 'adminepi@gmail.com')
                     <td> <a title="Edit" class="updateData btn bg-warning text-light" onclick="updateData({{$value->id}});"
-                      data-bs-toggle="modal" data-bs-target="#modal_edit"><i class="fa fa-edit"></i></a></td>  
+                      data-bs-toggle="modal" data-bs-target="#modal_edit"><i class="fa fa-edit"></i></a></td>
                     @endif
                   </tr>
             </div>
@@ -151,7 +152,7 @@
     <div class="col-lg-7">
       <div class="card">
         <div class="card-header">
-          <h5>Grafik Realisasi Keamanan Produk &  Mutu Produk Hewan</h5>
+          <h5>Grafik Realisasi Keamanan Produk & Mutu Produk Hewan</h5>
         </div>
         <div class="card-body">
           <canvas id="myChart" width="100" height="50"></canvas>
@@ -172,7 +173,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('KeamananProduk') }}" method="POST">
+        <form action="{{ url('v22/KeamananProduk') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
@@ -199,7 +200,7 @@
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
             <div class="col-xl-10">
-              <input type="text" name="Target" class="form-control">
+              <input type="text" name="Target" class="form-control" value ="0">
             </div>
           </div>
           <div class="form-group row mb-3">
@@ -219,6 +220,7 @@
   </div>
 </div>
 
+
 <!--modal edit jumlah target -->
 <div class="modal fade" id="modal_edittarget" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
@@ -230,7 +232,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('KeamananProduk/1') }}" method="POST">
+        <form action="{{ url('v22/KeamananProduk') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -262,10 +264,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('KeamananProduk') }}" method="POST" id="editForm">
+        <form action="{{ url('v22/KeamananProduk') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
+            <div class="col-xl-10">
+              <input type="text" name="id" class="form-control" id="idEdit" value="" readonly>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
             <div class="col-xl-10">
@@ -275,7 +283,7 @@
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
             <div class="col-xl-10">
-              <input type="text" name="Target" class="form-control" id="TargetEdit" value="">
+              <input type="text" name="Target" class="form-control" id="TargetEdit" value="" readonly>
             </div>
           </div>
           <div class="form-group row mb-3">
@@ -304,36 +312,36 @@
 
 {{-- MODAL EDIT --}}
 <script>
-  var data_piphewan = {!! json_encode($data_keamananproduk -> toArray())!!};
+  var data_pkhewan = {!! json_encode($data_keamananproduk -> toArray())!!};
         function updateData(id)
         {
-          var result = data_piphewan.filter( obj => obj.id === id)[0];
+          var result = data_pkhewan.filter( obj => obj.id === id)[0];
           console.log(result.Bulan);
+          document.getElementById("idEdit").value = result.id;
           document.getElementById("BulanEdit").value = result.Bulan;
           document.getElementById("TargetEdit").value = result.Target;
           document.getElementById("RealisasiEdit").value = result.Realisasi;
 
-          $('#editForm').attr('action', '/KeamananProduk/' + id)
+          $('#editForm').attr('action', 'KeamananProduk')
         }
 </script>
 
 
 {{-- SCRIPT BAGIAN ATAS --}}
 <script>
-   var data_piphewan = {!! json_encode($data_keamananproduk -> toArray())!!};
-  //  console.log('TES', data_piphewan);
+   var data_pkhewan = {!! json_encode($data_keamananproduk -> toArray())!!};
+  //  console.log('TES', data_pkhewan);
   var total_Target = 0;
   var total_Realisasi = 0 ;
-   for (let index = 0; index < data_piphewan.length; index++) {
-    var Target = parseInt(data_piphewan[index].Target);
-    var Realisasi = parseInt(data_piphewan[index].Realisasi);
+   for (let index = 0; index < data_pkhewan.length; index++) {
+    var Target = parseInt(data_pkhewan[index].Target);
+    var Realisasi = parseInt(data_pkhewan[index].Realisasi);
     // console.log(Realisasi);
     total_Target += Target;
     total_Realisasi += Realisasi;
    }
-
    var rata_totalTarget = total_Target/12;
-   var tampil_totalTarget = String(rata_totalTarget);
+   var tampil_totalTarget = String(rata_totalTarget );
    var tampil_totalRealisasi = String(total_Realisasi);
    console.log( tampil_totalTarget  , tampil_totalRealisasi)
    var tampil_Persentase = (parseInt(total_Realisasi) / parseInt(rata_totalTarget)) * 100;
@@ -346,21 +354,21 @@
 
 {{-- SCRIPT GRAFIK --}}
 <script>
-  var data_piphewan = {!! json_encode($data_keamananproduk -> toArray())!!};
-  // console.log('TES', data_piphewan);
+  var data_pkhewan = {!! json_encode($data_keamananproduk -> toArray())!!};
+  // console.log('TES', data_pkhewan);
   document.addEventListener("DOMContentLoaded", function (event) {
-    var Januari = parseInt(data_piphewan[0].Realisasi);
-    var Febuari = Januari + parseInt(data_piphewan[1].Realisasi);
-    var Maret = Febuari + parseInt(data_piphewan[2].Realisasi);
-    var April = Maret + parseInt(data_piphewan[3].Realisasi);
-    var Mei = April + parseInt(data_piphewan[4].Realisasi);
-    var Juni = Mei + parseInt(data_piphewan[5].Realisasi);
-    var Juli = Juni + parseInt(data_piphewan[6].Realisasi);
-    var Agustus = Juli + parseInt(data_piphewan[7].Realisasi);
-    var September = Agustus + parseInt(data_piphewan[8].Realisasi);
-    var Oktober = September + parseInt(data_piphewan[9].Realisasi);
-    var November = Oktober + parseInt(data_piphewan[10].Realisasi);
-    var Desember = November + parseInt(data_piphewan[11].Realisasi);
+    var Januari = parseInt(data_pkhewan[0].Realisasi);
+    var Febuari = Januari + parseInt(data_pkhewan[1].Realisasi);
+    var Maret = Febuari + parseInt(data_pkhewan[2].Realisasi);
+    var April = Maret + parseInt(data_pkhewan[3].Realisasi);
+    var Mei = April + parseInt(data_pkhewan[4].Realisasi);
+    var Juni = Mei + parseInt(data_pkhewan[5].Realisasi);
+    var Juli = Juni + parseInt(data_pkhewan[6].Realisasi);
+    var Agustus = Juli + parseInt(data_pkhewan[7].Realisasi);
+    var September = Agustus + parseInt(data_pkhewan[8].Realisasi);
+    var Oktober = September + parseInt(data_pkhewan[9].Realisasi);
+    var November = Oktober + parseInt(data_pkhewan[10].Realisasi);
+    var Desember = November + parseInt(data_pkhewan[11].Realisasi);
 
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart_jalur = new Chart(ctx, {

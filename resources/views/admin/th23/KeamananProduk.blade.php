@@ -5,8 +5,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      Keamanan Produk dan Mutu Produk Hewan tahun 2023
-      <?php ?>
+      Keamanan Produk dan Mutu Produk Hewan tahun
+      <?php echo $tahun?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -255,14 +255,14 @@
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td><a href="/Keamanan_ProdukHewan23">Keamanan Produk Hewan</a></td>
+                  <td><a href="Keamanan_ProdukHewan">Keamanan Produk Hewan</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Keamananprodukhewan23);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Keamananprodukhewan23);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Keamananprodukhewan23);</script>";?></td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td><a href="/AMR_Nasional23">AMR Nasional</a></td>
+                  <td><a href="AMR_Nasional">AMR Nasional</a></td>
                   <td><?php echo "<script>document.writeln(tampil_totalTarget_Amrnasional23);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_totalRealisasi_Amrnasional23);</script>";?></td>
                   <td><?php echo "<script>document.writeln(tampil_PersentaseFix_Amrnasional23);</script>";?></td>
@@ -421,7 +421,7 @@
 
 <script>
   //  PENYAKIT AMR NASIONAL
-  var data_amrnasional23 = {!! json_encode($data_amrnasional23 -> toArray())!!};
+  var data_amrnasional23 = {!! json_encode($data_amrnasional -> toArray())!!};
   var total_Target_Amrnasional23 = 0;
   var total_Realisasi_Amrnasional23 = 0;
   for (let index = 0; index < data_amrnasional23.length; index++) {
@@ -465,7 +465,7 @@
   var realisasibulan12_amrnasional23 = parseInt(data_amrnasional23[11].Realisasi);
 
   //  PENYAKIT KEAMANAN PRODUK HEWAN
-  var data_keamananprodukhewan23 = {!! json_encode($data_keamananprodukhewan23 -> toArray())!!};
+  var data_keamananprodukhewan23 = {!! json_encode($data_keamananprodukhewan -> toArray())!!};
   var total_Target_Keamananprodukhewan23 = 0;
   var total_Realisasi_Keamananprodukhewan23 = 0;
   for (let index = 0; index < data_keamananprodukhewan23.length; index++) {

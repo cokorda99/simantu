@@ -2935,7 +2935,7 @@ var tampil_PersentaseFix_Layanankinerja = tampil_Persentase.toFixed(2) + ' %'
   // KEAMANAN PRODUK BARU
 
   //  PENYAKIT AMR NASIONAL
-var data_amrnasional23 = {!! json_encode($data_amrnasional23 -> toArray())!!};
+var data_amrnasional23 = {!! json_encode($data_amrnasional -> toArray())!!};
 var total_Target_Amrnasional23 = 0;
 var total_Realisasi_Amrnasional23 = 0;
 for (let index = 0; index < data_amrnasional23.length; index++) {
@@ -2979,7 +2979,7 @@ var targetbulan12_amrnasional23 = parseInt(data_amrnasional23[11].Target);
 var realisasibulan12_amrnasional23 = parseInt(data_amrnasional23[11].Realisasi);
 
 //  PENYAKIT KEAMANAN PRODUK HEWAN
-var data_keamananprodukhewan23 = {!! json_encode($data_keamananprodukhewan23 -> toArray())!!};
+var data_keamananprodukhewan23 = {!! json_encode($data_keamananprodukhewan -> toArray())!!};
 var total_Target_Keamananprodukhewan23 = 0;
 var total_Realisasi_Keamananprodukhewan23 = 0;
 for (let index = 0; index < data_keamananprodukhewan23.length; index++) {
