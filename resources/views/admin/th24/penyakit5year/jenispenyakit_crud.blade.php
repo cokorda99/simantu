@@ -1,4 +1,4 @@
-@extends('admin/th23/layouts/main')
+@extends('admin/th24/layouts/main')
 
 @section('content')
 <div class="content-wrapper">
@@ -17,7 +17,7 @@
           <div class="box-header">
             <h3 class="box-title">Data Jenis Pilihan Penyakit</h3><br><br>
             @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com')
-            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
               Tambah
             </button>
             @endif
@@ -77,7 +77,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('data_Pilihan_Penyakit23') }}" method="POST">
+        <form action="{{ url('/v24/data_Pilihan_Penyakit') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Nama Penyakit</label>
@@ -104,10 +104,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('data_Pilihan_Penyakit23') }}" method="POST" id="editForm">
+        <form action="{{ url('/v24/data_Pilihan_Penyakit') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID Penyakit</label>
+            <div class="col-xl-10">
+              <input type="text" name="Id" class="form-control" id="ID_PenyakitEdit">
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Nama Penyakit</label>
             <div class="col-xl-10">
@@ -140,11 +146,12 @@
         <center>
           <h6 style="text-align: justify;">Apakah Anda yakin ingin menghapus data Penyakit?. Data yang sudah dihapus tidak dapat dikembalikan lagi  </h6>
         </center>
-        <form action="{{ url('data_Pilihan_Penyakit23') }}" method="POST" id="DeleteForm">
+        <form action="{{ url('/v24/data_Pilihan_Penyakit') }}" method="POST" id="DeleteForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="DELETE">
           <div class="modal-footer border-0">
+            <input type="text" name="Id" class="form-control" id="ID_PenyakitDelete" hidden>
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-danger float-end">Hapus</button>
           </div>
@@ -161,9 +168,10 @@
   var data_penyakit5year= {!! json_encode($data_jenispenyakit -> toArray())!!};
   function updateData(id) {
     var result = data_penyakit5year.filter(obj => obj.id === id)[0];
+    document.getElementById("ID_PenyakitEdit").value = result.id;
     document.getElementById("Nama_PenyakitEdit").value = result.Nama_Penyakit;
 
-    $('#editForm').attr('action', '/data_Pilihan_Penyakit23/' + id)
+    $('#editForm').attr('action', 'data_Pilihan_Penyakit')
   }
 
 </script>
@@ -174,6 +182,7 @@
   var data_penyakit5year= {!! json_encode($data_jenispenyakit -> toArray())!!};
   function hapusData(id) {
     var result = data_penyakit5year.filter(obj => obj.id === id)[0];
-    $('#DeleteForm').attr('action', '/data_Pilihan_Penyakit23/' + id)
+    document.getElementById("ID_PenyakitDelete").value = result.id;
+    $('#DeleteForm').attr('action', 'data_Pilihan_Penyakit')
   }
 </script>

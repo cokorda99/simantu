@@ -27,6 +27,8 @@ use App\Models\Keamananproduk;
 use App\Models\keamananproduk\Amrnasional;
 use App\Models\keamananproduk\Keamananprodukhewan;
 
+use App\Models\Penyakit5year;
+
 
 use App\Models\th22\Sbkhewan;
 use App\Models\th22\Ternakpotong;
@@ -41,7 +43,6 @@ use App\Models\th22\Dukunganmanajemen;
 
 use App\Models\th22\Sdm;
 
-use App\Models\th22\Penyakit5year;
 
 
 // LOAD MODEL 2023

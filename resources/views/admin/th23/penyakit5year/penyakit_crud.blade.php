@@ -17,11 +17,11 @@
           <div class="box-header">
             <h3 class="box-title">Data Jumlah Penyakit 5 Tahun Terakhir</h3><br><br>
             @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com')
-            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
               Tambah
             </button>
             @endif
-            <a title="Pengaturan List Penyakit" href="/data_Pilihan_Penyakit23"><button class="btn btn-sm btn-primary" ><i class="fa fa-edit"></i>  Pengaturan List Penyakit</button></a>
+            <a title="Pengaturan List Penyakit" href="data_Pilihan_Penyakit"><button class="btn btn-sm btn-primary" ><i class="fa fa-edit"></i>  Pengaturan List Penyakit</button></a>
             <br>
             <br>
             <label style="width: 5%; float: left;">Filter :</label>
@@ -47,12 +47,11 @@
                   <th>No</th>
                   <th>Kabupaten</th>
                   <th>Jenis Penyakit</th>
-                  {{-- <th>2018</th> --}}
+                  <th>2018</th>
                   <th>2019</th>
                   <th>2020</th>
                   <th>2021</th>
                   <th>2022</th>
-                  <th>2023</th>
                   @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com')
                   <th>Aksi</th>
                   @endif
@@ -68,12 +67,11 @@
                   <td>{{ $i++ }}</td>
                   <td>{{ $value-> Kabupaten}}</td>
                   <td>{{ $value-> Penyakit}}</td>
-                  {{-- <td>{{ $value-> Th2018}}</td> --}}
+                  <td>{{ $value-> Th2018}}</td>
                   <td>{{ $value-> Th2019}}</td>
                   <td>{{ $value-> Th2020}}</td>
                   <td>{{ $value-> Th2021}}</td>
                   <td>{{ $value-> Th2022}}</td>
-                  <td>{{ $value-> Th2023}}</td>
                   @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com')
                   <td>
                     <a title="Edit" class="updateData btn bg-warning text-light"
@@ -110,7 +108,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('pengaturan_Penyakit_terakhir23') }}" method="POST">
+        <form action="{{ url('/v23/pengaturan_Penyakit_terakhir') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Pilih Provinsi</label>
@@ -147,10 +145,10 @@
             <span style="color:red;">Jumlah Kasus 5 tahun terakhir</span>
           </center>
           <br>
-          <div class="form-group row mb-3" hidden>
+          <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2018</label>
             <div class="col-xl-10">
-              <input type="number" name="Th2018" class="form-control" value="0">
+              <input type="number" name="Th2018" class="form-control">
             </div>
           </div>
           <div class="form-group row mb-3">
@@ -177,12 +175,6 @@
               <input  type="number" name="Th2022" class="form-control">
             </div>
           </div>
-          <div class="form-group row mb-3">
-            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2023</label>
-            <div class="col-xl-10">
-              <input  type="number" name="Th2023" class="form-control">
-            </div>
-          </div>
           <button type="submit" class="btn btn-success float-end">Simpan</button>
         </form>
       </div>
@@ -202,10 +194,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('pengaturan_Penyakit_terakhir23') }}" method="POST" id="editForm">
+        <form action="{{ url('/v23/pengaturan_Penyakit_terakhir') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3">
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID</label>
+            <div class="col-xl-10">
+              <input type="text" id="IdEdit" name="Id" class="form-control" readonly>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Pilih Kabupaten</label>
             <div class="col-xl-10">
@@ -223,7 +221,7 @@
             <span style="color:red;">Jumlah Kasus 5 tahun terakhir</span>
           </center>
           <br>
-          <div class="form-group row mb-3" hidden>
+          <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2018</label>
             <div class="col-xl-10">
               <input type="number" name="Th2018" class="form-control" id="Th2018Edit">
@@ -253,12 +251,6 @@
               <input  type="number" name="Th2022" class="form-control" id="Th2022Edit">
             </div>
           </div>
-          <div class="form-group row mb-3">
-            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2023</label>
-            <div class="col-xl-10">
-              <input  type="number" name="Th2023" class="form-control" id="Th2023Edit">
-            </div>
-          </div>
           <button type="submit" class="btn btn-success float-end">Update</button>
         </form>
       </div>
@@ -285,11 +277,12 @@
         <center>
           <h6 style="text-align: justify;">Apakah Anda yakin ingin menghapus data Penyakit 5 Tahun Terakhir ?, Data yang sudah dihapus tidak dapat dikembalikan lagi  </h6>
         </center>
-        <form action="{{ url('pengaturan_Penyakit_terakhir23') }}" method="POST" id="DeleteForm">
+        <form action="{{ url('/v23/pengaturan_Penyakit_terakhir') }}" method="POST" id="DeleteForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="DELETE">
           <div class="modal-footer border-0">
+            <input type="text" id="IdEditDelete" name="Id" class="form-control" hidden>
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-danger float-end">Hapus</button>
           </div>
@@ -610,6 +603,7 @@
   
   function updateData(id) {
     var result = data_penyakit5year.filter(obj => obj.id === id)[0];
+    document.getElementById("IdEdit").value = result.id;
     document.getElementById("KabupatenEdit").value = result.Kabupaten;
     document.getElementById("PenyakitEdit").value = result.Penyakit;
     document.getElementById("Th2018Edit").value = result.Th2018;
@@ -617,9 +611,8 @@
     document.getElementById("Th2020Edit").value = result.Th2020;
     document.getElementById("Th2021Edit").value = result.Th2021;
     document.getElementById("Th2022Edit").value = result.Th2022;
-    document.getElementById("Th2023Edit").value = result.Th2023;
 
-    $('#editForm').attr('action', '/pengaturan_Penyakit_terakhir23/' + id)
+    $('#editForm').attr('action', 'pengaturan_Penyakit_terakhir')
   }
 
 </script>
@@ -630,6 +623,7 @@
   var data_penyakit5year= {!! json_encode($data_penyakit5year -> toArray())!!};
   function hapusData(id) {
     var result = data_penyakit5year.filter(obj => obj.id === id)[0];
-    $('#DeleteForm').attr('action', '/pengaturan_Penyakit_terakhir23/' + id)
+    document.getElementById("IdEditDelete").value = result.id;
+    $('#DeleteForm').attr('action', 'pengaturan_Penyakit_terakhir')
   }
 </script>

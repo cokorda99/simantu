@@ -17,11 +17,11 @@
           <div class="box-header">
             <h3 class="box-title">Data Jumlah Penyakit 5 Tahun Terakhir</h3><br><br>
             @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com')
-            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
               Tambah
             </button>
             @endif
-            <a title="Pengaturan List Penyakit" href="/data_Pilihan_Penyakit"><button class="btn btn-sm btn-primary" ><i class="fa fa-edit"></i>  Pengaturan List Penyakit</button></a>
+            <a title="Pengaturan List Penyakit" href="data_Pilihan_Penyakit"><button class="btn btn-sm btn-primary" ><i class="fa fa-edit"></i>  Pengaturan List Penyakit</button></a>
             <br>
             <br>
             <label style="width: 5%; float: left;">Filter :</label>
@@ -108,7 +108,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('pengaturan_Penyakit_terakhir') }}" method="POST">
+        <form action="{{ url('/v22/pengaturan_Penyakit_terakhir') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Pilih Provinsi</label>
@@ -194,10 +194,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('pengaturan_Penyakit_terakhir') }}" method="POST" id="editForm">
+        <form action="{{ url('/v22/pengaturan_Penyakit_terakhir') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3">
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID</label>
+            <div class="col-xl-10">
+              <input type="text" id="IdEdit" name="Id" class="form-control" readonly>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Pilih Kabupaten</label>
             <div class="col-xl-10">
@@ -271,11 +277,12 @@
         <center>
           <h6 style="text-align: justify;">Apakah Anda yakin ingin menghapus data Penyakit 5 Tahun Terakhir ?, Data yang sudah dihapus tidak dapat dikembalikan lagi  </h6>
         </center>
-        <form action="{{ url('pengaturan_Penyakit_terakhir') }}" method="POST" id="DeleteForm">
+        <form action="{{ url('/v22/pengaturan_Penyakit_terakhir') }}" method="POST" id="DeleteForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="DELETE">
           <div class="modal-footer border-0">
+            <input type="text" id="IdEditDelete" name="Id" class="form-control" hidden>
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-danger float-end">Hapus</button>
           </div>
@@ -596,6 +603,7 @@
   
   function updateData(id) {
     var result = data_penyakit5year.filter(obj => obj.id === id)[0];
+    document.getElementById("IdEdit").value = result.id;
     document.getElementById("KabupatenEdit").value = result.Kabupaten;
     document.getElementById("PenyakitEdit").value = result.Penyakit;
     document.getElementById("Th2018Edit").value = result.Th2018;
@@ -604,7 +612,7 @@
     document.getElementById("Th2021Edit").value = result.Th2021;
     document.getElementById("Th2022Edit").value = result.Th2022;
 
-    $('#editForm').attr('action', '/pengaturan_Penyakit_terakhir/' + id)
+    $('#editForm').attr('action', 'pengaturan_Penyakit_terakhir')
   }
 
 </script>
@@ -615,6 +623,7 @@
   var data_penyakit5year= {!! json_encode($data_penyakit5year -> toArray())!!};
   function hapusData(id) {
     var result = data_penyakit5year.filter(obj => obj.id === id)[0];
-    $('#DeleteForm').attr('action', '/pengaturan_Penyakit_terakhir/' + id)
+    document.getElementById("IdEditDelete").value = result.id;
+    $('#DeleteForm').attr('action', 'pengaturan_Penyakit_terakhir')
   }
 </script>

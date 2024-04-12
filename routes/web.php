@@ -28,6 +28,10 @@ use App\Http\Controllers\keamananproduk\AmrnasionalController;
 use App\Http\Controllers\keamananproduk\KeamananprodukhewanController;
 
 
+use App\Http\Controllers\Penyakit5yearController;
+use App\Http\Controllers\JenispilihanpenyakitController;
+
+
 
 
 use App\Http\Controllers\th22\SbkhewanController;
@@ -48,9 +52,9 @@ use App\Http\Controllers\th22\DinasluarController;
 
 
 
-use App\Http\Controllers\th22\Penyakit5yearController;
+
 use App\Http\Controllers\th22\MasukanController;
-use App\Http\Controllers\th22\JenispilihanpenyakitController;
+
 
 use App\Http\Controllers\th23\Sbkhewan23Controller;
 use App\Http\Controllers\th23\Ternakpotong23Controller;
@@ -126,6 +130,11 @@ Route::prefix('v22')->group(function () {
     // KEAMANAN PRODUK
 
     Route::match(['GET','POST' ,'PATCH'], 'KeamananProduk', [KeamananprodukController::class, 'index22']);
+
+
+    // 5 Tahun Penyakit terakhir
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'pengaturan_Penyakit_terakhir', [Penyakit5yearController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'data_Pilihan_Penyakit', [JenispilihanpenyakitController::class, 'index22']);
     
 });
 
@@ -158,6 +167,11 @@ Route::prefix('v23')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'Keamanan_ProdukHewan', [KeamananprodukhewanController::class, 'index23']);
 
 
+    // 5 Tahun Penyakit terakhir
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'pengaturan_Penyakit_terakhir', [Penyakit5yearController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'data_Pilihan_Penyakit', [JenispilihanpenyakitController::class, 'index23']);
+
+
 });
 
 // VERSION 3.0 (2024)
@@ -188,6 +202,10 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'AMR_Nasional', [AmrnasionalController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'Keamanan_ProdukHewan', [KeamananprodukhewanController::class, 'index24']);
 
+    // 5 Tahun Penyakit terakhir
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'pengaturan_Penyakit_terakhir', [Penyakit5yearController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'data_Pilihan_Penyakit', [JenispilihanpenyakitController::class, 'index24']);
+
 });
 
 
@@ -205,9 +223,9 @@ Route::resource('/DetailPenyakitHewan',DetailpenyakitController::class);
 Route::resource('/sdm_dinasluar',DinasluarController::class);
 
 
-Route::resource('/pengaturan_Penyakit_terakhir',Penyakit5yearController::class);
+
 Route::resource('/masukanBalai',MasukanController::class);
-Route::resource('/data_Pilihan_Penyakit',JenispilihanpenyakitController::class);
+
 
 
 Route::resource('/SaranaBidang23',Sbkhewan23Controller::class);
