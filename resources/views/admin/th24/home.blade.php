@@ -97,11 +97,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -111,11 +111,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -130,11 +130,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -144,11 +144,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -163,11 +163,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -177,11 +177,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -196,11 +196,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -210,11 +210,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -229,11 +229,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -243,11 +243,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -263,11 +263,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -277,11 +277,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -296,11 +296,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -310,11 +310,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -329,11 +329,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -343,11 +343,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -362,11 +362,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -376,11 +376,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -425,11 +425,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -439,11 +439,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -458,11 +458,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -472,11 +472,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -491,11 +491,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -505,11 +505,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -524,11 +524,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -538,11 +538,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -557,11 +557,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -571,11 +571,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -590,11 +590,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -604,11 +604,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -623,11 +623,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -637,11 +637,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -656,11 +656,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -670,11 +670,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -689,11 +689,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -703,11 +703,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -722,11 +722,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -736,11 +736,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -783,11 +783,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -797,11 +797,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -816,11 +816,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -830,11 +830,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -849,11 +849,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -863,11 +863,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -882,11 +882,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -896,11 +896,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -915,11 +915,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -929,11 +929,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -948,11 +948,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -962,11 +962,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -981,11 +981,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -995,11 +995,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1014,11 +1014,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1028,11 +1028,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1047,11 +1047,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1061,11 +1061,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1080,11 +1080,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1094,11 +1094,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1113,11 +1113,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1127,11 +1127,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1146,11 +1146,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1160,11 +1160,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1180,11 +1180,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1194,11 +1194,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1214,11 +1214,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1228,11 +1228,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1248,11 +1248,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1262,11 +1262,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1282,11 +1282,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1296,11 +1296,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1316,11 +1316,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1330,11 +1330,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1350,11 +1350,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1364,11 +1364,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1384,11 +1384,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1398,11 +1398,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1417,11 +1417,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1431,11 +1431,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1450,11 +1450,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1464,11 +1464,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -1483,11 +1483,11 @@
                           <tr>
                             <th>No</th>
                             <th>Jenis Penyakit</th>
-                            <th>2019</th>
+                            <th hidden>2019</th>
                             <th>2020</th>
                             <th>2021</th>
                             <th>2022</th>
-                            <th>2023</th>
+                            <th>2023</th><th>2024</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1497,11 +1497,11 @@
                             <td>{{ $i++ }}</td>
                             <td hidden>{{ $value-> Kabupaten}}</td>
                             <td>{{ $value-> Penyakit}}</td>
-                            <td>{{ $value-> Th2019}}</td>
+                            <td hidden>{{ $value-> Th2019}}</td>
                             <td>{{ $value-> Th2020}}</td>
                             <td>{{ $value-> Th2021}}</td>
                             <td>{{ $value-> Th2022}}</td>
-                            <td>{{ $value-> Th2023}}</td>
+                            <td>{{ $value-> Th2023}}</td><td>{{ $value-> Th2024}}</td>
                           </tr>
                           @endforeach
                         </tbody>

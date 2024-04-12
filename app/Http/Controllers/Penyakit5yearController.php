@@ -22,6 +22,8 @@ class Penyakit5yearController extends Controller
             $data_penyakit5year->Th2020 = $request->Th2020;
             $data_penyakit5year->Th2021 = $request->Th2021;
             $data_penyakit5year->Th2022 = $request->Th2022;
+            $data_penyakit5year->Th2023 = $request->Th2023;
+            $data_penyakit5year->Th2024 = $request->Th2024;
     
             $data_penyakit5year->save();
             return redirect('/v22/pengaturan_Penyakit_terakhir');
@@ -45,6 +47,8 @@ class Penyakit5yearController extends Controller
             $data_penyakit5year->Th2020 = $request->Th2020;
             $data_penyakit5year->Th2021 = $request->Th2021;
             $data_penyakit5year->Th2022 = $request->Th2022;
+            $data_penyakit5year->Th2023 = $request->Th2023;
+            $data_penyakit5year->Th2024 = $request->Th2024;
             $data_penyakit5year->save();
             return redirect('/v22/pengaturan_Penyakit_terakhir')->with('success' , 'Data berhasil diUpdate');
         } elseif ($request->isMethod('delete')) {
@@ -70,7 +74,9 @@ class Penyakit5yearController extends Controller
             $data_penyakit5year->Th2019 = $request->Th2019;
             $data_penyakit5year->Th2020 = $request->Th2020;
             $data_penyakit5year->Th2021 = $request->Th2021;
+            $data_penyakit5year->Th2022 = $request->Th2022;
             $data_penyakit5year->Th2023 = $request->Th2023;
+            $data_penyakit5year->Th2024 = $request->Th2024;
     
             $data_penyakit5year->save();
             return redirect('/v23/pengaturan_Penyakit_terakhir');
@@ -93,7 +99,9 @@ class Penyakit5yearController extends Controller
             $data_penyakit5year->Th2019 = $request->Th2019;
             $data_penyakit5year->Th2020 = $request->Th2020;
             $data_penyakit5year->Th2021 = $request->Th2021;
+            $data_penyakit5year->Th2022 = $request->Th2022;
             $data_penyakit5year->Th2023 = $request->Th2023;
+            $data_penyakit5year->Th2024 = $request->Th2024;
             $data_penyakit5year->save();
             return redirect('/v23/pengaturan_Penyakit_terakhir')->with('success' , 'Data berhasil diUpdate');
         } elseif ($request->isMethod('delete')) {
@@ -119,6 +127,8 @@ class Penyakit5yearController extends Controller
             $data_penyakit5year->Th2019 = $request->Th2019;
             $data_penyakit5year->Th2020 = $request->Th2020;
             $data_penyakit5year->Th2021 = $request->Th2021;
+            $data_penyakit5year->Th2022 = $request->Th2022;
+            $data_penyakit5year->Th2023 = $request->Th2023;
             $data_penyakit5year->Th2024 = $request->Th2024;
     
             $data_penyakit5year->save();
@@ -142,6 +152,8 @@ class Penyakit5yearController extends Controller
             $data_penyakit5year->Th2019 = $request->Th2019;
             $data_penyakit5year->Th2020 = $request->Th2020;
             $data_penyakit5year->Th2021 = $request->Th2021;
+            $data_penyakit5year->Th2022 = $request->Th2022;
+            $data_penyakit5year->Th2023 = $request->Th2023;
             $data_penyakit5year->Th2024 = $request->Th2024;
             $data_penyakit5year->save();
             return redirect('/v24/pengaturan_Penyakit_terakhir')->with('success' , 'Data berhasil diUpdate');

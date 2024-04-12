@@ -47,11 +47,12 @@
                   <th>No</th>
                   <th>Kabupaten</th>
                   <th>Jenis Penyakit</th>
-                  <th>2018</th>
+                  <th hidden >2018</th>
                   <th>2019</th>
                   <th>2020</th>
                   <th>2021</th>
                   <th>2022</th>
+                  <th>2023</th>
                   @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com')
                   <th>Aksi</th>
                   @endif
@@ -67,11 +68,12 @@
                   <td>{{ $i++ }}</td>
                   <td>{{ $value-> Kabupaten}}</td>
                   <td>{{ $value-> Penyakit}}</td>
-                  <td>{{ $value-> Th2018}}</td>
+                  <td hidden>{{ $value-> Th2018}}</td>
                   <td>{{ $value-> Th2019}}</td>
                   <td>{{ $value-> Th2020}}</td>
                   <td>{{ $value-> Th2021}}</td>
                   <td>{{ $value-> Th2022}}</td>
+                  <td>{{ $value-> Th2023}}</td>
                   @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com')
                   <td>
                     <a title="Edit" class="updateData btn bg-warning text-light"
@@ -145,10 +147,10 @@
             <span style="color:red;">Jumlah Kasus 5 tahun terakhir</span>
           </center>
           <br>
-          <div class="form-group row mb-3">
+          <div class="form-group row mb-3" hidden>
             <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2018</label>
             <div class="col-xl-10">
-              <input type="number" name="Th2018" class="form-control">
+              <input type="number" name="Th2018" class="form-control" value="0">
             </div>
           </div>
           <div class="form-group row mb-3">
@@ -173,6 +175,18 @@
             <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2022</label>
             <div class="col-xl-10">
               <input  type="number" name="Th2022" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2023</label>
+            <div class="col-xl-10">
+              <input  type="number" name="Th2023" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2024</label>
+            <div class="col-xl-10">
+              <input  type="number" name="Th2024" class="form-control" value="0">
             </div>
           </div>
           <button type="submit" class="btn btn-success float-end">Simpan</button>
@@ -221,7 +235,7 @@
             <span style="color:red;">Jumlah Kasus 5 tahun terakhir</span>
           </center>
           <br>
-          <div class="form-group row mb-3">
+          <div class="form-group row mb-3" hidden>
             <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2018</label>
             <div class="col-xl-10">
               <input type="number" name="Th2018" class="form-control" id="Th2018Edit">
@@ -249,6 +263,18 @@
             <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2022</label>
             <div class="col-xl-10">
               <input  type="number" name="Th2022" class="form-control" id="Th2022Edit">
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2023</label>
+            <div class="col-xl-10">
+              <input  type="number" name="Th2023" class="form-control" id="Th2023Edit">
+            </div>
+          </div>
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2024</label>
+            <div class="col-xl-10">
+              <input  type="number" name="Th2024" class="form-control" id="Th2024Edit">
             </div>
           </div>
           <button type="submit" class="btn btn-success float-end">Update</button>
@@ -611,6 +637,8 @@
     document.getElementById("Th2020Edit").value = result.Th2020;
     document.getElementById("Th2021Edit").value = result.Th2021;
     document.getElementById("Th2022Edit").value = result.Th2022;
+    document.getElementById("Th2023Edit").value = result.Th2023;
+    document.getElementById("Th2024Edit").value = result.Th2024;
 
     $('#editForm').attr('action', 'pengaturan_Penyakit_terakhir')
   }

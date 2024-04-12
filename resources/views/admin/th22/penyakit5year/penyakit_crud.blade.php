@@ -175,6 +175,18 @@
               <input  type="number" name="Th2022" class="form-control">
             </div>
           </div>
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2023</label>
+            <div class="col-xl-10">
+              <input  type="number" name="Th2023" class="form-control" value="0">
+            </div>
+          </div>
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2024</label>
+            <div class="col-xl-10">
+              <input  type="number" name="Th2024" class="form-control" value="0">
+            </div>
+          </div>
           <button type="submit" class="btn btn-success float-end">Simpan</button>
         </form>
       </div>
@@ -249,6 +261,18 @@
             <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2022</label>
             <div class="col-xl-10">
               <input  type="number" name="Th2022" class="form-control" id="Th2022Edit">
+            </div>
+          </div>
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2023</label>
+            <div class="col-xl-10">
+              <input  type="number" name="Th2023" class="form-control" id="Th2023Edit">
+            </div>
+          </div>
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun 2024</label>
+            <div class="col-xl-10">
+              <input  type="number" name="Th2024" class="form-control"id="Th2024Edit">
             </div>
           </div>
           <button type="submit" class="btn btn-success float-end">Update</button>
@@ -611,6 +635,8 @@
     document.getElementById("Th2020Edit").value = result.Th2020;
     document.getElementById("Th2021Edit").value = result.Th2021;
     document.getElementById("Th2022Edit").value = result.Th2022;
+    document.getElementById("Th2023Edit").value = result.Th2023;
+    document.getElementById("Th2024Edit").value = result.Th2024;
 
     $('#editForm').attr('action', 'pengaturan_Penyakit_terakhir')
   }
