@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\th23;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sdm23 extends Model
+class Sdm extends Model
 {
     use HasFactory;
 }

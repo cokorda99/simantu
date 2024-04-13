@@ -6,6 +6,7 @@
   <section class="content-header">
     <h1>
       DATA DINAS LUAR SIMANTU
+      <?php echo $tahun ?>
     </h1>
   </section>
   <!-- Main content -->
@@ -19,22 +20,16 @@
             {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
               Tambah
             </button> --}}
-            <div class="input-icons" style="width: 25%; float:right">
-              <form action="{{ url('sdm_dinasluar23') }}" method="GET" id="Pencarian">
-                <div style="float:left">
-                  <span><i class="fa fa-search"> </i></span>
-                  <input style="text-align: center;" name="cari" class="form-control" type="text" id="myInput" placeholder="Pencarian" title="Type in a name">
-                </div>
-                <input type="submit" value="CARI" class="btn btn-primary btn-sm" style="float:right; width:100px; height:40px">
-
-              </form>
+            <div class="input-icons" style="width: 20%; float:right">
+              <span><i class="fa fa-search"> </i></span>
+              <input style="text-align: center;" class="form-control" type="text" id="myInput" onkeyup="myFunction()" placeholder="Pencarian" title="Type in a name">
             </div>
             <div style="width: 29%; margin-top: 10px">
                 <input type="date" name="FilterTanggal" class="form-control" onchange="filter()" id="filterId">
                 
                 {{-- <select class="form-select" name="FilterTanggal" onchange="filter()" id="filterId">
                     <option value="">Pilih Tanggal</option>
-                    @foreach($data_dinasluar23 as $key=>$value)
+                    @foreach($data_dinasluar as $key=>$value)
                     <option value="{{ $value-> Tanggal}}">{{ $value-> Tanggal}}</option>
                     @endforeach
                   </select> --}}
@@ -56,13 +51,13 @@
                 </tr>
               </thead>
               <tbody>
-                @if ($data_dinasluar23->count() == 0)
+                @if ($data_dinasluar->count() == 0)
                 <tr>
                     <td colspan="5">Belum Ada Data Dinas Luar</td>
                 </tr>
                 @endif
                 <p hidden> {{ $i = 1 }}</p>
-                @foreach ($data_dinasluar23 as $key=>$value)
+                @foreach ($data_dinasluar as $key=>$value)
                 <tr>
                   <td>{{ $i++ }}</td>
                   <td>{{ $value-> Nama}}</td>
@@ -84,9 +79,9 @@
               </tbody>
             </table>
             <div style="margin-top:2%;">
-              {{ $data_dinasluar23->links('pagination::bootstrap-4') }}
-              {{-- <p>Menampilkan {{$data_dinasluar23->count()}} dari {{ $data_dinasluar23->total() }} orang pegawai.</p> --}}
-              <p>Jumlah pegawai dinas luar : {{ $data_dinasluar23->total() }} orang pegawai.</p>
+              {{ $data_dinasluar->links('pagination::bootstrap-4') }}
+              {{-- <p>Menampilkan {{$data_dinasluar->count()}} dari {{ $data_dinasluar->total() }} orang pegawai.</p> --}}
+              <p>Jumlah pegawai dinas luar : {{ $data_dinasluar->total() }} orang pegawai.</p>
             </div>
           </div>
           <!-- /.box-body -->
@@ -110,7 +105,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('sdm_dinasluar23') }}" method="POST">
+        <form action="{{ url('/v23/sdm_dinasluar') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Nama</label>
@@ -155,10 +150,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('sdm_dinasluar23') }}" method="POST" id="editForm">
+        <form action="{{ url('/v23/sdm_dinasluar') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID</label>
+            <div class="col-xl-10">
+              <input type="text" name="id" class="form-control" id="IdEdit">
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Nama</label>
             <div class="col-xl-10">
@@ -181,6 +182,12 @@
             <label for="inputEmail3" class="col-xl-2 col-form-label">Kegiatan</label>
             <div class="col-xl-10">
               <input type="text" name="Kegiatan" class="form-control" id="KegiatanEdit">
+            </div>
+          </div>
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Tahun</label>
+            <div class="col-xl-10">
+              <input type="text" name="Kegiatan" class="form-control" id="TahunEdit">
             </div>
           </div>
           <button type="submit" class="btn btn-success float-end">Update</button>
@@ -211,11 +218,12 @@
             echo "<script>document.writeln(NamaPegawai);</script>";
             ?><br> Data yang sudah dihapus tidak dapat dikembalikan lagi  </h6>
         </center>
-        <form action="{{ url('sdm_dinasluar23') }}" method="POST" id="DeleteForm">
+        <form action="{{ url('/v23/sdm_dinasluar') }}" method="POST" id="DeleteForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="DELETE">
           <div class="modal-footer border-0">
+          <input type="text" name="id" class="form-control" id="IdDelete" hidden>
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-danger float-end">Hapus</button>
           </div>
@@ -269,27 +277,30 @@ function filter() {
 
 {{-- MODAL EDIT --}}
 <script>
-  var data_sdm = {!! json_encode($data_dinasluar23All -> toArray())!!};
+  var data_sdm = {!! json_encode($data_dinasluarAll -> toArray())!!};
   function updateData(id) {
     var result = data_sdm.filter(obj => obj.id === id)[0];
+    document.getElementById("IdEdit").value = result.id;
     document.getElementById("NamaEdit").value = result.Nama;
     document.getElementById("TanggalEdit").value = result.Tanggal;
     document.getElementById("TujuanEdit").value = result.Tujuan;
     document.getElementById("KegiatanEdit").value = result.Kegiatan;
-    $('#editForm').attr('action', '/sdm_dinasluar23/' + id)
+    document.getElementById("TahunEdit").value = result.Tahun;
+    $('#editForm').attr('action', '/v23/sdm_dinasluar')
   }
 </script>
 
 {{-- MODAL HAPUS --}}
 <script>
   var NamaPegawai = '';
-  var data_sdm = {!! json_encode($data_dinasluar23All -> toArray())!!};
+  var data_sdm = {!! json_encode($data_dinasluarAll -> toArray())!!};
   function hapusData(id) {
     var result = data_sdm.filter(obj => obj.id === id)[0];
     console.log(result);
+    document.getElementById("IdDelete").value = result.id;
     NamaPegawai = String(result.Nama);
     console.log(NamaPegawai);
 
-    $('#DeleteForm').attr('action', '/sdm_dinasluar23/' + id)
+    $('#DeleteForm').attr('action', '/v23/sdm_dinasluar')
   }
 </script>

@@ -1963,7 +1963,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-sm-6">
-                <h5>SDM Tahun 2023<span id="ySDM"></span></h5>
+                <h5>SDM Tahun 2024<span id="ySDM"></span></h5>
               </div>
             </div>
           </div>
