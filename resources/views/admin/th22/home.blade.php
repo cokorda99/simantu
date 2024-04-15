@@ -2837,7 +2837,7 @@ var realisasibulan12_asf = parseInt(data_asf[11].Realisasi);
 
   for (let index = 0; index < data_sdm.length; index++) {
     // BERDASARKAN JENIS
-    if (data_sdm[index].Jenis == 'ASN') {
+    if (data_sdm[index].Jenis == 'PNS' || data_sdm[index].Jenis == 'PPPK') {
       total_Jenis_ASN += 1;
     } else if (data_sdm[index].Jenis == 'DPK') {
       total_Jenis_DPK += 1;

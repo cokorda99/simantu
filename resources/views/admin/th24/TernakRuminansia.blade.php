@@ -1,4 +1,4 @@
-@extends('admin/th23/layouts/main')
+@extends('admin/th24/layouts/main')
 
 @section('content')
 <div class="content-wrapper">

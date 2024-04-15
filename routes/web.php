@@ -27,9 +27,11 @@ use App\Http\Controllers\KeamananprodukController;
 use App\Http\Controllers\keamananproduk\AmrnasionalController;
 use App\Http\Controllers\keamananproduk\KeamananprodukhewanController;
 
-
 use App\Http\Controllers\Penyakit5yearController;
 use App\Http\Controllers\JenispilihanpenyakitController;
+use App\Http\Controllers\SdmController;
+use App\Http\Controllers\DinasluarController;
+use App\Http\Controllers\MasukanController;
 
 
 
@@ -43,9 +45,8 @@ use App\Http\Controllers\th22\PengendalianpenyakitController;
 use App\Http\Controllers\th22\PenyediaanbenihController;
 use App\Http\Controllers\th22\KesehatanventerinerController;
 use App\Http\Controllers\th22\DukunganmanajemenController;
-use App\Http\Controllers\th22\SdmController;
+
 use App\Http\Controllers\th22\DetailpenyakitController;
-use App\Http\Controllers\th22\DinasluarController;
 
 
 
@@ -53,7 +54,8 @@ use App\Http\Controllers\th22\DinasluarController;
 
 
 
-use App\Http\Controllers\th22\MasukanController;
+
+
 
 
 use App\Http\Controllers\th23\Sbkhewan23Controller;
@@ -66,19 +68,12 @@ use App\Http\Controllers\th23\Pengendalianpenyakit23Controller;
 use App\Http\Controllers\th23\Penyediaanbenih23Controller;
 use App\Http\Controllers\th23\Kesehatanventeriner23Controller;
 use App\Http\Controllers\th23\Dukunganmanajemen23Controller;
-use App\Http\Controllers\th23\Sdm23Controller;
 use App\Http\Controllers\th23\Detailpenyakit23Controller;
-use App\Http\Controllers\th23\Dinasluar23Controller;
 
 
-
-use App\Http\Controllers\th23\Penyakit5year23Controller;
-use App\Http\Controllers\th23\Masukan23Controller;
-use App\Http\Controllers\th23\Jenispilihanpenyakit23Controller;
 
 
 use App\Http\Controllers\th23\Kepuasanlayananinternal23Controller;
-
 
 
 
@@ -126,19 +121,17 @@ Route::prefix('v22')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Parasiter', [ParasiterController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Lsd', [LsdController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'Investigasi_Wabah', [InveswabahController::class, 'index22']);
-
-    
     // KEAMANAN PRODUK
-
     Route::match(['GET','POST' ,'PATCH'], 'KeamananProduk', [KeamananprodukController::class, 'index22']);
-
-
     // 5 Tahun Penyakit terakhir
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'pengaturan_Penyakit_terakhir', [Penyakit5yearController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'data_Pilihan_Penyakit', [JenispilihanpenyakitController::class, 'index22']);
+    // SDM
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'sdm_sdm', [SdmController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'sdm_dinasluar', [DinasluarController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'masukanBalai', [MasukanController::class, 'index22']);
 
-    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'TernakRuminansia', [TernakpotongController::class, 'index22']);
-    
+    Route::match(['GET','POST','PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index22']);
 });
 
 // VERSION 2.0 (2023)
@@ -162,19 +155,19 @@ Route::prefix('v23')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Parasiter', [ParasiterController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Lsd', [LsdController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'Investigasi_Wabah', [InveswabahController::class, 'index23']);
-
     // KEAMANAN PRODUK
-
     Route::match(['GET','POST' ,'PATCH'], 'KeamananProduk', [KeamananprodukController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'AMR_Nasional', [AmrnasionalController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'Keamanan_ProdukHewan', [KeamananprodukhewanController::class, 'index23']);
-
-
     // 5 Tahun Penyakit terakhir
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'pengaturan_Penyakit_terakhir', [Penyakit5yearController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'data_Pilihan_Penyakit', [JenispilihanpenyakitController::class, 'index23']);
+    // SDM
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'sdm_sdm', [SdmController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'sdm_dinasluar', [DinasluarController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'masukanBalai', [MasukanController::class, 'index23']);
 
-    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'TernakRuminansia', [TernakpotongController::class, 'index23']);
+    Route::match(['GET','POST','PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index23']);
 
 
 });
@@ -185,7 +178,6 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'IndeksKepuasanMasyarakat', [IkmController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'PelayananKesehatanHewan', [PkhewanController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'PengamatanPenyakitHewan', [PiphewanController::class, 'index24']);
-
     // TURUNAN PENGAMATAN & IDENTIFIKASI PENYAKIT HEWAN
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Rabies', [RabiesController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Avian', [AvianController::class, 'index24']);
@@ -200,18 +192,19 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Parasiter', [ParasiterController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'Penyakit_Lsd', [LsdController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'Investigasi_Wabah', [InveswabahController::class, 'index24']);
-
     // KEAMANAN PRODUK
-
     Route::match(['GET','POST' ,'PATCH'], 'KeamananProduk', [KeamananprodukController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'AMR_Nasional', [AmrnasionalController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'Keamanan_ProdukHewan', [KeamananprodukhewanController::class, 'index24']);
-
     // 5 Tahun Penyakit terakhir
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'pengaturan_Penyakit_terakhir', [Penyakit5yearController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'data_Pilihan_Penyakit', [JenispilihanpenyakitController::class, 'index24']);
+    // SDM
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'sdm_sdm', [SdmController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'sdm_dinasluar', [DinasluarController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'masukanBalai', [MasukanController::class, 'index24']);
 
-    Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'TernakRuminansia', [TernakpotongController::class, 'index24']);
+    Route::match(['GET','POST','PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index24']);
 
 });
 
@@ -225,13 +218,13 @@ Route::resource('/anggaran_PengendalianPenyakit',PengendalianpenyakitController:
 Route::resource('/anggaran_PenyedianBenih',PenyediaanbenihController::class);
 Route::resource('/anggaran_KesehatanVeteriner',KesehatanventerinerController::class);
 Route::resource('/anggaran_DukunganManajemen',DukunganmanajemenController::class);
-Route::resource('/sdm_sdm',SdmController::class);
+
 Route::resource('/DetailPenyakitHewan',DetailpenyakitController::class);
-Route::resource('/sdm_dinasluar',DinasluarController::class);
 
 
 
-Route::resource('/masukanBalai',MasukanController::class);
+
+
 
 
 
@@ -245,16 +238,11 @@ Route::resource('/anggaran_PengendalianPenyakit23',Pengendalianpenyakit23Control
 Route::resource('/anggaran_PenyedianBenih23',Penyediaanbenih23Controller::class);
 Route::resource('/anggaran_KesehatanVeteriner23',Kesehatanventeriner23Controller::class);
 Route::resource('/anggaran_DukunganManajemen23',Dukunganmanajemen23Controller::class);
-Route::resource('/sdm_sdm23',Sdm23Controller::class);
+
 Route::resource('/DetailPenyakitHewan23',Detailpenyakit23Controller::class);
-Route::resource('/sdm_dinasluar23',Dinasluar23Controller::class);
 
 
 
-Route::resource('/Penyakit_Bakterial23',Penyakitbakterial23Controller::class);
-Route::resource('/pengaturan_Penyakit_terakhir23',Penyakit5year23Controller::class);
-Route::resource('/masukanBalai23',Masukan23Controller::class);
-Route::resource('/data_Pilihan_Penyakit23',Jenispilihanpenyakit23Controller::class);
-Route::resource('/Penyakit_Pmk23',Pmk23Controller::class);
+
 
 Route::resource('/kepuasanlayanan_internal23', Kepuasanlayananinternal23Controller::class);

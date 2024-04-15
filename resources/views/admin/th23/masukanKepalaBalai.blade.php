@@ -5,7 +5,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      DATA MASUKAN KEPALA BALAI SIMANTU
+      DATA MASUKAN KEPALA BALAI SIMANTU TAHUN
+      <?php echo $tahun ?>
     </h1>
   </section>
   <!-- Main content -->
@@ -17,7 +18,7 @@
           <div class="box-header">
             <h3 class="box-title">Data Masukan</h3><br><br>
             @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com' || auth::user()->email == 'kepalabbvetdenpasar@gmail.com')
-            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
               Tambah
             </button>
             @endif
@@ -58,7 +59,7 @@
               </thead>
               <tbody>
                 <p hidden> {{ $i = 1 }}</p>
-                @foreach ($data_masukan23 as $key=>$value)
+                @foreach ($data_masukan as $key=>$value)
                 <tr>
                   <td>{{ $i++ }}</td>
                   <td>{{ $value-> Tanggal}}</td>
@@ -101,7 +102,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('masukanBalai23') }}" method="POST">
+        <form action="{{ url('/v23/masukanBalai') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Tanggal<small><span style="color: red">*</span></small></label>
@@ -178,10 +179,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('masukanBalai23') }}" method="POST" id="editForm">
+        <form action="{{ url('/v23/masukanBalai') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID</label>
+            <div class="col-xl-10">
+              <input type="text" name="id" class="form-control" id="IdEdit" readonly>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Judul</label>
             <div class="col-xl-10">
@@ -222,11 +229,12 @@
         <center>
           <h6 style="text-align: justify;">Apakah Anda yakin ingin menghapus data ini ?. Data yang sudah dihapus tidak dapat dikembalikan lagi  </h6>
         </center>
-        <form action="{{ url('masukanBalai23') }}" method="POST" id="DeleteForm">
+        <form action="{{ url('/v23/masukanBalai') }}" method="POST" id="DeleteForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="DELETE">
           <div class="modal-footer border-0">
+          <input type="text" name="id" class="form-control" id="IdDelete" readonly hidden>
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-danger float-end">Hapus</button>
           </div>
@@ -240,27 +248,29 @@
 
 {{-- MODAL EDIT --}}
 <script>
-  var data_masukan = {!! json_encode($data_masukan23 -> toArray())!!};
+  var data_masukan = {!! json_encode($data_masukan -> toArray())!!};
   function updateData(id) {
     var result = data_masukan.filter(obj => obj.id === id)[0];
+    document.getElementById("IdEdit").value = result.id;
     document.getElementById("JudulEdit").value = result.Judul;
     document.getElementById("IsiEdit").value = result.Isi_Masukan;
 
-    $('#editForm').attr('action', '/masukanBalai23/' + id)
+    $('#editForm').attr('action', '/v23/masukanBalai')
   }
 </script>
 
 {{-- MODAL HAPUS --}}
 <script>
   var NamaPegawai = '';
-  var data_masukan = {!! json_encode($data_masukan23 -> toArray())!!};
+  var data_masukan = {!! json_encode($data_masukan -> toArray())!!};
   function hapusData(id) {
     var result = data_masukan.filter(obj => obj.id === id)[0];
+    document.getElementById("IdDelete").value = result.id;
     console.log(result);
     NamaPegawai = String(result.Nama);
     console.log(NamaPegawai);
 
-    $('#DeleteForm').attr('action', '/masukanBalai23/' + id)
+    $('#DeleteForm').attr('action', '/v23/masukanBalai/')
   }
 </script>
 

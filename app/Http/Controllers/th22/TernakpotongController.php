@@ -13,135 +13,41 @@ class TernakpotongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-        $data_ternakpotong= Ternakpotong::all();
-        return view('admin.th22.TernakRuminansia', [
-                "title" => 'Ternak Ruminansia Potong | SIMANTU'
-            ], compact(
-            'data_ternakpotong',
-        ));
-        // return view('admin.th22.TernakRuminansia' , [
-        //     "title" => 'Ternak Ruminansia Potong | SIMANTU'
-        // ]);
-    }
+   public function index22(Request $request) 
+   {
+    if ($request->isMethod('post')) {
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        $model = new Ternakpotong;
-
-        return view('admin.th22.TernakRuminansia', [
-            "title" => 'Ternak Ruminansia Potong | SIMANTU'
-        ], compact(
-        'model',
-    ));
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        $model = new Ternakpotong;
-        $model->Bulan = $request->Bulan;
-        $model->Target = $request->Target;
-        $model->Realisasi = $request->Realisasi;
-
-        $model->save();
-
-        return redirect('/TernakRuminansia')->with('success' , 'Data berhasil ditambah');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-         //
-         $model = Ternakpotong::find($id);
-
-    //      return view('admin.th22.TernakRuminansia', [
-    //          "title" => 'Ternak Ruminansia Potong | SIMANTU'
-    //      ], compact(
-    //      'model',
-    //  ));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-        if($request->get('forUpdateAll') == "forUpdateAllValue"){
-            $question = Ternakpotong::where('updateAll',$id)
-                ->update([
-                    'Target' => $request->get('valueUpdateAll')
-                ]);
-                return redirect('/TernakRuminansia');
-        }else {
-            //other code ( update for unique record ) 
-            $model = Ternakpotong::find($id);
-            $model->Bulan = $request->Bulan;
-            $model->Target = $request->Target;
-            $model->Realisasi = $request->Realisasi;
-    
-            $model->save();
-    
-            return redirect('/TernakRuminansia')->with('success' , 'Data berhasil diUpdate');
-        }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function index22(Request $request) {
+        $data_ternakpotong = new Ternakpotong;
+        $data_ternakpotong->Bulan = $request-Bulan;
+        $data_ternakpotong->Target = $request->Target;
+        $data_ternakpotong->Realisasi = $request->Realisasi;
+        $data_ternakpotong->Tahun = '2022';
+        $data_ternakpotong->updateAll = '1';
+        $data_ternakpotong->save();
         return redirect('/v22/TernakRuminansia');
-    }
+    } elseif ($request->isMethod('get')) {
+        $tahun = '2022';
+        $data_ternakpotong = Ternakpotong::where('Tahun', $tahun)->get();
 
-    public function index23(Request $request) {
-        return redirect('/v23/TernakRuminansia');
-    }
+        return view('admin.th22.TernakRuminansia', ["title" => 'Ternak Potong Ruminansia | SIMANTU'], compact('data_ternakpotong','tahun'));
+    } elseif ($request->isMethod('patch')) {
+        $tahun = '2022';
+        if($request->get('forUpdateAll') == "forUpdateAllValue"){
+            $question = Ternakpotong::where('updateAll',1)->where('Tahun', $tahun)->update([
+                'Target' => $request->get('valueUpdateAll')
+            ]);
+            return redirect('/v22/TernakRuminansia');
+        } else {
+            $model = Ternakpotong::find($request->id);
+            $model -> Bulan = $request->Bulan;
+            $model -> Target = $request->Target;
+            $model -> Realisasi = $request->Realisasi;
 
-    public function index24(Request $request) {
-        return redirect('/v24/TernakRuminansia');
+            $model->save();
+            return redirect('/v22/TernakRuminansia');
+        }
+    } else {
+        return response()->json(['message' => 'Method not allowed'], 405);
     }
+   }
 }

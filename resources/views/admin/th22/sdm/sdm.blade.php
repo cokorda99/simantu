@@ -5,7 +5,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      DATA SDM SIMANTU
+      DATA SDM SIMANTU TAHUN
+      <?php echo $tahun ?>
     </h1>
   </section>
   <!-- Main content -->
@@ -17,7 +18,7 @@
           <div class="box-header">
             <h3 class="box-title">Data Pegawai</h3><br><br>
             @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com' || auth::user()->email == 'admikepegawaian@gmail.com')
-            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
               Tambah
             </button>
             @endif
@@ -100,7 +101,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('sdm_sdm') }}" method="POST">
+        <form action="{{ url('v22/sdm_sdm') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Nama<small><span style="color: red">*</span></small></label>
@@ -201,10 +202,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('sdm_sdm') }}" method="POST" id="editForm">
+        <form action="{{ url('v22/sdm_sdm') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID</label>
+            <div class="col-xl-10">
+              <input type="text" name="id" class="form-control" id="IdEdit">
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Nama</label>
             <div class="col-xl-10">
@@ -309,11 +316,12 @@
             echo "<script>document.writeln(NamaPegawai);</script>";
             ?><br> Data yang sudah dihapus tidak dapat dikembalikan lagi  </h6>
         </center>
-        <form action="{{ url('sdm_sdm') }}" method="POST" id="DeleteForm">
+        <form action="{{ url('/v22/sdm_sdm') }}" method="POST" id="DeleteForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="DELETE">
           <div class="modal-footer border-0">
+            <input type="text" name="id" class="form-control" id="IdDelete" hidden>
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-danger float-end">Hapus</button>
           </div>
@@ -334,7 +342,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('sdm_dinasluar') }}" method="POST">
+        <form action="{{ url('/v22/sdm_dinasluar') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Nama</label>
@@ -539,6 +547,7 @@
   var data_sdm = {!! json_encode($data_sdmAll -> toArray())!!};
   function updateData(id) {
     var result = data_sdm.filter(obj => obj.id === id)[0];
+    document.getElementById("IdEdit").value = result.id;
     document.getElementById("NamaEdit").value = result.Nama;
     document.getElementById("NipEdit").value = result.Nip;
     document.getElementById("JenisEdit").value = result.Jenis;
@@ -547,7 +556,7 @@
     document.getElementById("pilihjenisjabatanEdit").value = result.Jabatan;
     document.getElementById("FungsionalEdit").value = result.Fungsional;
 
-    $('#editForm').attr('action', '/sdm_sdm/' + id)
+    $('#editForm').attr('action', '/v22/sdm_sdm')
   }
 
 
@@ -703,10 +712,11 @@
   function hapusData(id) {
     var result = data_sdm.filter(obj => obj.id === id)[0];
     console.log(result);
+    document.getElementById("IdDelete").value = result.id;
     NamaPegawai = String(result.Nama);
     console.log(NamaPegawai);
 
-    $('#DeleteForm').attr('action', '/sdm_sdm/' + id)
+    $('#DeleteForm').attr('action', '/v22/sdm_sdm')
   }
 </script>
 

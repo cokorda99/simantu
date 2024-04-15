@@ -17,12 +17,12 @@
           <div class="box-header">
             <h3 class="box-title">Data Pegawai</h3><br><br>
             @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com' || auth::user()->email == 'admikepegawaian@gmail.com')
-            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
               Tambah
             </button>
             @endif
             <div class="input-icons" style="width: 25%; float:right">
-              <form action="{{ url('sdm_sdm23') }}" method="GET" id="Pencarian">
+              <form action="{{ url('/v23/sdm_sdm') }}" method="GET" id="Pencarian">
                 <div style="float:left">
                   <span><i class="fa fa-search"> </i></span>
                   <input style="text-align: center;" name="cari" class="form-control" type="text" id="myInput" placeholder="Pencarian" title="Type in a name">
@@ -50,13 +50,13 @@
                 </tr>
               </thead>
               <tbody>
-                @if ($data_sdm23->count() == 0)
+                @if ($data_sdm->count() == 0)
                 <tr>
                     <td colspan="5">Belum Ada Data Pegawai</td>
                 </tr>
                 @endif
                 <p hidden> {{ $i = 1 }}</p>
-                @foreach ($data_sdm23 as $key=>$value)
+                @foreach ($data_sdm as $key=>$value)
                 <tr>
                   <td>{{ $i++ }}</td>
                   <td>{{ $value-> Nama}}</td>
@@ -81,8 +81,8 @@
               </tbody>
             </table>
             <div style="margin-top:2%;">
-              {{ $data_sdm23->links('pagination::bootstrap-4') }}
-              <p>Menampilkan {{$data_sdm23->count()}} dari {{ $data_sdm23->total() }} orang pegawai.</p>
+              {{ $data_sdm->links('pagination::bootstrap-4') }}
+              <p>Menampilkan {{$data_sdm->count()}} dari {{ $data_sdm->total() }} orang pegawai.</p>
             </div>
           </div>
           <!-- /.box-body -->
@@ -106,7 +106,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('sdm_sdm23') }}" method="POST">
+        <form action="{{ url('/v23/sdm_sdm') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Nama<small><span style="color: red">*</span></small></label>
@@ -207,10 +207,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('sdm_sdm23') }}" method="POST" id="editForm">
+        <form action="{{ url('/v23/sdm_sdm') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID</label>
+            <div class="col-xl-10">
+              <input type="text" name="id" class="form-control" id="IdEdit">
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Nama</label>
             <div class="col-xl-10">
@@ -315,11 +321,12 @@
             echo "<script>document.writeln(NamaPegawai);</script>";
             ?><br> Data yang sudah dihapus tidak dapat dikembalikan lagi  </h6>
         </center>
-        <form action="{{ url('sdm_sdm23') }}" method="POST" id="DeleteForm">
+        <form action="{{ url('/v23/sdm_sdm') }}" method="POST" id="DeleteForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="DELETE">
           <div class="modal-footer border-0">
+            <input type="text" name="id" class="form-control" id="IdDelete" hidden>
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-danger float-end">Hapus</button>
           </div>
@@ -340,7 +347,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('sdm_dinasluar23') }}" method="POST">
+        <form action="{{ url('/v23/sdm_dinasluar') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Nama</label>
@@ -377,7 +384,7 @@
 <script>
 
 function Pencarian() {
-  $('#Pencarian').attr('action', '/sdm_sdm23/cari')
+  $('#Pencarian').attr('action', '//v23/sdm_sdm/cari')
 }
 //   function myFunction() {
 //   var input, filter, table, tr, td, i, txtValue;
@@ -546,9 +553,10 @@ function Pencarian() {
 </script>
 {{-- MODAL EDIT --}}
 <script>
-  var data_sdm = {!! json_encode($data_sdmAll23 -> toArray())!!};
+  var data_sdm = {!! json_encode($data_sdmAll -> toArray())!!};
   function updateData(id) {
     var result = data_sdm.filter(obj => obj.id === id)[0];
+    document.getElementById("IdEdit").value = result.id;
     document.getElementById("NamaEdit").value = result.Nama;
     document.getElementById("NipEdit").value = result.Nip;
     document.getElementById("JenisEdit").value = result.Jenis;
@@ -557,7 +565,7 @@ function Pencarian() {
     document.getElementById("pilihjenisjabatanEdit").value = result.Jabatan;
     document.getElementById("FungsionalEdit").value = result.Fungsional;
 
-    $('#editForm').attr('action', '/sdm_sdm23/' + id)
+    $('#editForm').attr('action', '/v23/sdm_sdm/')
   }
 
 
@@ -709,19 +717,20 @@ function Pencarian() {
 {{-- MODAL HAPUS --}}
 <script>
   var NamaPegawai = '';
-  var data_sdm = {!! json_encode($data_sdmAll23 -> toArray())!!};
+  var data_sdm = {!! json_encode($data_sdmAll -> toArray())!!};
   function hapusData(id) {
     var result = data_sdm.filter(obj => obj.id === id)[0];
     console.log(result);
+    document.getElementById("IdDelete").value = result.id;
     NamaPegawai = String(result.Nama);
     console.log(NamaPegawai);
 
-    $('#DeleteForm').attr('action', '/sdm_sdm23/' + id)
+    $('#DeleteForm').attr('action', '/v23/sdm_sdm')
   }
 </script>
 
 <script>
-  var data_sdm = {!! json_encode($data_sdmAll23 -> toArray())!!};
+  var data_sdm = {!! json_encode($data_sdmAll -> toArray())!!};
   function dinasLuar(id) {
     var result = data_sdm.filter(obj => obj.id === id)[0];
     document.getElementById("NamaDinasLuar").value = result.Nama;

@@ -5,7 +5,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      TERNAK RUMINANSIA POTONG TAHUN
+      TERNAK RUMINANSIA POTONG TAHUN 2022
       <?php ?>
     </h1>
     <p>Update at :

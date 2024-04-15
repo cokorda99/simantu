@@ -29,6 +29,8 @@ use App\Models\keamananproduk\Keamananprodukhewan;
 
 use App\Models\Penyakit5year;
 
+use App\Models\Sdm;
+
 
 use App\Models\th22\Sbkhewan;
 use App\Models\th22\Ternakpotong;
@@ -41,7 +43,7 @@ use App\Models\th22\Penyediaanbenih;
 use App\Models\th22\Kesehatanventeriner;
 use App\Models\th22\Dukunganmanajemen;
 
-use App\Models\th22\Sdm;
+
 
 
 
@@ -66,8 +68,6 @@ use App\Models\th23\Penyediaanbenih23;
 use App\Models\th23\Kesehatanventeriner23;
 use App\Models\th23\Dukunganmanajemen23;
 use App\Models\th23\Kepuasaninternal23;
-
-use App\Models\th23\Sdm23;
 
 // use App\Models\th22\Penyakit5year;
 
@@ -108,6 +108,7 @@ class DashboardController extends Controller
         $data_pmk= Pmk::where('Tahun', $tahun)->get();
 
         $data_keamananproduk= Keamananproduk::where('Tahun', $tahun)->get();
+        $data_sdm= Sdm::all();
 
 
         $data_sbkhewan= Sbkhewan::all();
@@ -121,7 +122,7 @@ class DashboardController extends Controller
         $data_kesehatanventeriner= Kesehatanventeriner::all();
         $data_dukunganmanajemen= Dukunganmanajemen::all();
 
-        $data_sdm= Sdm::all();
+        
 
 
         $data_penyakit5year= Penyakit5year::all();
@@ -159,6 +160,7 @@ class DashboardController extends Controller
         $data_keamananproduk= Keamananproduk::where('Tahun', $tahun)->get();
         $data_amrnasional= Amrnasional::where('Tahun', $tahun)->get();
         $data_keamananprodukhewan= Keamananprodukhewan::where('Tahun', $tahun)->get();
+        $data_sdm= Sdm::all();
 
 
         $data_sbkhewan= Sbkhewan23::all();
@@ -172,8 +174,6 @@ class DashboardController extends Controller
         $data_penyediaanbenih= Penyediaanbenih23::all();
         $data_kesehatanventeriner= Kesehatanventeriner23::all();
         $data_dukunganmanajemen= Dukunganmanajemen23::all();
-
-        $data_sdm= Sdm23::all();
 
 
 
@@ -213,6 +213,8 @@ class DashboardController extends Controller
         $data_amrnasional= Amrnasional::where('Tahun', $tahun)->get();
         $data_keamananprodukhewan= Keamananprodukhewan::where('Tahun', $tahun)->get();
 
+        $data_sdm= Sdm::all();
+
 
         $data_sbkhewan= Sbkhewan23::all();
         $data_ternakpotong= Ternakpotong23::all();
@@ -224,8 +226,6 @@ class DashboardController extends Controller
         $data_penyediaanbenih= Penyediaanbenih23::all();
         $data_kesehatanventeriner= Kesehatanventeriner23::all();
         $data_dukunganmanajemen= Dukunganmanajemen23::all();
-
-        $data_sdm= Sdm23::all();
 
         $data_penyakit5year= Penyakit5year::all();
         return view('admin.th24.home', [
