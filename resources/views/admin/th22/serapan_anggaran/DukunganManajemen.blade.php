@@ -8,7 +8,7 @@
       Realisasi Serapan Anggaran <br>
       Dukungan Manajemen dan Dukungan Teknis Lainnya <br>
       Ditjen Peternakan dan Kesehatan Hewan
-      <?php ?>
+      <?php echo $tahun?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -106,9 +106,9 @@
                     Edit Pagu
                   </button>
                   @endif
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                     Tambah
-                  </button> --}}
+                  </button>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -138,6 +138,7 @@
                     @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com' || auth::user()->email == 'adminkeuangan@gmail.com')
                     <th>Aksi</th>
                     @endif
+
                   </tr>
                 </thead>
                 <tbody>
@@ -153,6 +154,7 @@
                       onclick="updateData({{$value->id}});" data-bs-toggle="modal" data-bs-target="#modal_edit"><i
                         class="fa fa-edit"></i></a></td>
                     @endif
+
                   </tr>
             </div>
             @endforeach
@@ -185,7 +187,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_DukunganManajemen') }}" method="POST">
+        <form action="{{ url('v22/anggaran_DukunganManajemen') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
@@ -210,7 +212,7 @@
             </div>
           </div>
           <div class="form-group row mb-3">
-            <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Pagu</label>
             <div class="col-xl-10">
               <input type="text" name="Target" class="form-control">
             </div>
@@ -243,7 +245,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_DukunganManajemen/1') }}" method="POST">
+        <form action="{{ url('v22/anggaran_DukunganManajemen') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -264,7 +266,6 @@
   </div>
 </div>
 
-
 <!--modal edit -->
 <div class="modal fade" id="modal_Edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
@@ -276,10 +277,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_DukunganManajemen') }}" method="POST" id="editForm">
+        <form action="{{ url('v22/anggaran_DukunganManajemen') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3">
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID</label>
+            <div class="col-xl-10">
+              <input type="text" name="Id" class="form-control" id="IdEdit" value="" readonly>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
             <div class="col-xl-10">
@@ -287,7 +294,7 @@
             </div>
           </div>
           <div class="form-group row mb-3">
-            <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Pagu</label>
             <div class="col-xl-10">
               <input type="text" name="Target" class="form-control" id="TargetEdit" value="" readonly>
             </div>
@@ -320,11 +327,12 @@
   function updateData(id) {
     var result = data_ikm.filter(obj => obj.id === id)[0];
     console.log(result.Bulan);
+    document.getElementById("IdEdit").value = result.id;
     document.getElementById("BulanEdit").value = result.Bulan;
     document.getElementById("TargetEdit").value = result.Target;
     document.getElementById("RealisasiEdit").value = result.Realisasi;
 
-    $('#editForm').attr('action', '/anggaran_DukunganManajemen/' + id)
+    $('#editForm').attr('action', 'anggaran_DukunganManajemen')
   }
 </script>
 

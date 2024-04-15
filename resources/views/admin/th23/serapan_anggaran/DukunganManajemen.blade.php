@@ -8,7 +8,7 @@
       Realisasi Serapan Anggaran <br>
       Dukungan Manajemen dan Dukungan Teknis Lainnya <br>
       Ditjen Peternakan dan Kesehatan Hewan
-      <?php ?>
+      <?php echo $tahun?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -129,9 +129,9 @@
                     Edit Pagu
                   </button>
                   @endif
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
                     Tambah
-                  </button> --}}
+                  </button>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -161,11 +161,12 @@
                     @if (auth::user()->email == 'admin@gmail.com' || auth::user()->email == 'adminmonev@gmail.com' || auth::user()->email == 'adminkeuangan@gmail.com')
                     <th>Aksi</th>
                     @endif
+
                   </tr>
                 </thead>
                 <tbody>
                   <p hidden> {{ $i = 1 }}</p>
-                  @foreach ($data_dukunganmanajemen23 as $key=>$value)
+                  @foreach ($data_dukunganmanajemen as $key=>$value)
                   <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $value-> Bulan}}</td>
@@ -176,6 +177,7 @@
                       onclick="updateData({{$value->id}});" data-bs-toggle="modal" data-bs-target="#modal_edit"><i
                         class="fa fa-edit"></i></a></td>
                     @endif
+
                   </tr>
             </div>
             @endforeach
@@ -192,6 +194,7 @@
         </div>
         <div class="card-body">
           <canvas id="myChart" width="100" height="50"></canvas>
+          {{-- <canvas id="myChart2" width="100" height="50"></canvas> --}}
         </div>
       </div>
     </div>
@@ -208,7 +211,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_DukunganManajemen23') }}" method="POST">
+        <form action="{{ url('v23/anggaran_DukunganManajemen') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
@@ -233,15 +236,15 @@
             </div>
           </div>
           <div class="form-group row mb-3">
-            <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Pagu</label>
             <div class="col-xl-10">
-              <input type="text" name="Target" class="form-control">
+              <input type="text" name="Target" class="form-control" value="0">
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Realisasi</label>
             <div class="col-xl-10">
-              <input type="text" name="Realisasi" class="form-control">
+              <input type="text" name="Realisasi" class="form-control" value="0">
             </div>
           </div>
           <button type="submit" class="btn btn-success float-end">Simpan</button>
@@ -266,7 +269,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_DukunganManajemen23/1') }}" method="POST">
+        <form action="{{ url('v23/anggaran_DukunganManajemen') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -287,7 +290,6 @@
   </div>
 </div>
 
-
 <!--modal edit -->
 <div class="modal fade" id="modal_Edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
@@ -299,10 +301,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_DukunganManajemen23') }}" method="POST" id="editForm">
+        <form action="{{ url('v23/anggaran_DukunganManajemen') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3">
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID</label>
+            <div class="col-xl-10">
+              <input type="text" name="Id" class="form-control" id="IdEdit" value="" readonly>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
             <div class="col-xl-10">
@@ -310,7 +318,7 @@
             </div>
           </div>
           <div class="form-group row mb-3">
-            <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Pagu</label>
             <div class="col-xl-10">
               <input type="text" name="Target" class="form-control" id="TargetEdit" value="" readonly>
             </div>
@@ -345,23 +353,25 @@
 
 {{-- MODAL EDIT --}}
 <script>
-  var data_ikm = {!! json_encode($data_dukunganmanajemen23 -> toArray())!!};
+  var data_ikm = {!! json_encode($data_dukunganmanajemen -> toArray())!!};
   function updateData(id) {
     var result = data_ikm.filter(obj => obj.id === id)[0];
     console.log(result.Bulan);
+    document.getElementById("IdEdit").value = result.id;
     document.getElementById("BulanEdit").value = result.Bulan;
     document.getElementById("TargetEdit").value = result.Target;
     document.getElementById("akrualEdit").value = result.akrual;
     document.getElementById("sp2dEdit").value = result.sp2d;
 
-    $('#editForm').attr('action', '/anggaran_DukunganManajemen23/' + id)
+
+    $('#editForm').attr('action', '/v23/anggaran_DukunganManajemen')
   }
 </script>
 
 
 {{-- SCRIPT BAGIAN ATAS --}}
 <script>
-  var data_ikm = {!! json_encode($data_dukunganmanajemen23 -> toArray())!!};
+  var data_ikm = {!! json_encode($data_dukunganmanajemen -> toArray())!!};
   //  console.log('TES', data_ikm);
   var total_Target = 0;
   var total_akrual = 0;
@@ -376,6 +386,8 @@
     total_akrual += Akrual;
     total_sp2d += Sp2d;
   }
+
+
   function formatRupiah(nilai){
     var number_string = nilai.toString(),
     sisa = number_string.length % 3,
@@ -404,7 +416,7 @@
 
 {{-- SCRIPT GRAFIK --}}
 <script>
-  var data_ikm = {!! json_encode($data_dukunganmanajemen23 -> toArray())!!};
+  var data_ikm = {!! json_encode($data_dukunganmanajemen -> toArray())!!};
   // console.log('TES', data_ikm);
   document.addEventListener("DOMContentLoaded", function (event) {
     var Januari = parseInt(data_ikm[0].akrual);

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\anggaran;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Pengendalianpenyakit;
+use App\Models\anggaran\Pengendalianpenyakit;
 
 class PengendalianpenyakitController extends Controller
 {

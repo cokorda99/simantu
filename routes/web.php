@@ -35,8 +35,10 @@ use App\Http\Controllers\MasukanController;
 
 // ANGGARAN
 
-use App\Http\Controllers\PengendalianpenyakitController;
-use App\Http\Controllers\PenyediaanbenihController;
+use App\Http\Controllers\anggaran\PengendalianpenyakitController;
+use App\Http\Controllers\anggaran\PenyediaanbenihController;
+use App\Http\Controllers\anggaran\KesehatanventerinerController;
+use App\Http\Controllers\anggaran\DukunganmanajemenController;
 
 
 use App\Http\Controllers\TernakpotongController;
@@ -50,8 +52,7 @@ use App\Http\Controllers\th22\TernakunggasController;
 use App\Http\Controllers\th22\LayananController;
 
 
-use App\Http\Controllers\th22\KesehatanventerinerController;
-use App\Http\Controllers\th22\DukunganmanajemenController;
+
 
 use App\Http\Controllers\th22\DetailpenyakitController;
 
@@ -72,8 +73,7 @@ use App\Http\Controllers\th23\Ternakungga23Controller;
 use App\Http\Controllers\th23\Layanan23Controller;
 use App\Http\Controllers\th23\Layanankinerja23Controller;
 use App\Http\Controllers\th23\Penyediaanbenih23Controller;
-use App\Http\Controllers\th23\Kesehatanventeriner23Controller;
-use App\Http\Controllers\th23\Dukunganmanajemen23Controller;
+
 use App\Http\Controllers\th23\Detailpenyakit23Controller;
 
 
@@ -140,6 +140,8 @@ Route::prefix('v22')->group(function () {
     // ANGGARAN
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PengendalianPenyakit', [PengendalianpenyakitController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PenyedianBenih', [PenyediaanbenihController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_KesehatanVeteriner', [KesehatanventerinerController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index22']);
 
     Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index22']);
 });
@@ -180,6 +182,8 @@ Route::prefix('v23')->group(function () {
     // ANGGARAN
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PengendalianPenyakit', [PengendalianpenyakitController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PenyedianBenih', [PenyediaanbenihController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_KesehatanVeteriner', [KesehatanventerinerController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index23']);
 
     Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index23']);
 
@@ -222,6 +226,8 @@ Route::prefix('v24')->group(function () {
     // ANGGARAN
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PengendalianPenyakit', [PengendalianpenyakitController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PenyedianBenih', [PenyediaanbenihController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_KesehatanVeteriner', [KesehatanventerinerController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index24']);
 
     Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index24']);
 
@@ -233,9 +239,6 @@ Route::resource('/TernakUnggas',TernakunggasController::class);
 Route::resource('/KeamananProduk',KeamananprodukController::class);
 Route::resource('/LayananDukungan',LayananController::class);
 
-
-Route::resource('/anggaran_KesehatanVeteriner',KesehatanventerinerController::class);
-Route::resource('/anggaran_DukunganManajemen',DukunganmanajemenController::class);
 
 Route::resource('/DetailPenyakitHewan',DetailpenyakitController::class);
 
@@ -252,7 +255,6 @@ Route::resource('/TernakUnggas23',Ternakungga23Controller::class);
 Route::resource('/LayananDukungan23',Layanan23Controller::class);
 Route::resource('/LayananManajemenKinerja23',Layanankinerja23Controller::class);
 
-Route::resource('/anggaran_KesehatanVeteriner23',Kesehatanventeriner23Controller::class);
 Route::resource('/anggaran_DukunganManajemen23',Dukunganmanajemen23Controller::class);
 
 Route::resource('/DetailPenyakitHewan23',Detailpenyakit23Controller::class);

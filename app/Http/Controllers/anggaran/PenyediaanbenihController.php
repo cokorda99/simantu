@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\anggaran;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Penyediaanbenih;
+use App\Models\anggaran\Penyediaanbenih;
 class PenyediaanbenihController extends Controller
 {
     /**
