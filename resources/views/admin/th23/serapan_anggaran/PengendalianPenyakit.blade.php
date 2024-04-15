@@ -7,7 +7,7 @@
     <h1 class="text-uppercase">
       Realisasi Serapan Anggaran <br>
       Pengendalian dan Penanggulangan Penyakit Hewan
-      <?php ?>
+      <?php echo $tahun?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -128,9 +128,9 @@
                     Edit Pagu
                   </button>
                   @endif
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
                     Tambah
-                  </button> --}}
+                  </button>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -165,7 +165,7 @@
                 </thead>
                 <tbody>
                   <p hidden> {{ $i = 1 }}</p>
-                  @foreach ($data_pengendalianpenyakit23 as $key=>$value)
+                  @foreach ($data_pengendalianpenyakit as $key=>$value)
                   <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $value-> Bulan}}</td>
@@ -210,7 +210,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_PengendalianPenyakit23') }}" method="POST">
+        <form action="{{ url('v23/anggaran_PengendalianPenyakit') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
@@ -268,7 +268,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_PengendalianPenyakit23/1') }}" method="POST">
+        <form action="{{ url('v23/anggaran_PengendalianPenyakit') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -300,10 +300,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_PengendalianPenyakit23') }}" method="POST" id="editForm">
+        <form action="{{ url('v23/anggaran_PengendalianPenyakit') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3">
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID</label>
+            <div class="col-xl-10">
+              <input type="text" name="Id" class="form-control" id="IdEdit" value="" readonly>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
             <div class="col-xl-10">
@@ -346,24 +352,25 @@
 
 {{-- MODAL EDIT --}}
 <script>
-  var data_ikm = {!! json_encode($data_pengendalianpenyakit23 -> toArray())!!};
+  var data_ikm = {!! json_encode($data_pengendalianpenyakit -> toArray())!!};
   function updateData(id) {
     var result = data_ikm.filter(obj => obj.id === id)[0];
     console.log(result.Bulan);
+    document.getElementById("IdEdit").value = result.id;
     document.getElementById("BulanEdit").value = result.Bulan;
     document.getElementById("TargetEdit").value = result.Target;
     document.getElementById("akrualEdit").value = result.akrual;
     document.getElementById("sp2dEdit").value = result.sp2d;
 
 
-    $('#editForm').attr('action', '/anggaran_PengendalianPenyakit23/' + id)
+    $('#editForm').attr('action', '/v23/anggaran_PengendalianPenyakit')
   }
 </script>
 
 
 {{-- SCRIPT BAGIAN ATAS --}}
 <script>
-  var data_ikm = {!! json_encode($data_pengendalianpenyakit23 -> toArray())!!};
+  var data_ikm = {!! json_encode($data_pengendalianpenyakit -> toArray())!!};
   //  console.log('TES', data_ikm);
   var total_Target = 0;
   var total_akrual = 0;
@@ -408,7 +415,7 @@
 
 {{-- SCRIPT GRAFIK --}}
 <script>
-  var data_ikm = {!! json_encode($data_pengendalianpenyakit23 -> toArray())!!};
+  var data_ikm = {!! json_encode($data_pengendalianpenyakit -> toArray())!!};
   // console.log('TES', data_ikm);
   document.addEventListener("DOMContentLoaded", function (event) {
     var Januari = parseInt(data_ikm[0].akrual);

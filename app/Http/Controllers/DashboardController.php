@@ -28,8 +28,10 @@ use App\Models\keamananproduk\Amrnasional;
 use App\Models\keamananproduk\Keamananprodukhewan;
 
 use App\Models\Penyakit5year;
-
 use App\Models\Sdm;
+
+use App\Models\Pengendalianpenyakit;
+use App\Models\Penyediaanbenih;
 
 
 use App\Models\th22\Sbkhewan;
@@ -38,8 +40,8 @@ use App\Models\th22\Ternakunggas;
 
 use App\Models\th22\Layanan;
 
-use App\Models\th22\Pengendalianpenyakit;
-use App\Models\th22\Penyediaanbenih;
+
+
 use App\Models\th22\Kesehatanventeriner;
 use App\Models\th22\Dukunganmanajemen;
 
@@ -63,8 +65,6 @@ use App\Models\th23\Ternakungga23;
 use App\Models\th23\Layanan23;
 use App\Models\th23\Layanankinerja23;
 
-use App\Models\th23\Pengendalianpenyakit23;
-use App\Models\th23\Penyediaanbenih23;
 use App\Models\th23\Kesehatanventeriner23;
 use App\Models\th23\Dukunganmanajemen23;
 use App\Models\th23\Kepuasaninternal23;
@@ -110,6 +110,9 @@ class DashboardController extends Controller
         $data_keamananproduk= Keamananproduk::where('Tahun', $tahun)->get();
         $data_sdm= Sdm::all();
 
+        $data_pengendalianpenyakit= Pengendalianpenyakit::where('Tahun', $tahun)->get();
+        $data_penyediaanbenih= Penyediaanbenih::where('Tahun', $tahun)->get();
+
 
         $data_sbkhewan= Sbkhewan::all();
         $data_ternakpotong= Ternakpotong::all();
@@ -117,8 +120,8 @@ class DashboardController extends Controller
 
         $data_layanan= Layanan::all();
 
-        $data_pengendalianpenyakit= Pengendalianpenyakit::all();
-        $data_penyediaanbenih= Penyediaanbenih::all();
+
+        
         $data_kesehatanventeriner= Kesehatanventeriner::all();
         $data_dukunganmanajemen= Dukunganmanajemen::all();
 
@@ -162,6 +165,9 @@ class DashboardController extends Controller
         $data_keamananprodukhewan= Keamananprodukhewan::where('Tahun', $tahun)->get();
         $data_sdm= Sdm::all();
 
+        $data_pengendalianpenyakit= Pengendalianpenyakit::where('Tahun', $tahun)->get();
+        $data_penyediaanbenih= Penyediaanbenih::where('Tahun', $tahun)->get();
+
 
         $data_sbkhewan= Sbkhewan23::all();
         $data_ternakpotong= Ternakpotong23::all();
@@ -170,8 +176,6 @@ class DashboardController extends Controller
         $data_layanan= Layanan23::all();
         $data_layanankinerja= Layanankinerja23::all();
 
-        $data_pengendalianpenyakit= Pengendalianpenyakit23::all();
-        $data_penyediaanbenih= Penyediaanbenih23::all();
         $data_kesehatanventeriner= Kesehatanventeriner23::all();
         $data_dukunganmanajemen= Dukunganmanajemen23::all();
 
@@ -215,6 +219,9 @@ class DashboardController extends Controller
 
         $data_sdm= Sdm::all();
 
+        $data_pengendalianpenyakit= Pengendalianpenyakit::where('Tahun', $tahun)->get();
+        $data_penyediaanbenih= Penyediaanbenih::where('Tahun', $tahun)->get();
+
 
         $data_sbkhewan= Sbkhewan23::all();
         $data_ternakpotong= Ternakpotong23::all();
@@ -222,8 +229,6 @@ class DashboardController extends Controller
         $data_layanan= Layanan23::all();
         $data_layanankinerja= Layanankinerja23::all();
 
-        $data_pengendalianpenyakit= Pengendalianpenyakit23::all();
-        $data_penyediaanbenih= Penyediaanbenih23::all();
         $data_kesehatanventeriner= Kesehatanventeriner23::all();
         $data_dukunganmanajemen= Dukunganmanajemen23::all();
 
