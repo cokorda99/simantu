@@ -34,8 +34,11 @@ use App\Models\Pengendalianpenyakit;
 use App\Models\Penyediaanbenih;
 
 
+use App\Models\Ternakpotong;
+
+
 use App\Models\th22\Sbkhewan;
-use App\Models\th22\Ternakpotong;
+
 use App\Models\th22\Ternakunggas;
 
 use App\Models\th22\Layanan;
@@ -113,9 +116,11 @@ class DashboardController extends Controller
         $data_pengendalianpenyakit= Pengendalianpenyakit::where('Tahun', $tahun)->get();
         $data_penyediaanbenih= Penyediaanbenih::where('Tahun', $tahun)->get();
 
+        $data_ternakpotong= Ternakpotong::where('Tahun', $tahun)->get();
+
 
         $data_sbkhewan= Sbkhewan::all();
-        $data_ternakpotong= Ternakpotong::all();
+
         $data_ternakunggas= Ternakunggas::all();
 
         $data_layanan= Layanan::all();
@@ -169,8 +174,10 @@ class DashboardController extends Controller
         $data_penyediaanbenih= Penyediaanbenih::where('Tahun', $tahun)->get();
 
 
+        $data_ternakpotong= Ternakpotong::where('Tahun', $tahun)->get();
+
+
         $data_sbkhewan= Sbkhewan23::all();
-        $data_ternakpotong= Ternakpotong23::all();
         $data_ternakunggas= Ternakungga23::all();
 
         $data_layanan= Layanan23::all();
@@ -222,9 +229,10 @@ class DashboardController extends Controller
         $data_pengendalianpenyakit= Pengendalianpenyakit::where('Tahun', $tahun)->get();
         $data_penyediaanbenih= Penyediaanbenih::where('Tahun', $tahun)->get();
 
+        $data_ternakpotong= Ternakpotong::where('Tahun', $tahun)->get();
+
 
         $data_sbkhewan= Sbkhewan23::all();
-        $data_ternakpotong= Ternakpotong23::all();
         $data_ternakunggas= Ternakungga23::all();
         $data_layanan= Layanan23::all();
         $data_layanankinerja= Layanankinerja23::all();

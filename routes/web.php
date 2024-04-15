@@ -39,9 +39,12 @@ use App\Http\Controllers\PengendalianpenyakitController;
 use App\Http\Controllers\PenyediaanbenihController;
 
 
+use App\Http\Controllers\TernakpotongController;
+
+
 
 use App\Http\Controllers\th22\SbkhewanController;
-use App\Http\Controllers\th22\TernakpotongController;
+
 use App\Http\Controllers\th22\TernakunggasController;
 
 use App\Http\Controllers\th22\LayananController;
@@ -137,6 +140,8 @@ Route::prefix('v22')->group(function () {
     // ANGGARAN
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PengendalianPenyakit', [PengendalianpenyakitController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PenyedianBenih', [PenyediaanbenihController::class, 'index22']);
+
+    Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index22']);
 });
 
 // VERSION 2.0 (2023)
@@ -175,6 +180,8 @@ Route::prefix('v23')->group(function () {
     // ANGGARAN
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PengendalianPenyakit', [PengendalianpenyakitController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PenyedianBenih', [PenyediaanbenihController::class, 'index23']);
+
+    Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index23']);
 
 
 
@@ -216,11 +223,12 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PengendalianPenyakit', [PengendalianpenyakitController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PenyedianBenih', [PenyediaanbenihController::class, 'index24']);
 
+    Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index24']);
+
 });
 
 
 Route::resource('/SaranaBidang',SbkhewanController::class);
-Route::resource('/TernakRuminansia',TernakpotongController::class);
 Route::resource('/TernakUnggas',TernakunggasController::class);
 Route::resource('/KeamananProduk',KeamananprodukController::class);
 Route::resource('/LayananDukungan',LayananController::class);
@@ -239,7 +247,6 @@ Route::resource('/DetailPenyakitHewan',DetailpenyakitController::class);
 
 
 Route::resource('/SaranaBidang23',Sbkhewan23Controller::class);
-Route::resource('/TernakRuminansia23',Ternakpotong23Controller::class);
 Route::resource('/TernakUnggas23',Ternakungga23Controller::class);
 
 Route::resource('/LayananDukungan23',Layanan23Controller::class);
