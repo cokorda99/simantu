@@ -40,15 +40,12 @@ use App\Http\Controllers\anggaran\PenyediaanbenihController;
 use App\Http\Controllers\anggaran\KesehatanventerinerController;
 use App\Http\Controllers\anggaran\DukunganmanajemenController;
 
-
 use App\Http\Controllers\TernakpotongController;
 
+// YANG BELUM
 use App\Http\Controllers\th22\SbkhewanController;
-
 use App\Http\Controllers\th22\TernakunggasController;
-
 use App\Http\Controllers\th22\LayananController;
-
 use App\Http\Controllers\th22\DetailpenyakitController;
 
 
