@@ -50,27 +50,14 @@ use App\Http\Controllers\th22\DetailpenyakitController;
 
 
 
-
-
-
-
-
-
-
-
+// YANG BELUM DI 2023
 use App\Http\Controllers\th23\Sbkhewan23Controller;
 use App\Http\Controllers\th23\Ternakpotong23Controller;
 use App\Http\Controllers\th23\Ternakungga23Controller;
-
 use App\Http\Controllers\th23\Layanan23Controller;
 use App\Http\Controllers\th23\Layanankinerja23Controller;
 use App\Http\Controllers\th23\Penyediaanbenih23Controller;
-
 use App\Http\Controllers\th23\Detailpenyakit23Controller;
-
-
-
-
 use App\Http\Controllers\th23\Kepuasanlayananinternal23Controller;
 
 
