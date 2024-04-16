@@ -22,11 +22,9 @@ use App\Http\Controllers\penyakits\LsdController;
 use App\Http\Controllers\penyakits\InveswabahController;
 
 // KEAMANAN PRODUK
-
 use App\Http\Controllers\KeamananprodukController;
 use App\Http\Controllers\keamananproduk\AmrnasionalController;
 use App\Http\Controllers\keamananproduk\KeamananprodukhewanController;
-
 use App\Http\Controllers\Penyakit5yearController;
 use App\Http\Controllers\JenispilihanpenyakitController;
 use App\Http\Controllers\SdmController;
@@ -34,19 +32,16 @@ use App\Http\Controllers\DinasluarController;
 use App\Http\Controllers\MasukanController;
 
 // ANGGARAN
-
 use App\Http\Controllers\anggaran\PengendalianpenyakitController;
 use App\Http\Controllers\anggaran\PenyediaanbenihController;
 use App\Http\Controllers\anggaran\KesehatanventerinerController;
 use App\Http\Controllers\anggaran\DukunganmanajemenController;
-
 use App\Http\Controllers\TernakpotongController;
 
 
 // CONTROLLER BISA LANGSUNG DIPAKAI 
 // Sarana Bidang Kesehatan Hewan
 use App\Http\Controllers\SbkhewanController;
-
 // Ternak Unggas dan Aneka Ternak
 use App\Http\Controllers\TernakunggasController;
 
@@ -59,10 +54,6 @@ use App\Http\Controllers\LayanankinerjaController;
 
 // Nilai Indeks Kepuasan Layanan Internal Pegawai
 use App\Http\Controllers\KepuasanlayananinternalController;
-
-
-
-
 
 /*
 |--------------------------------------------------------------------------
