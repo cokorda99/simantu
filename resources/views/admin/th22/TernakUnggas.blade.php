@@ -5,7 +5,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      TERNAK UNGGAS DAN ANEKA TERNAK TAHUN
+      TERNAK UNGGAS DAN ANEKA TERNAK TAHUN {{ $tahun }}
       <?php ?>
     </h1>
     <p>Update at :
@@ -99,9 +99,9 @@
                     Edit Target
                   </button> 
                   @endif
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
                     Tambah
-                  </button> --}}
+                  </button>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -172,7 +172,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('TernakUnggas') }}" method="POST">
+        <form action="{{ url('v22/TernakUnggas') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
@@ -230,7 +230,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('TernakUnggas/1') }}" method="POST">
+        <form action="{{ url('v22/TernakUnggas') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -263,7 +263,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('TernakUnggas') }}" method="POST" id="editForm">
+        <form action="{{ url('v22/TernakUnggas') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">

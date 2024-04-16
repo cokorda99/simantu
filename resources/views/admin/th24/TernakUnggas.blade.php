@@ -1,11 +1,11 @@
-@extends('admin/th23/layouts/main')
+@extends('admin/th24/layouts/main')
 
 @section('content')
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      TERNAK UNGGAS DAN ANEKA TERNAK TAHUN 2023
+      TERNAK UNGGAS DAN ANEKA TERNAK TAHUN {{ $tahun }}
       <?php ?>
     </h1>
     <p>Update at :
@@ -99,9 +99,9 @@
                     Edit Target
                   </button> 
                   @endif
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
                     Tambah
-                  </button> --}}
+                  </button>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -129,7 +129,7 @@
                 </thead>
                 <tbody>
                   <p hidden> {{ $i = 1 }}</p>
-                  @foreach ($data_ternakunggas23 as $key=>$value)
+                  @foreach ($data_ternakunggas as $key=>$value)
                   <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $value-> Bulan}}</td>
@@ -172,7 +172,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('TernakUnggas23') }}" method="POST">
+        <form action="{{ url('v24/TernakUnggas') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
@@ -230,7 +230,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('TernakUnggas23/1') }}" method="POST">
+        <form action="{{ url('v24/TernakUnggas') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -263,7 +263,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('TernakUnggas23') }}" method="POST" id="editForm">
+        <form action="{{ url('v24/TernakUnggas') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
@@ -305,7 +305,7 @@
 
 {{-- MODAL EDIT --}}
 <script>
-  var data_piphewan = {!! json_encode($data_ternakunggas23 -> toArray())!!};
+  var data_piphewan = {!! json_encode($data_ternakunggas -> toArray())!!};
         function updateData(id)
         {
           var result = data_piphewan.filter( obj => obj.id === id)[0];
@@ -321,7 +321,7 @@
 
 {{-- SCRIPT BAGIAN ATAS --}}
 <script>
-   var data_piphewan = {!! json_encode($data_ternakunggas23 -> toArray())!!};
+   var data_piphewan = {!! json_encode($data_ternakunggas -> toArray())!!};
   //  console.log('TES', data_piphewan);
   var total_Target = 0;
   var total_Realisasi = 0 ;
@@ -347,7 +347,7 @@
 
 {{-- SCRIPT GRAFIK --}}
 <script>
-  var data_piphewan = {!! json_encode($data_ternakunggas23 -> toArray())!!};
+  var data_piphewan = {!! json_encode($data_ternakunggas -> toArray())!!};
   // console.log('TES', data_piphewan);
   document.addEventListener("DOMContentLoaded", function (event) {
     var Januari = parseInt(data_piphewan[0].Realisasi);

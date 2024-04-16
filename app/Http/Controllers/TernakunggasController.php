@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\th22;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\th22\Ternakunggas;
+use App\Models\Ternakunggas;
 
 class TernakunggasController extends Controller
 {
@@ -13,124 +13,113 @@ class TernakunggasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index22(Request $request) 
     {
-        //
-        $data_ternakunggas= Ternakunggas::all();
-        return view('admin.th22.TernakUnggas', [
-                "title" => 'Ternak Unggas dan Aneka Ternak | SIMANTU'
-            ], compact(
-            'data_ternakunggas',
-        ));
-        // return view('admin.th22.TernakUnggas' , [
-        //     "title" => 'Ternak Unggas dan Aneka Ternak | SIMANTU'
-        // ]);
-    }
+        if ($request->isMethod('post')) {
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        $model = new Ternakunggas;
 
-        return view('admin.th22.TernakUnggas', [
-            "title" => 'Ternak Unggas dan Aneka Ternak | SIMANTU'
-        ], compact(
-        'model',
-    ));
+            $data_ternakunggas = new Ternakunggas;
+            $data_ternakunggas->Bulan = $request->Bulan;
+            $data_ternakunggas->Target = $request->Target;
+            $data_ternakunggas->Realisasi = $request->Realisasi;
+            $data_ternakunggas->Tahun = '2022';
+            $data_ternakunggas->updateAll = '1';
+            $data_ternakunggas ->save();
+            return redirect('/v22/TernakUnggas');
+        } elseif ($request->isMethod('get')) {
+            $tahun = '2022';
+            $data_ternakunggas = Ternakunggas::where('Tahun', $tahun)->get();
 
-    }
+            return view('admin.th22.TernakUnggas', ["title" => 'Ternak Unggas | SIMANTU'], compact('data_ternakunggas','tahun'));
+        } elseif ($request->isMethod('patch')) {
+            $tahun = '2022';
+            if($request->get('forUpdateAll') == "forUpdateAllValue"){
+                $question = Ternakunggas::where('updateAll',1)->where('Tahun', $tahun)->update(['Target' => $request->get('valueUpdateAll')]);
+                return redirect('/v22/TernakUnggas');
+            } else {
+                $model = Ternakunggas::find($request->id);
+                $model->Bulan = $request->Bulan;
+                $model->Target = $request->Target;
+                $model->Realisasi = $request->Realisasi;
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        $model = new Ternakunggas;
-        $model->Bulan = $request->Bulan;
-        $model->Target = $request->Target;
-        $model->Realisasi = $request->Realisasi;
-
-        $model->save();
-
-        return redirect('/TernakUnggas')->with('success' , 'Data berhasil ditambah');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-         //
-         $model = Ternakunggas::find($id);
-
-    //      return view('admin.th22.TernakUnggas', [
-    //          "title" => 'Ternak Unggas dan Aneka Ternak | SIMANTU'
-    //      ], compact(
-    //      'model',
-    //  ));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-        if($request->get('forUpdateAll') == "forUpdateAllValue"){
-            $question = Ternakunggas::where('updateAll',$id)
-                ->update([
-                    'Target' => $request->get('valueUpdateAll')
-                ]);
-                return redirect('/TernakUnggas');
-        }else {
-            $model = Ternakunggas::find($id);
-            $model->Bulan = $request->Bulan;
-            $model->Target = $request->Target;
-            $model->Realisasi = $request->Realisasi;
-    
-            $model->save();
-    
-            return redirect('/TernakUnggas')->with('success' , 'Data berhasil diUpdate');
+                $model->save();
+                return redirect('/v22/TernakUnggas');
+            }
+        } else {
+            return response()->json(['message' => 'Method not allowed'], 405);
         }
-
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function index23(Request $request) 
     {
-        //
+        if ($request->isMethod('post')) {
+
+
+            $data_ternakunggas = new Ternakunggas;
+            $data_ternakunggas->Bulan = $request->Bulan;
+            $data_ternakunggas->Target = $request->Target;
+            $data_ternakunggas->Realisasi = $request->Realisasi;
+            $data_ternakunggas->Tahun = '2023';
+            $data_ternakunggas->updateAll = '1';
+            $data_ternakunggas ->save();
+            return redirect('/v23/TernakUnggas');
+        } elseif ($request->isMethod('get')) {
+            $tahun = '2023';
+            $data_ternakunggas = Ternakunggas::where('Tahun', $tahun)->get();
+
+            return view('admin.th23.TernakUnggas', ["title" => 'Ternak Unggas | SIMANTU'], compact('data_ternakunggas','tahun'));
+        } elseif ($request->isMethod('patch')) {
+            $tahun = '2023';
+            if($request->get('forUpdateAll') == "forUpdateAllValue"){
+                $question = Ternakunggas::where('updateAll',1)->where('Tahun', $tahun)->update(['Target' => $request->get('valueUpdateAll')]);
+                return redirect('/v23/TernakUnggas');
+            } else {
+                $model = Ternakunggas::find($request->id);
+                $model->Bulan = $request->Bulan;
+                $model->Target = $request->Target;
+                $model->Realisasi = $request->Realisasi;
+
+                $model->save();
+                return redirect('/v23/TernakUnggas');
+            }
+        } else {
+            return response()->json(['message' => 'Method not allowed'], 405);
+        }
+    }
+    public function index24(Request $request) 
+    {
+        if ($request->isMethod('post')) {
+
+
+            $data_ternakunggas = new Ternakunggas;
+            $data_ternakunggas->Bulan = $request->Bulan;
+            $data_ternakunggas->Target = $request->Target;
+            $data_ternakunggas->Realisasi = $request->Realisasi;
+            $data_ternakunggas->Tahun = '2024';
+            $data_ternakunggas->updateAll = '1';
+            $data_ternakunggas ->save();
+            return redirect('/v24/TernakUnggas');
+        } elseif ($request->isMethod('get')) {
+            $tahun = '2024';
+            $data_ternakunggas = Ternakunggas::where('Tahun', $tahun)->get();
+
+            return view('admin.th24.TernakUnggas', ["title" => 'Ternak Unggas | SIMANTU'], compact('data_ternakunggas','tahun'));
+        } elseif ($request->isMethod('patch')) {
+            $tahun = '2024';
+            if($request->get('forUpdateAll') == "forUpdateAllValue"){
+                $question = Ternakunggas::where('updateAll',1)->where('Tahun', $tahun)->update(['Target' => $request->get('valueUpdateAll')]);
+                return redirect('/v24/TernakUnggas');
+            } else {
+                $model = Ternakunggas::find($request->id);
+                $model->Bulan = $request->Bulan;
+                $model->Target = $request->Target;
+                $model->Realisasi = $request->Realisasi;
+
+                $model->save();
+                return redirect('/v24/TernakUnggas');
+            }
+        } else {
+            return response()->json(['message' => 'Method not allowed'], 405);
+        }
     }
 }
 

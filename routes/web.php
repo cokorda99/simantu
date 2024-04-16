@@ -123,6 +123,7 @@ Route::prefix('v22')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index22']);
 
     Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'TernakUnggas', [TernakunggasController::class, 'index22']);
 });
 
 // VERSION 2.0 (2023)
@@ -165,6 +166,7 @@ Route::prefix('v23')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index23']);
 
     Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'TernakUnggas', [TernakunggasController::class, 'index23']);
 
 
 
@@ -209,6 +211,7 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index24']);
 
     Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'TernakUnggas', [TernakunggasController::class, 'index24']);
 
 });
 

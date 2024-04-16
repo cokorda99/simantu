@@ -129,7 +129,7 @@
                 </thead>
                 <tbody>
                   <p hidden> {{ $i = 1 }}</p>
-                  @foreach ($data_ternakunggas23 as $key=>$value)
+                  @foreach ($data_ternakunggas as $key=>$value)
                   <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $value-> Bulan}}</td>
@@ -305,7 +305,7 @@
 
 {{-- MODAL EDIT --}}
 <script>
-  var data_piphewan = {!! json_encode($data_ternakunggas23 -> toArray())!!};
+  var data_piphewan = {!! json_encode($data_ternakunggas -> toArray())!!};
         function updateData(id)
         {
           var result = data_piphewan.filter( obj => obj.id === id)[0];
@@ -314,14 +314,14 @@
           document.getElementById("TargetEdit").value = result.Target;
           document.getElementById("RealisasiEdit").value = result.Realisasi;
 
-          $('#editForm').attr('action', '/TernakUnggas23/' + id)
+          $('#editForm').attr('action', '/TernakUnggas/' + id)
         }
 </script>
 
 
 {{-- SCRIPT BAGIAN ATAS --}}
 <script>
-   var data_piphewan = {!! json_encode($data_ternakunggas23 -> toArray())!!};
+   var data_piphewan = {!! json_encode($data_ternakunggas -> toArray())!!};
   //  console.log('TES', data_piphewan);
   var total_Target = 0;
   var total_Realisasi = 0 ;
@@ -347,7 +347,7 @@
 
 {{-- SCRIPT GRAFIK --}}
 <script>
-  var data_piphewan = {!! json_encode($data_ternakunggas23 -> toArray())!!};
+  var data_piphewan = {!! json_encode($data_ternakunggas -> toArray())!!};
   // console.log('TES', data_piphewan);
   document.addEventListener("DOMContentLoaded", function (event) {
     var Januari = parseInt(data_piphewan[0].Realisasi);
