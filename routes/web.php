@@ -33,47 +33,32 @@ use App\Http\Controllers\SdmController;
 use App\Http\Controllers\DinasluarController;
 use App\Http\Controllers\MasukanController;
 
+// ANGGARAN
+
+use App\Http\Controllers\anggaran\PengendalianpenyakitController;
+use App\Http\Controllers\anggaran\PenyediaanbenihController;
+use App\Http\Controllers\anggaran\KesehatanventerinerController;
+use App\Http\Controllers\anggaran\DukunganmanajemenController;
+
+use App\Http\Controllers\TernakpotongController;
 
 
+// CONTROLLER BISA LANGSUNG DIPAKAI 
+// Sarana Bidang Kesehatan Hewan
+use App\Http\Controllers\SbkhewanController;
 
-use App\Http\Controllers\th22\SbkhewanController;
-use App\Http\Controllers\th22\TernakpotongController;
-use App\Http\Controllers\th22\TernakunggasController;
+// Ternak Unggas dan Aneka Ternak
+use App\Http\Controllers\TernakunggasController;
 
-use App\Http\Controllers\th22\LayananController;
-use App\Http\Controllers\th22\PengendalianpenyakitController;
-use App\Http\Controllers\th22\PenyediaanbenihController;
-use App\Http\Controllers\th22\KesehatanventerinerController;
-use App\Http\Controllers\th22\DukunganmanajemenController;
+// Layanan Dukungan Manajemen Internal
+use App\Http\Controllers\LayananController;
 
-use App\Http\Controllers\th22\DetailpenyakitController;
+// KHUSUS DI VERSI 2023 dan 2024
+// Layanan Manajemen Kinerja Internal
+use App\Http\Controllers\LayanankinerjaController;
 
-
-
-
-
-
-
-
-
-
-
-use App\Http\Controllers\th23\Sbkhewan23Controller;
-use App\Http\Controllers\th23\Ternakpotong23Controller;
-use App\Http\Controllers\th23\Ternakungga23Controller;
-
-use App\Http\Controllers\th23\Layanan23Controller;
-use App\Http\Controllers\th23\Layanankinerja23Controller;
-use App\Http\Controllers\th23\Pengendalianpenyakit23Controller;
-use App\Http\Controllers\th23\Penyediaanbenih23Controller;
-use App\Http\Controllers\th23\Kesehatanventeriner23Controller;
-use App\Http\Controllers\th23\Dukunganmanajemen23Controller;
-use App\Http\Controllers\th23\Detailpenyakit23Controller;
-
-
-
-
-use App\Http\Controllers\th23\Kepuasanlayananinternal23Controller;
+// Nilai Indeks Kepuasan Layanan Internal Pegawai
+use App\Http\Controllers\KepuasanlayananinternalController;
 
 
 
@@ -131,7 +116,13 @@ Route::prefix('v22')->group(function () {
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'sdm_dinasluar', [DinasluarController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'masukanBalai', [MasukanController::class, 'index22']);
 
-    Route::match(['GET','POST','PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index22']);
+    // ANGGARAN
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_PengendalianPenyakit', [PengendalianpenyakitController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_PenyedianBenih', [PenyediaanbenihController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_KesehatanVeteriner', [KesehatanventerinerController::class, 'index22']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index22']);
+
+    Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index22']);
 });
 
 // VERSION 2.0 (2023)
@@ -167,7 +158,14 @@ Route::prefix('v23')->group(function () {
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'sdm_dinasluar', [DinasluarController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'masukanBalai', [MasukanController::class, 'index23']);
 
-    Route::match(['GET','POST','PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index23']);
+    // ANGGARAN
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_PengendalianPenyakit', [PengendalianpenyakitController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_PenyedianBenih', [PenyediaanbenihController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_KesehatanVeteriner', [KesehatanventerinerController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index23']);
+
+    Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index23']);
+
 
 
 });
@@ -204,45 +202,21 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'sdm_dinasluar', [DinasluarController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH' , 'PUT' , 'DELETE'], 'masukanBalai', [MasukanController::class, 'index24']);
 
-    Route::match(['GET','POST','PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index24']);
+    // ANGGARAN
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_PengendalianPenyakit', [PengendalianpenyakitController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_PenyedianBenih', [PenyediaanbenihController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_KesehatanVeteriner', [KesehatanventerinerController::class, 'index24']);
+    Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index24']);
+
+    Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index24']);
 
 });
 
 
+// YANG BELUM DI SEMUA VERSI
 Route::resource('/SaranaBidang',SbkhewanController::class);
-Route::resource('/TernakRuminansia',TernakpotongController::class);
 Route::resource('/TernakUnggas',TernakunggasController::class);
 Route::resource('/KeamananProduk',KeamananprodukController::class);
 Route::resource('/LayananDukungan',LayananController::class);
-Route::resource('/anggaran_PengendalianPenyakit',PengendalianpenyakitController::class);
-Route::resource('/anggaran_PenyedianBenih',PenyediaanbenihController::class);
-Route::resource('/anggaran_KesehatanVeteriner',KesehatanventerinerController::class);
-Route::resource('/anggaran_DukunganManajemen',DukunganmanajemenController::class);
-
-Route::resource('/DetailPenyakitHewan',DetailpenyakitController::class);
-
-
-
-
-
-
-
-
-Route::resource('/SaranaBidang23',Sbkhewan23Controller::class);
-Route::resource('/TernakRuminansia23',Ternakpotong23Controller::class);
-Route::resource('/TernakUnggas23',Ternakungga23Controller::class);
-
-Route::resource('/LayananDukungan23',Layanan23Controller::class);
-Route::resource('/LayananManajemenKinerja23',Layanankinerja23Controller::class);
-Route::resource('/anggaran_PengendalianPenyakit23',Pengendalianpenyakit23Controller::class);
-Route::resource('/anggaran_PenyedianBenih23',Penyediaanbenih23Controller::class);
-Route::resource('/anggaran_KesehatanVeteriner23',Kesehatanventeriner23Controller::class);
-Route::resource('/anggaran_DukunganManajemen23',Dukunganmanajemen23Controller::class);
-
-Route::resource('/DetailPenyakitHewan23',Detailpenyakit23Controller::class);
-
-
-
-
-
-Route::resource('/kepuasanlayanan_internal23', Kepuasanlayananinternal23Controller::class);
+Route::resource('/LayananManajemenKinerja',LayanankinerjaController::class);
+Route::resource('/kepuasanlayanan_internal', KepuasanlayananinternalController::class);

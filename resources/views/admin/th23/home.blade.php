@@ -1565,24 +1565,24 @@
                     <td class="table-success">Meningkatnya Layanan Pengendalian dan Penanggulangan Penyakit Hewan</td>
                     <td>
                       <table>
-                        {{-- <tr>
-                          <td><a href="PelayananKesehatanHewan">2. Pelayanan Kesehatan Hewan</a></td>
-                        </tr> --}}
                         <tr>
-                          <td><a href="PengamatanPenyakitHewan">2. Pengamatan dan Identifikasi Penyakit Hewan</a></td>
+                          <td><a href="PelayananKesehatanHewan">2. Pelayanan Kesehatan Hewan</a></td>
                         </tr>
                         <tr>
-                          <td><a href="SaranaBidang">3. Sarana Bidang Kesehatan Hewan</a></td>
+                          <td><a href="PengamatanPenyakitHewan">3. Pengamatan dan Identifikasi Penyakit Hewan</a></td>
+                        </tr>
+                        <tr>
+                          <td><a href="SaranaBidang">4. Sarana Bidang Kesehatan Hewan</a></td>
                         </tr>
                       </table>
                     </td>
                     <td class="table-info">
                       <table>
-                        {{-- <tr>
+                        <tr>
                           <td>
                             <?php echo "<script>document.writeln(tampil_totalTarget_Pkhewan);</script>"; ?> Layanan
                           </td>
-                        </tr> --}}
+                        </tr>
                         <tr>
                           <td>
                             <?php echo "<script>document.writeln(totalTarget_tampil_piphewan);</script>"; ?> Sampel
@@ -1597,11 +1597,11 @@
                     </td>
                     <td class="table-danger">
                       <table>
-                        {{-- <tr>
+                        <tr>
                           <td>
                             <?php echo "<script>document.writeln(tampil_totalRealisasi_Pkhewan);</script>"; ?> Layanan
                           </td>
-                        </tr> --}}
+                        </tr>
                         <tr>
                           <td>
                             <?php echo "<script>document.writeln(totalRealisasi_tampil_piphewan);</script>"; ?> Sampel
@@ -1616,11 +1616,11 @@
                     </td>
                     <td class="table-secondary">
                       <table>
-                        {{-- <tr>
+                        <tr>
                           <td>
                             <?php echo "<script>document.writeln(tampil_PersentaseFix_Pkhewan);</script>"; ?>
                           </td>
-                        </tr> --}}
+                        </tr>
                         <tr>
                           <td>
                             <?php echo "<script>document.writeln(persentase_tampil_piphewan);</script>"; ?>
@@ -1641,10 +1641,10 @@
                     <td>
                       <table>
                         <tr>
-                          <td><a href="TernakRuminansia">4. Ternak Ruminansia Potong</a></td>
+                          <td><a href="TernakRuminansia">5. Ternak Ruminansia Potong</a></td>
                         </tr>
                         <tr>
-                          <td><a href="TernakUnggas">5. Ternak Unggas dan Aneka Ternak</a></td>
+                          <td><a href="TernakUnggas">6. Ternak Unggas dan Aneka Ternak</a></td>
                         </tr>
                       </table>
                     </td>
@@ -1697,7 +1697,7 @@
                     <td>
                       <table>
                         <tr>
-                          <td><a href="KeamananProduk">6. Keamanan Produk dan Mutu Produk Hewan</a></td>
+                          <td><a href="KeamananProduk">7. Keamanan Produk dan Mutu Produk Hewan</a></td>
                         </tr>
                       </table>
                     </td>
@@ -1737,10 +1737,10 @@
                     <td>
                       <table>
                         <tr>
-                          <td><a href="LayananDukungan">7. Layanan Dukungan Manajemen Internal</a></td>
+                          <td><a href="LayananDukungan">8. Layanan Dukungan Manajemen Internal</a></td>
                         </tr>
                         <tr>
-                          <td><a href="LayananManajemenKinerja">8. Layanan Manajemen Kinerja Internal</a></td>
+                          <td><a href="LayananManajemenKinerja">9. Layanan Manajemen Kinerja Internal</a></td>
                         </tr>
                       </table>
                     </td>

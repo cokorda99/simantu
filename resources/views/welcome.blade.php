@@ -1,7 +1,6 @@
 @extends('layouts/main')
 
 @section('content')
-
 <div class="container-fluid">
 <div class="container cont-login">
     <div class="mt-5 deskrips">

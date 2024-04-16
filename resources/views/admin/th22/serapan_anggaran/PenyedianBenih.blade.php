@@ -7,7 +7,7 @@
     <h1 class="text-uppercase">
       Realisasi Serapan Anggaran <br>
       Penyediaan Benih dan Bibit Serta Peningkatanan Produksi Ternak
-      <?php ?>
+      <?php echo $tahun?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -105,9 +105,9 @@
                     Edit Pagu
                   </button> 
                   @endif
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
                     Tambah
-                  </button> --}}
+                  </button>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -185,7 +185,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_PenyedianBenih') }}" method="POST">
+        <form action="{{ url('v22/anggaran_PenyedianBenih') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
@@ -243,7 +243,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_PenyedianBenih/1') }}" method="POST">
+        <form action="{{ url('v22/anggaran_PenyedianBenih') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -275,10 +275,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('anggaran_PenyedianBenih') }}" method="POST" id="editForm">
+        <form action="{{ url('v22/anggaran_PenyedianBenih') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3" hidden>
+            <label for="inputEmail3" class="col-xl-2 col-form-label">ID</label>
+            <div class="col-xl-10">
+              <input type="text" name="Id" class="form-control" id="IdEdit" value="" readonly>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
             <div class="col-xl-10">
@@ -319,11 +325,12 @@
   function updateData(id) {
     var result = data_ikm.filter(obj => obj.id === id)[0];
     console.log(result.Bulan);
+    document.getElementById("IdEdit").value = result.id;
     document.getElementById("BulanEdit").value = result.Bulan;
     document.getElementById("TargetEdit").value = result.Target;
     document.getElementById("RealisasiEdit").value = result.Realisasi;
 
-    $('#editForm').attr('action', '/anggaran_PenyedianBenih/' + id)
+    $('#editForm').attr('action', 'anggaran_PenyedianBenih')
   }
 </script>
 

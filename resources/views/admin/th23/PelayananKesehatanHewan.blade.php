@@ -199,13 +199,13 @@
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
             <div class="col-xl-10">
-              <input type="text" name="Target" class="form-control">
+              <input type="text" name="Target" class="form-control" value ="0">
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Realisasi</label>
             <div class="col-xl-10">
-              <input type="text" name="Realisasi" class="form-control">
+              <input type="text" name="Realisasi" class="form-control" value ="0">
             </div>
           </div>
           <button type="submit" class="btn btn-success float-end">Simpan</button>

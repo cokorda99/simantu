@@ -28,48 +28,21 @@ use App\Models\keamananproduk\Amrnasional;
 use App\Models\keamananproduk\Keamananprodukhewan;
 
 use App\Models\Penyakit5year;
-
 use App\Models\Sdm;
 
-
-use App\Models\th22\Sbkhewan;
-use App\Models\th22\Ternakpotong;
-use App\Models\th22\Ternakunggas;
-
-use App\Models\th22\Layanan;
-
-use App\Models\th22\Pengendalianpenyakit;
-use App\Models\th22\Penyediaanbenih;
-use App\Models\th22\Kesehatanventeriner;
-use App\Models\th22\Dukunganmanajemen;
+use App\Models\anggaran\Pengendalianpenyakit;
+use App\Models\anggaran\Penyediaanbenih;
+use App\Models\anggaran\Kesehatanventeriner;
+use App\Models\anggaran\Dukunganmanajemen;
 
 
-
-
-
+use App\Models\Ternakpotong;
+use App\Models\Sbkhewan;
+use App\Models\Ternakunggas;
+use App\Models\Layanan;
 // LOAD MODEL 2023
-use App\Models\th23\Piphewan23;
-// MODEL TURUNAN PIP HEWAN
-use App\Models\th23\Penyakit23;
-
-
-
-use App\Models\th23\Sbkhewan23;
-use App\Models\th23\Ternakpotong23;
-use App\Models\th23\Ternakungga23;
-
-
-
-use App\Models\th23\Layanan23;
-use App\Models\th23\Layanankinerja23;
-
-use App\Models\th23\Pengendalianpenyakit23;
-use App\Models\th23\Penyediaanbenih23;
-use App\Models\th23\Kesehatanventeriner23;
-use App\Models\th23\Dukunganmanajemen23;
-use App\Models\th23\Kepuasaninternal23;
-
-// use App\Models\th22\Penyakit5year;
+use App\Models\Layanankinerja;
+use App\Models\Kepuasaninternal;
 
 
 class DashboardController extends Controller
@@ -110,17 +83,17 @@ class DashboardController extends Controller
         $data_keamananproduk= Keamananproduk::where('Tahun', $tahun)->get();
         $data_sdm= Sdm::all();
 
+        $data_pengendalianpenyakit= Pengendalianpenyakit::where('Tahun', $tahun)->get();
+        $data_penyediaanbenih= Penyediaanbenih::where('Tahun', $tahun)->get();
+        $data_kesehatanventeriner= Kesehatanventeriner::where('Tahun', $tahun)->get();
+        $data_dukunganmanajemen= Dukunganmanajemen::where('Tahun', $tahun)->get();
 
-        $data_sbkhewan= Sbkhewan::all();
-        $data_ternakpotong= Ternakpotong::all();
-        $data_ternakunggas= Ternakunggas::all();
+        $data_ternakpotong= Ternakpotong::where('Tahun', $tahun)->get();
 
-        $data_layanan= Layanan::all();
 
-        $data_pengendalianpenyakit= Pengendalianpenyakit::all();
-        $data_penyediaanbenih= Penyediaanbenih::all();
-        $data_kesehatanventeriner= Kesehatanventeriner::all();
-        $data_dukunganmanajemen= Dukunganmanajemen::all();
+        $data_sbkhewan= Sbkhewan::where('Tahun', $tahun)->get();
+        $data_ternakunggas= Ternakunggas::where('Tahun', $tahun)->get();
+        $data_layanan= Layanan::where('Tahun', $tahun)->get();
 
         
 
@@ -138,7 +111,7 @@ class DashboardController extends Controller
     {
         $tahun ='2023';
         $data_ikm = Ikm::where('Tahun', $tahun)->get();
-        $data_internal = Kepuasaninternal23::all();
+        $data_internal = Kepuasaninternal::where('Tahun', $tahun)->get();
         $data_pkhewan = pkhewan::where('Tahun', $tahun)->get();
         $data_piphewan= Piphewan::all();
         // DATA TURUNAN PIP HEWAN 
@@ -162,21 +135,20 @@ class DashboardController extends Controller
         $data_keamananprodukhewan= Keamananprodukhewan::where('Tahun', $tahun)->get();
         $data_sdm= Sdm::all();
 
+        $data_pengendalianpenyakit= Pengendalianpenyakit::where('Tahun', $tahun)->get();
+        $data_penyediaanbenih= Penyediaanbenih::where('Tahun', $tahun)->get();
+        $data_kesehatanventeriner= Kesehatanventeriner::where('Tahun', $tahun)->get();
+        $data_dukunganmanajemen= Dukunganmanajemen::where('Tahun', $tahun)->get();
 
-        $data_sbkhewan= Sbkhewan23::all();
-        $data_ternakpotong= Ternakpotong23::all();
-        $data_ternakunggas= Ternakungga23::all();
 
-        $data_layanan= Layanan23::all();
-        $data_layanankinerja= Layanankinerja23::all();
-
-        $data_pengendalianpenyakit= Pengendalianpenyakit23::all();
-        $data_penyediaanbenih= Penyediaanbenih23::all();
-        $data_kesehatanventeriner= Kesehatanventeriner23::all();
-        $data_dukunganmanajemen= Dukunganmanajemen23::all();
+        $data_ternakpotong= Ternakpotong::where('Tahun', $tahun)->get();
 
 
 
+        $data_sbkhewan= Sbkhewan::where('Tahun', $tahun)->get();
+        $data_ternakunggas= Ternakunggas::where('Tahun', $tahun)->get();
+        $data_layanan= Layanan::where('Tahun', $tahun)->get();
+        $data_layanankinerja= Layanankinerja::where('Tahun', $tahun)->get();
 
         $data_penyakit5year= Penyakit5year::all();
 
@@ -191,7 +163,7 @@ class DashboardController extends Controller
     {
         $tahun ='2024';
         $data_ikm = Ikm::where('Tahun', $tahun)->get();
-        $data_internal = Kepuasaninternal23::all();
+        $data_internal = Kepuasaninternal::where('Tahun', $tahun)->get();
         $data_pkhewan = pkhewan::where('Tahun', $tahun)->get();
         $data_piphewan= Piphewan::all();
         // DATA TURUNAN PIP HEWAN 
@@ -215,17 +187,18 @@ class DashboardController extends Controller
 
         $data_sdm= Sdm::all();
 
+        $data_pengendalianpenyakit= Pengendalianpenyakit::where('Tahun', $tahun)->get();
+        $data_penyediaanbenih= Penyediaanbenih::where('Tahun', $tahun)->get();
+        $data_kesehatanventeriner= Kesehatanventeriner::where('Tahun', $tahun)->get();
+        $data_dukunganmanajemen= Dukunganmanajemen::where('Tahun', $tahun)->get();
+        $data_ternakpotong= Ternakpotong::where('Tahun', $tahun)->get();
 
-        $data_sbkhewan= Sbkhewan23::all();
-        $data_ternakpotong= Ternakpotong23::all();
-        $data_ternakunggas= Ternakungga23::all();
-        $data_layanan= Layanan23::all();
-        $data_layanankinerja= Layanankinerja23::all();
 
-        $data_pengendalianpenyakit= Pengendalianpenyakit23::all();
-        $data_penyediaanbenih= Penyediaanbenih23::all();
-        $data_kesehatanventeriner= Kesehatanventeriner23::all();
-        $data_dukunganmanajemen= Dukunganmanajemen23::all();
+        $data_sbkhewan= Sbkhewan::where('Tahun', $tahun)->get();
+        $data_ternakunggas= Ternakunggas::where('Tahun', $tahun)->get();
+        $data_layanan= Layanan::where('Tahun', $tahun)->get();
+        $data_layanankinerja= Layanankinerja::where('Tahun', $tahun)->get();
+
 
         $data_penyakit5year= Penyakit5year::all();
         return view('admin.th24.home', [
