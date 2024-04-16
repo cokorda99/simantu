@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\th23;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\th23\Kepuasaninternal23;
+use App\Models\Layanankinerja;
 
-class Kepuasanlayananinternal23Controller extends Controller
+class LayanankinerjaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,15 +16,12 @@ class Kepuasanlayananinternal23Controller extends Controller
     public function index()
     {
         //
-        $data_internal= Kepuasaninternal23::all();
-        return view('admin.th23.IndeksKepuasanLayananInternal', [
-                "title" => 'Indeks Kepuasan Layanan Internal | SIMANTU'
+        $data_layanankinerja= Layanankinerja::all();
+        return view('admin.th23.LayananKinerja', [
+                "title" => 'Layanan Dukungan Manajemen Internal | SIMANTU'
             ], compact(
-            'data_internal',
+            'data_layanankinerja',
         ));
-        // return view('admin.th23.serapan_anggaran.KesehatanVeteriner' , [
-        //     "title" => 'Kesehatan Veteriner | SIMANTU'
-        // ]);
     }
 
     /**
@@ -35,10 +32,10 @@ class Kepuasanlayananinternal23Controller extends Controller
     public function create()
     {
         //
-        $model = new Kepuasaninternal23;
+        $model = new Layanankinerja;
 
-        return view('admin.th23.IndeksKepuasanLayananInternal', [
-            "title" => 'Indeks Kepuasan Layanan Internal | SIMANTU'
+        return view('admin.th23.LayananKinerja', [
+            "title" => 'Layanan Dukungan Manajemen Internal | SIMANTU'
         ], compact(
         'model',
     ));
@@ -54,14 +51,14 @@ class Kepuasanlayananinternal23Controller extends Controller
     public function store(Request $request)
     {
         //
-        $model = new Kepuasaninternal23;
+        $model = new Layanankinerja;
         $model->Bulan = $request->Bulan;
         $model->Target = $request->Target;
         $model->Realisasi = $request->Realisasi;
 
         $model->save();
 
-        return redirect('/kepuasanlayanan_internal23')->with('success' , 'Data berhasil ditambah');
+        return redirect('/LayananManajemenKinerja')->with('success' , 'Data berhasil ditambah');
     }
 
     /**
@@ -84,10 +81,10 @@ class Kepuasanlayananinternal23Controller extends Controller
     public function edit($id)
     {
          //
-         $model = Kepuasaninternal23::find($id);
+         $model = Layanankinerja::find($id);
 
-    //      return view('admin.th23.serapan_anggaran.KesehatanVeteriner', [
-    //          "title" => 'Kesehatan Veteriner | SIMANTU'
+    //      return view('admin.th23.LayananKinerja', [
+    //          "title" => 'Layanan Dukungan Manajemen Internal | SIMANTU'
     //      ], compact(
     //      'model',
     //  ));
@@ -103,27 +100,22 @@ class Kepuasanlayananinternal23Controller extends Controller
     public function update(Request $request, $id)
     {
         //
-
         if($request->get('forUpdateAll') == "forUpdateAllValue"){
-            $question = Kepuasaninternal23::where('updateAll',$id)
+            $question = Layanankinerja::where('updateAll',$id)
                 ->update([
                     'Target' => $request->get('valueUpdateAll')
                 ]);
-                return redirect('/kepuasanlayanan_internal23');
+                return redirect('/LayananManajemenKinerja');
         }else {
             //other code ( update for unique record ) 
-            $model = Kepuasaninternal23::find($id);
+            $model = Layanankinerja::find($id);
             $model->Bulan = $request->Bulan;
             $model->Target = $request->Target;
             $model->Realisasi = $request->Realisasi;
-            // $model->akrual = $request->akrual;
-            // $model->sp2d = $request->sp2d;
-    
     
             $model->save();
-            return redirect('/kepuasanlayanan_internal23');;
     
-            // return redirect('/kepuasanlayanan_internal23')->with('success' , 'Data berhasil diUpdate');;
+            return redirect('/LayananManajemenKinerja')->with('success' , 'Data berhasil diUpdate');
         }
     }
 

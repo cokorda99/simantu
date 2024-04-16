@@ -42,23 +42,23 @@ use App\Http\Controllers\anggaran\DukunganmanajemenController;
 
 use App\Http\Controllers\TernakpotongController;
 
-// YANG BELUM
-use App\Http\Controllers\th22\SbkhewanController;
-use App\Http\Controllers\th22\TernakunggasController;
-use App\Http\Controllers\th22\LayananController;
-use App\Http\Controllers\th22\DetailpenyakitController;
 
+// CONTROLLER BISA LANGSUNG DIPAKAI 
+// Sarana Bidang Kesehatan Hewan
+use App\Http\Controllers\SbkhewanController;
 
+// Ternak Unggas dan Aneka Ternak
+use App\Http\Controllers\TernakunggasController;
 
-// YANG BELUM DI 2023
-use App\Http\Controllers\th23\Sbkhewan23Controller;
-use App\Http\Controllers\th23\Ternakpotong23Controller;
-use App\Http\Controllers\th23\Ternakungga23Controller;
-use App\Http\Controllers\th23\Layanan23Controller;
-use App\Http\Controllers\th23\Layanankinerja23Controller;
-use App\Http\Controllers\th23\Penyediaanbenih23Controller;
-use App\Http\Controllers\th23\Detailpenyakit23Controller;
-use App\Http\Controllers\th23\Kepuasanlayananinternal23Controller;
+// Layanan Dukungan Manajemen Internal
+use App\Http\Controllers\LayananController;
+
+// KHUSUS DI VERSI 2023 dan 2024
+// Layanan Manajemen Kinerja Internal
+use App\Http\Controllers\LayanankinerjaController;
+
+// Nilai Indeks Kepuasan Layanan Internal Pegawai
+use App\Http\Controllers\KepuasanlayananinternalController;
 
 
 
@@ -213,33 +213,10 @@ Route::prefix('v24')->group(function () {
 });
 
 
+// YANG BELUM DI SEMUA VERSI
 Route::resource('/SaranaBidang',SbkhewanController::class);
 Route::resource('/TernakUnggas',TernakunggasController::class);
 Route::resource('/KeamananProduk',KeamananprodukController::class);
 Route::resource('/LayananDukungan',LayananController::class);
-
-
-Route::resource('/DetailPenyakitHewan',DetailpenyakitController::class);
-
-
-
-
-
-
-
-
-Route::resource('/SaranaBidang23',Sbkhewan23Controller::class);
-Route::resource('/TernakUnggas23',Ternakungga23Controller::class);
-
-Route::resource('/LayananDukungan23',Layanan23Controller::class);
-Route::resource('/LayananManajemenKinerja23',Layanankinerja23Controller::class);
-
-Route::resource('/anggaran_DukunganManajemen23',Dukunganmanajemen23Controller::class);
-
-Route::resource('/DetailPenyakitHewan23',Detailpenyakit23Controller::class);
-
-
-
-
-
-Route::resource('/kepuasanlayanan_internal23', Kepuasanlayananinternal23Controller::class);
+Route::resource('/LayananManajemenKinerja',LayanankinerjaController::class);
+Route::resource('/kepuasanlayanan_internal', KepuasanlayananinternalController::class);

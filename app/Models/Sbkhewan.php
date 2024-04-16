@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\th22;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Detailpenyakit extends Model
+class Sbkhewan extends Model
 {
     use HasFactory;
 }
