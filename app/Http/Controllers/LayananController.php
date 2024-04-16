@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\th22;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\th22\Layanan;
+use App\Models\Layanan;
 
 class LayananController extends Controller
 {
