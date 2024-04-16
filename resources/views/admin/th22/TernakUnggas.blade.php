@@ -99,7 +99,7 @@
                     Edit Target
                   </button> 
                   @endif
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                     Tambah
                   </button>
                 </div>
@@ -199,13 +199,13 @@
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
             <div class="col-xl-10">
-              <input type="text" name="Target" class="form-control">
+              <input type="text" name="Target" class="form-control" value = "0">
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Realisasi</label>
             <div class="col-xl-10">
-              <input type="text" name="Realisasi" class="form-control">
+              <input type="text" name="Realisasi" class="form-control" value = "0">
             </div>
           </div>
           <button type="submit" class="btn btn-success float-end">Simpan</button>
@@ -270,6 +270,12 @@
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
             <div class="col-xl-10">
+              <input type="text" name="id" class="form-control" id="IdEdit" value="" readonly hidden>
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
+            <div class="col-xl-10">
               <input type="text" name="Bulan" class="form-control" id="BulanEdit" value="" readonly>
             </div>
           </div>
@@ -310,11 +316,12 @@
         {
           var result = data_piphewan.filter( obj => obj.id === id)[0];
           console.log(result.Bulan);
+          document.getElementById("IdEdit").value = result.id;
           document.getElementById("BulanEdit").value = result.Bulan;
           document.getElementById("TargetEdit").value = result.Target;
           document.getElementById("RealisasiEdit").value = result.Realisasi;
 
-          $('#editForm').attr('action', '/TernakUnggas/' + id)
+          $('#editForm').attr('action', 'TernakUnggas')
         }
 </script>
 

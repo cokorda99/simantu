@@ -5,7 +5,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      TERNAK UNGGAS DAN ANEKA TERNAK TAHUN 2023
+      TERNAK UNGGAS DAN ANEKA TERNAK TAHUN {{ $tahun }}
       <?php ?>
     </h1>
     <p>Update at :
@@ -99,9 +99,9 @@
                     Edit Target
                   </button> 
                   @endif
-                  {{-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah"  hidden>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                     Tambah
-                  </button> --}}
+                  </button>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -172,7 +172,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('TernakUnggas23') }}" method="POST">
+        <form action="{{ url('v23/TernakUnggas') }}" method="POST">
           @csrf
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
@@ -199,13 +199,13 @@
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
             <div class="col-xl-10">
-              <input type="text" name="Target" class="form-control">
+              <input type="text" name="Target" class="form-control" value = "0">
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Realisasi</label>
             <div class="col-xl-10">
-              <input type="text" name="Realisasi" class="form-control">
+              <input type="text" name="Realisasi" class="form-control" value = "0">
             </div>
           </div>
           <button type="submit" class="btn btn-success float-end">Simpan</button>
@@ -230,7 +230,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('TernakUnggas23/1') }}" method="POST">
+        <form action="{{ url('v23/TernakUnggas') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -263,10 +263,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('TernakUnggas23') }}" method="POST" id="editForm">
+        <form action="{{ url('v23/TernakUnggas') }}" method="POST" id="editForm">
           @csrf
           {{-- {{method_field('PUT')}} --}}
           <input type="hidden" name="_method" value="PATCH">
+          <div class="form-group row mb-3">
+            <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
+            <div class="col-xl-10">
+              <input type="text" name="id" class="form-control" id="IdEdit" value="" readonly hidden>
+            </div>
+          </div>
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Bulan</label>
             <div class="col-xl-10">
@@ -310,11 +316,12 @@
         {
           var result = data_piphewan.filter( obj => obj.id === id)[0];
           console.log(result.Bulan);
+          document.getElementById("IdEdit").value = result.id;
           document.getElementById("BulanEdit").value = result.Bulan;
           document.getElementById("TargetEdit").value = result.Target;
           document.getElementById("RealisasiEdit").value = result.Realisasi;
 
-          $('#editForm').attr('action', '/TernakUnggas/' + id)
+          $('#editForm').attr('action', 'TernakUnggas')
         }
 </script>
 
