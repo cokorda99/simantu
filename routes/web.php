@@ -36,14 +36,19 @@ use App\Http\Controllers\anggaran\PengendalianpenyakitController;
 use App\Http\Controllers\anggaran\PenyediaanbenihController;
 use App\Http\Controllers\anggaran\KesehatanventerinerController;
 use App\Http\Controllers\anggaran\DukunganmanajemenController;
-use App\Http\Controllers\TernakpotongController;
 
-// COBA COBAPUSH
+
+use App\Http\Controllers\TernakpotongController;
+use App\Http\Controllers\TernakunggasController;
+
+
+// Profile Admin
+use App\Http\Controllers\ProfileController;
+
+
 // CONTROLLER BISA LANGSUNG DIPAKAI 
 // Sarana Bidang Kesehatan Hewan
 use App\Http\Controllers\SbkhewanController;
-// Ternak Unggas dan Aneka Ternak
-use App\Http\Controllers\TernakunggasController;
 
 // Layanan Dukungan Manajemen Internal
 use App\Http\Controllers\LayananController;
@@ -112,6 +117,10 @@ Route::prefix('v22')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_KesehatanVeteriner', [KesehatanventerinerController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index22']);
 
+    // PROFIL ADMIN
+    Route::match(['GET','POST' ,'PATCH'], 'Admin_profile', [ProfileController::class, 'index22']);
+
+
     Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index22']);
     Route::match(['GET','POST' ,'PATCH'], 'TernakUnggas', [TernakunggasController::class, 'index22']);
 });
@@ -154,6 +163,10 @@ Route::prefix('v23')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_PenyedianBenih', [PenyediaanbenihController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_KesehatanVeteriner', [KesehatanventerinerController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index23']);
+
+
+    // PROFIL ADMIN
+    Route::match(['GET','POST' ,'PATCH'], 'Admin_profile', [ProfileController::class, 'index23']);
 
     Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index23']);
     Route::match(['GET','POST' ,'PATCH'], 'TernakUnggas', [TernakunggasController::class, 'index23']);
@@ -200,6 +213,9 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_KesehatanVeteriner', [KesehatanventerinerController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'anggaran_DukunganManajemen', [DukunganmanajemenController::class, 'index24']);
 
+    // PROFIL ADMIN
+    Route::match(['GET','POST' ,'PATCH'], 'Admin_profile', [ProfileController::class, 'index24']);
+
     Route::match(['GET','POST' ,'PATCH'], 'TernakRuminansia', [TernakpotongController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'TernakUnggas', [TernakunggasController::class, 'index24']);
 
@@ -208,7 +224,6 @@ Route::prefix('v24')->group(function () {
 
 // YANG BELUM DI SEMUA VERSI
 Route::resource('/SaranaBidang',SbkhewanController::class);
-Route::resource('/TernakUnggas',TernakunggasController::class);
 Route::resource('/KeamananProduk',KeamananprodukController::class);
 Route::resource('/LayananDukungan',LayananController::class);
 Route::resource('/LayananManajemenKinerja',LayanankinerjaController::class);

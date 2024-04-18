@@ -109,7 +109,7 @@
                         <input type="submit" class="btn btn-outline-light btn-sm btn-block" value="Login" name="login" style="border-radius: 25px; border: 2px solid white;">
                     </div>
                 </form>
-                <div class="container" style="text-align: center; margin-top: 15px;">
+                <div class="container" style="text-align: center; margin-top: 15px;" hidden>
                     <h5 style="font-size: 15px; color: white;">Belum Punya Akun?</h5>
                     <h5 style="font-size: 15px; color:white;" onClick="location.href='{{ route('register') }}'" >Daftar</h5>
                 </div>
