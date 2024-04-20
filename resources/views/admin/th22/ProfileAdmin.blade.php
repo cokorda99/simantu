@@ -12,31 +12,29 @@
                     <h3 class="text-center">Profil Admin</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('v22/Admin_profile') }}" method="POST">
+                    <form action="{{ url('v22/Admin_profile') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="_method" value="PATCH">
-                        <div class="form-group text-center">
-                            <img src="../assets/dist/img/avatar5.png" class="rounded-circle img-thumbnail" alt="Foto Profil" width="150">
+                        <center>
+                        <div class="file-input-wrapper text-center">
+                            <div class="file-icon">
+                            <input type="file" id="image" name="image" onchange="previewImage(event)" accept="image/png, image/gif, image/jpeg" >
+                            </div>
+                            <img id="preview" src="../images/{{Auth::user()->image}}" class="rounded-circle img-thumbnail" alt="Foto Profil">
                         </div>
+                        </center>
                         <div class="form-group" hidden>
                             <label for="nama">ID:</label>
-                            
                             <input type="text" class="form-control" id="id" placeholder="Masukkan Nama Anda" value="{{Auth::user()->id}}" name="id">
                         </div>
                         <div class="form-group">
                             <label for="nama">Nama:</label>
-                            
                             <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Anda" value="{{Auth::user()->name}}" name="name">
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda" value="{{Auth::user()->email}}" readonly>
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" placeholder="Masukkan Password Anda">
-                        </div> -->
-                            <!-- {{Auth::user()}} -->
                         <br>
                         <button type="submit" class="btn btn-primary btn-block">Simpan Perubahan</button>
                     </form>
@@ -48,4 +46,17 @@
     <!-- {{ $data_user }} -->
   </section>
 </div>
+
+<script>
+    function previewImage(event) {
+    var input = event.target;
+    var reader = new FileReader();
+    reader.onload = function(){
+        var preview = document.getElementById('preview');
+        preview.src = reader.result;
+        // preview.style.display = 'block';
+    }
+    reader.readAsDataURL(input.files[0]);
+}
+</script>
 @endsection

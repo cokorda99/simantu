@@ -64,19 +64,57 @@
   .input-icons i {
     position: absolute;
     padding: 1%;
-}
+  }
  
 .input-icons {
     width: 100%;
     margin-bottom: 10px;
-}
+  }
  
 .icon {
     padding: 10px;
     min-width: 40px;
-}
+  }
  
   </style>
+
+<style>
+    /* Style for the input wrapper */
+    .file-input-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    /* Style for the input */
+    .file-input-wrapper input[type="file"] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+
+    /* Style for the image icon */
+    .file-input-wrapper .file-icon {
+        width: 45px; /* Adjust icon size as needed */
+        height: 45px; /* Adjust icon size as needed */
+        cursor: pointer;
+        display: inline-block;
+        background-image: url("{{ asset('img/camera2-clear.png') }}"); /* Path to your image icon */
+        background-size: cover;
+        position: absolute;
+        left: 75px;
+        top: 150px;
+    }
+
+    /* Style for the preview image */
+    .file-input-wrapper img#preview {
+        max-width: 200px;
+        display: block;
+        margin-top: 20px; /* Adjust spacing between icon and preview */
+    }
+</style>
   
 </head>
 

@@ -48,10 +48,20 @@ class ProfileController extends Controller
             ));
         } elseif ($request->isMethod('patch')) {
             $model = User::find($request->id);
-            $model->name = $request->name;
-
-            $model->save();
-    
+            $image = $request->file('image');
+            if ($image == null) {
+                # code...
+                $model->name = $request->name;
+                $model->save();
+            } else {
+                # code...
+                $model = User::find($request->id);
+                $model->name = $request->name;
+                $imageName = $image->getClientOriginalName();
+                $image->move(public_path('images'), $imageName);
+                $model->image = $imageName;
+                $model->save();
+            }
             return redirect('/v22/Admin_profile');
         } elseif ($request->isMethod('delete')) {
             //other code ( update for unique record ) 
@@ -103,9 +113,20 @@ class ProfileController extends Controller
             ));
         } elseif ($request->isMethod('patch')) {
             $model = User::find($request->id);
-            $model->name = $request->name;
-
-            $model->save();
+            $image = $request->file('image');
+            if ($image == null) {
+                # code...
+                $model->name = $request->name;
+                $model->save();
+            } else {
+                # code...
+                $model = User::find($request->id);
+                $model->name = $request->name;
+                $imageName = $image->getClientOriginalName();
+                $image->move(public_path('images'), $imageName);
+                $model->image = $imageName;
+                $model->save();
+            }
     
             return redirect('/v23/Admin_profile');
         } elseif ($request->isMethod('delete')) {
@@ -158,9 +179,20 @@ class ProfileController extends Controller
             ));
         } elseif ($request->isMethod('patch')) {
             $model = User::find($request->id);
-            $model->name = $request->name;
-
-            $model->save();
+            $image = $request->file('image');
+            if ($image == null) {
+                # code...
+                $model->name = $request->name;
+                $model->save();
+            } else {
+                # code...
+                $model = User::find($request->id);
+                $model->name = $request->name;
+                $imageName = $image->getClientOriginalName();
+                $image->move(public_path('images'), $imageName);
+                $model->image = $imageName;
+                $model->save();
+            }
     
             return redirect('/v24/Admin_profile');
         } elseif ($request->isMethod('delete')) {
