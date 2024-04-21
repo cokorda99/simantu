@@ -13,120 +13,74 @@ class LayanankinerjaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index23(Request $request)
     {
-        //
-        $data_layanankinerja= Layanankinerja::all();
-        return view('admin.th23.LayananKinerja', [
-                "title" => 'Layanan Dukungan Manajemen Internal | SIMANTU'
-            ], compact(
-            'data_layanankinerja',
-        ));
-    }
+        if($request->isMethod('post')){
+            $data_layanankinerja = new Layanankinerja;
+            $data_layanankinerja->Bulan = $request->Bulan;
+            $data_layanankinerja->Target = $request->Target;
+            $data_layanankinerja->Realisasi = $request->Realisasi;
+            $data_layanankinerja->Tahun = '2023';
+            $data_layanankinerja->updateAll = '1';
+            $data_layanankinerja->save();
+            return redirect('/v23/LayananManajemenKinerja');
+        } elseif ($request->isMethod('get')){
+            $tahun = '2023';
+            $data_layanankinerja = Layanankinerja::where('Tahun', $tahun)->get();
+            return view('admin.th23.LayananKinerja', ["title"=> 'Layanan Manajemen Kinerja Internal | SIMANTU'], compact('data_layanankinerja', 'tahun'));
+        } elseif ($request->isMethod('patch')){
+            $tahun = '2023';
+            if($request->get('forUpdateAll') == "forUpdateAllValue") {
+                $question = Layanankinerja::where('updateAll',1)->where('Tahun', $tahun)->update(['Target' => $request->get('valueUpdateAll')]);
+                return redirect('/v23/LayananManajemenKinerja');
+            } else {
+                $model = Layanankinerja::find($request->id);
+                $model->Bulan = $request->Bulan;
+                $model->Target = $request->Target;
+                $model->Realisasi = $request->Realisasi;
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        $model = new Layanankinerja;
-
-        return view('admin.th23.LayananKinerja', [
-            "title" => 'Layanan Dukungan Manajemen Internal | SIMANTU'
-        ], compact(
-        'model',
-    ));
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        $model = new Layanankinerja;
-        $model->Bulan = $request->Bulan;
-        $model->Target = $request->Target;
-        $model->Realisasi = $request->Realisasi;
-
-        $model->save();
-
-        return redirect('/LayananManajemenKinerja')->with('success' , 'Data berhasil ditambah');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-         //
-         $model = Layanankinerja::find($id);
-
-    //      return view('admin.th23.LayananKinerja', [
-    //          "title" => 'Layanan Dukungan Manajemen Internal | SIMANTU'
-    //      ], compact(
-    //      'model',
-    //  ));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-        if($request->get('forUpdateAll') == "forUpdateAllValue"){
-            $question = Layanankinerja::where('updateAll',$id)
-                ->update([
-                    'Target' => $request->get('valueUpdateAll')
-                ]);
-                return redirect('/LayananManajemenKinerja');
-        }else {
-            //other code ( update for unique record ) 
-            $model = Layanankinerja::find($id);
-            $model->Bulan = $request->Bulan;
-            $model->Target = $request->Target;
-            $model->Realisasi = $request->Realisasi;
-    
-            $model->save();
-    
-            return redirect('/LayananManajemenKinerja')->with('success' , 'Data berhasil diUpdate');
+                $model->save();
+                return redirect('/v23/LayananManajemenKinerja');
+            }
+        } else {
+            return response()->json(['message' => 'Method not Allowed'], 405);
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function index24(Request $request)
     {
-        //
+        if($request->isMethod('post'))
+        {
+            $data_layanankinerja = new Layanankinerja;
+            $data_layanankinerja->Bulan = $request->Bulan;
+            $data_layanankinerja->Target = $request->Target;
+            $data_layanankinerja->Realisasi = $request->Realisasi;
+            $data_layanankinerja->Tahun = '2024';
+            $data_layanankinerja->updateAll = '1';
+            $data_layanankinerja->save();
+            return redirect('/v24/LayananManajemenKinerja');
+        } elseif ($request->isMethod('get'))
+        {
+            $tahun = '2024';
+            $data_layanankinerja = Layanankinerja::where('Tahun', $tahun)->get();
+            return view('admin.th24.LayananKinerja', ["title"=> 'Layanan Manajemen Kinerja Internal | SIMANTU'], compact('data_layanankinerja', 'tahun'));
+        } elseif ($request->isMethod('patch'))
+        {
+            $tahun = '2024';
+            if($request->get('forUpdateAll') == "forUpdateAllValue") {
+                $question = Layanankinerja::where('updateAll',1)->where('Tahun', $tahun)->update(['Target' => $request->get('valueUpdateAll')]);
+                return redirect('/v24/LayananManajemenKinerja');
+            } else {
+                $model = Layanankinerja::find($request->id);
+                $model->Bulan = $request->Bulan;
+                $model->Target = $request->Target;
+                $model->Realisasi = $request->Realisasi;
+
+                $model->save();
+                return redirect('/v24/LayananManajemenKinerja');
+            }
+        } else {
+            return response()->json(['message' => 'Method not Allowed'], 405);
+        }
     }
 }
