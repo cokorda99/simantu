@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+
 
 class ProfileController extends Controller
 {
@@ -49,20 +52,58 @@ class ProfileController extends Controller
         } elseif ($request->isMethod('patch')) {
             $model = User::find($request->id);
             $image = $request->file('image');
-            if ($image == null) {
+            $editpasswordcheck = $request->editpasswordcheck;
+
+            if ($editpasswordcheck == null) {
                 # code...
-                $model->name = $request->name;
-                $model->save();
+                if ($image == null) {
+                    # code...
+                    $model->name = $request->name;
+                    $model->save();
+                } else {
+                    # code...
+                    $model = User::find($request->id);
+                    $model->name = $request->name;
+                    $imageName = $image->getClientOriginalName();
+                    $image->move(public_path('images'), $imageName);
+                    $model->image = $imageName;
+                    $model->save();
+                    
+                }
+                return redirect('/v22/Admin_profile');
             } else {
                 # code...
-                $model = User::find($request->id);
-                $model->name = $request->name;
-                $imageName = $image->getClientOriginalName();
-                $image->move(public_path('images'), $imageName);
-                $model->image = $imageName;
-                $model->save();
+                $user = Auth::user();
+                // Validate input
+                $request->validate([
+                    'current_password' => 'required',
+                    'new_password' => 'required|string|min:8|confirmed',
+                ]);
+                // Check if the current password matches
+                if (Hash::check($request->current_password, $user->password)) {
+                    // Update password
+                    if ($image == null) {
+                        # code...
+                        $model->name = $request->name;
+                        $model->save();
+                        $user->password = Hash::make($request->new_password);
+                        $user->save();
+                    } else {
+                        # code...
+                        $model = User::find($request->id);
+                        $model->name = $request->name;
+                        $imageName = $image->getClientOriginalName();
+                        $image->move(public_path('images'), $imageName);
+                        $model->image = $imageName;
+                        $model->save();
+                        $user->password = Hash::make($request->new_password);
+                        $user->save();
+                    }
+                    return redirect('/v22/Admin_profile')->with('success', 'Password changed successfully.');
+                } else {
+                    return redirect('/v22/Admin_profile')->with('error', 'Current password is incorrect.');
+                }
             }
-            return redirect('/v22/Admin_profile');
         } elseif ($request->isMethod('delete')) {
             //other code ( update for unique record ) 
             $model = User::find($request->id);

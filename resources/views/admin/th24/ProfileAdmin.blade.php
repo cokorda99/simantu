@@ -36,6 +36,29 @@
                             <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda" value="{{Auth::user()->email}}" readonly>
                         </div>
                         <br>
+                        <div class="form-group">
+                            <b><label for="current_password">Edit Password</label></b>
+                            <input type="checkbox" id="showAdditionalFields" style="width: 50px;" onchange="toggleAdditionalFields()">
+                            <input type="text" id="editpasswordcheck" value="" name="editpasswordcheck" hidden>
+                        </div>
+                        <div id="additionalFields" class="hidden">
+                            <label for="current_password">Password Sekarang:</label>
+                            <div class="password-container">
+                                <input class="form-control" id="current_password" type="password" name="current_password" placeholder="Masukkan Password Sekarang">
+                                <i class="toggle-password fa fa-eye" onclick="togglePasswordVisibility()"></i>
+                            </div>
+                            <label for="new_password">Password Baru:</label>
+                            <div class="password-container">
+                                <input class="form-control" id="new_password" type="password" name="new_password" placeholder="Masukkan Password Baru">
+                                <i class="toggle-password1 fa fa-eye" onclick="togglePasswordVisibility1()"></i>
+                            </div>
+                            <label for="new_password_confirmation">Konfirmasi Password Baru:</label>
+                            <div class="password-container">
+                                <input class="form-control" id="new_password_confirmation" type="password" name="new_password_confirmation" placeholder="Konfirmasi Password Baru">
+                                <i class="toggle-password2 fa fa-eye" onclick="togglePasswordVisibility2()"></i>
+                            </div>
+                        </div>
+                        <br>
                         <button type="submit" class="btn btn-primary btn-block">Simpan Perubahan</button>
                     </form>
                 </div>
@@ -58,5 +81,78 @@
     }
     reader.readAsDataURL(input.files[0]);
 }
+</script>
+
+<script>
+    function toggleAdditionalFields() {
+        var additionalFieldsDiv = document.getElementById("additionalFields");
+        var checkbox = document.getElementById("showAdditionalFields");
+        var check_curentp = document.getElementById("current_password");
+        var check_newp = document.getElementById("new_password");
+        var check_confirmp = document.getElementById("new_password_confirmation");
+
+        var editpasswordvalue = document.getElementById("editpasswordcheck");
+
+        if (checkbox.checked) {
+            additionalFieldsDiv.classList.remove("hidden");
+            check_curentp.setAttribute('required','required');
+            check_newp.setAttribute('required','required');
+            check_confirmp.setAttribute('required','required');
+            editpasswordvalue.value = "true";
+        } else {
+            additionalFieldsDiv.classList.add("hidden");
+            check_curentp.removeAttribute('required');
+            check_newp.removeAttribute('required');
+            check_confirmp.removeAttribute('required');
+            editpasswordvalue.value = null;
+        }
+    }
+</script>
+
+<script>
+    function togglePasswordVisibility() {
+        var passwordField = document.getElementById("current_password");
+        var icon = document.querySelector(".toggle-password");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+    }
+
+    function togglePasswordVisibility1() {
+        var passwordField = document.getElementById("new_password");
+        var icon = document.querySelector(".toggle-password1");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+    }
+
+    function togglePasswordVisibility2() {
+        var passwordField = document.getElementById("new_password_confirmation");
+        var icon = document.querySelector(".toggle-password2");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+    }
 </script>
 @endsection

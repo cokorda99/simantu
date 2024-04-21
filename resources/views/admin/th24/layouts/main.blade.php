@@ -116,7 +116,46 @@
         margin-top: 20px; /* Adjust spacing between icon and preview */
     }
 </style>
-  
+
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+<style>
+    .password-container {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.toggle-password1 {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.toggle-password2 {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#passwordField {
+  padding-right: 30px; /* To accommodate the eye icon */
+}
+
+  </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
