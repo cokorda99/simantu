@@ -128,7 +128,7 @@
                     Edit Pagu
                   </button>
                   @endif
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                     Tambah
                   </button>
                 </div>
