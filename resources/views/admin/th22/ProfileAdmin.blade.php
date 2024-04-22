@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nama">Nama:</label>
-                            <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Anda" value="{{Auth::user()->name}}" name="name">
+                            <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Anda" value="{{Auth::user()->name}}" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
@@ -65,9 +65,28 @@
             </div>
         </div>
     </div>
-
-    <!-- {{ $data_user }} -->
   </section>
+  @if(session('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: '{{ session('success') }}',
+                icon: 'success',
+                confirmButtonText: 'Okay'
+            });
+        </script>
+    @endif
+
+    @if(session('error'))
+        <script>
+            Swal.fire({
+                title: 'Error',
+                text: '{{ session('error') }}',
+                icon: 'error',
+                confirmButtonText: 'Okay'
+            });
+        </script>
+    @endif
 </div>
 
 <script>
