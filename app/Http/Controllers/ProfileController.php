@@ -70,38 +70,46 @@ class ProfileController extends Controller
                     $model->save();
                     
                 }
-                return redirect('/v22/Admin_profile');
+                return redirect()->back()->with('success', 'Update Profil Berhasil');
             } else {
                 # code...
                 $user = Auth::user();
                 // Validate input
                 $request->validate([
                     'current_password' => 'required',
-                    'new_password' => 'required|string|min:8|confirmed',
+                    'new_password' => 'required',
+                    'new_password_confirmation' => 'required',
                 ]);
                 // Check if the current password matches
                 if (Hash::check($request->current_password, $user->password)) {
                     // Update password
-                    if ($image == null) {
+                    // Check if the confirm password matches
+                    if ($request->new_password == $request->new_password_confirmation) {
                         # code...
-                        $model->name = $request->name;
-                        $model->save();
-                        $user->password = Hash::make($request->new_password);
-                        $user->save();
+                        if ($image == null) {
+                            # code...
+                            $model->name = $request->name;
+                            $model->save();
+                            $user->password = Hash::make($request->new_password);
+                            $user->save();
+                        } else {
+                            # code...
+                            $model = User::find($request->id);
+                            $model->name = $request->name;
+                            $imageName = $image->getClientOriginalName();
+                            $image->move(public_path('images'), $imageName);
+                            $model->image = $imageName;
+                            $model->save();
+                            $user->password = Hash::make($request->new_password);
+                            $user->save();
+                        }
+                        return redirect()->back()->with('success', 'Update profil dan Password Berhasil');
                     } else {
                         # code...
-                        $model = User::find($request->id);
-                        $model->name = $request->name;
-                        $imageName = $image->getClientOriginalName();
-                        $image->move(public_path('images'), $imageName);
-                        $model->image = $imageName;
-                        $model->save();
-                        $user->password = Hash::make($request->new_password);
-                        $user->save();
+                        return redirect()->back()->with('error', 'Konfirmasi Password baru dan password baru tidak sama');
                     }
-                    return redirect('/v22/Admin_profile')->with('success', 'Password changed successfully.');
                 } else {
-                    return redirect('/v22/Admin_profile')->with('error', 'Current password is incorrect.');
+                    return redirect()->back()->with('error', 'Password sekarang salah !!');
                 }
             }
         } elseif ($request->isMethod('delete')) {
@@ -155,21 +163,66 @@ class ProfileController extends Controller
         } elseif ($request->isMethod('patch')) {
             $model = User::find($request->id);
             $image = $request->file('image');
-            if ($image == null) {
+            $editpasswordcheck = $request->editpasswordcheck;
+
+            if ($editpasswordcheck == null) {
                 # code...
-                $model->name = $request->name;
-                $model->save();
+                if ($image == null) {
+                    # code...
+                    $model->name = $request->name;
+                    $model->save();
+                } else {
+                    # code...
+                    $model = User::find($request->id);
+                    $model->name = $request->name;
+                    $imageName = $image->getClientOriginalName();
+                    $image->move(public_path('images'), $imageName);
+                    $model->image = $imageName;
+                    $model->save();
+                    
+                }
+                return redirect()->back()->with('success', 'Update Profil Berhasil');
             } else {
                 # code...
-                $model = User::find($request->id);
-                $model->name = $request->name;
-                $imageName = $image->getClientOriginalName();
-                $image->move(public_path('images'), $imageName);
-                $model->image = $imageName;
-                $model->save();
+                $user = Auth::user();
+                // Validate input
+                $request->validate([
+                    'current_password' => 'required',
+                    'new_password' => 'required',
+                    'new_password_confirmation' => 'required',
+                ]);
+                // Check if the current password matches
+                if (Hash::check($request->current_password, $user->password)) {
+                    // Update password
+                    // Check if the confirm password matches
+                    if ($request->new_password == $request->new_password_confirmation) {
+                        # code...
+                        if ($image == null) {
+                            # code...
+                            $model->name = $request->name;
+                            $model->save();
+                            $user->password = Hash::make($request->new_password);
+                            $user->save();
+                        } else {
+                            # code...
+                            $model = User::find($request->id);
+                            $model->name = $request->name;
+                            $imageName = $image->getClientOriginalName();
+                            $image->move(public_path('images'), $imageName);
+                            $model->image = $imageName;
+                            $model->save();
+                            $user->password = Hash::make($request->new_password);
+                            $user->save();
+                        }
+                        return redirect()->back()->with('success', 'Update profil dan Password Berhasil');
+                    } else {
+                        # code...
+                        return redirect()->back()->with('error', 'Konfirmasi Password baru dan password baru tidak sama');
+                    }
+                } else {
+                    return redirect()->back()->with('error', 'Password sekarang salah !!');
+                }
             }
-    
-            return redirect('/v23/Admin_profile');
         } elseif ($request->isMethod('delete')) {
             //other code ( update for unique record ) 
             $model = User::find($request->id);
@@ -221,21 +274,66 @@ class ProfileController extends Controller
         } elseif ($request->isMethod('patch')) {
             $model = User::find($request->id);
             $image = $request->file('image');
-            if ($image == null) {
+            $editpasswordcheck = $request->editpasswordcheck;
+
+            if ($editpasswordcheck == null) {
                 # code...
-                $model->name = $request->name;
-                $model->save();
+                if ($image == null) {
+                    # code...
+                    $model->name = $request->name;
+                    $model->save();
+                } else {
+                    # code...
+                    $model = User::find($request->id);
+                    $model->name = $request->name;
+                    $imageName = $image->getClientOriginalName();
+                    $image->move(public_path('images'), $imageName);
+                    $model->image = $imageName;
+                    $model->save();
+                    
+                }
+                return redirect()->back()->with('success', 'Update Profil Berhasil');
             } else {
                 # code...
-                $model = User::find($request->id);
-                $model->name = $request->name;
-                $imageName = $image->getClientOriginalName();
-                $image->move(public_path('images'), $imageName);
-                $model->image = $imageName;
-                $model->save();
+                $user = Auth::user();
+                // Validate input
+                $request->validate([
+                    'current_password' => 'required',
+                    'new_password' => 'required',
+                    'new_password_confirmation' => 'required',
+                ]);
+                // Check if the current password matches
+                if (Hash::check($request->current_password, $user->password)) {
+                    // Update password
+                    // Check if the confirm password matches
+                    if ($request->new_password == $request->new_password_confirmation) {
+                        # code...
+                        if ($image == null) {
+                            # code...
+                            $model->name = $request->name;
+                            $model->save();
+                            $user->password = Hash::make($request->new_password);
+                            $user->save();
+                        } else {
+                            # code...
+                            $model = User::find($request->id);
+                            $model->name = $request->name;
+                            $imageName = $image->getClientOriginalName();
+                            $image->move(public_path('images'), $imageName);
+                            $model->image = $imageName;
+                            $model->save();
+                            $user->password = Hash::make($request->new_password);
+                            $user->save();
+                        }
+                        return redirect()->back()->with('success', 'Update profil dan Password Berhasil');
+                    } else {
+                        # code...
+                        return redirect()->back()->with('error', 'Konfirmasi Password baru dan password baru tidak sama');
+                    }
+                } else {
+                    return redirect()->back()->with('error', 'Password sekarang salah !!');
+                }
             }
-    
-            return redirect('/v24/Admin_profile');
         } elseif ($request->isMethod('delete')) {
             //other code ( update for unique record ) 
             $model = User::find($request->id);

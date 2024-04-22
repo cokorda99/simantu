@@ -37,11 +37,11 @@
                   <a href="Admin_profile" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"class="btn btn-default btn-flat">Sign out</a>
-                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                  <button class="btn btn-default btn-flat" onclick="confirmAction()">Logout</button>
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"class="btn btn-default btn-flat" hidden>Sign out</a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                  </form>
                 </div>
               </li>
             </ul>
@@ -50,3 +50,21 @@
       </div>
     </nav>
   </header>
+
+  <script>
+    function confirmAction() {
+      Swal.fire({
+            title: 'Logout',
+            text: "Apakah anda yakin ingin keluar aplikasi Simantu ? ",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Logout'
+        }).then((result) => {
+            if (result.value) {
+              document.getElementById('logout-form').submit();
+            }
+        });
+    }
+</script>
