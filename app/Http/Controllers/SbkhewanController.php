@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\th22;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\th22\Sbkhewan;
+use App\Models\Sbkhewan;
 
 class SbkhewanController extends Controller
 {
@@ -13,123 +13,99 @@ class SbkhewanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index23 (Request $request)
     {
-        //
-        $data_sbkhewan= Sbkhewan::all();
-        return view('admin.th22.SaranaBidang', [
-                "title" => 'Sarana Bidang Kesehatan Hewan | SIMANTU'
-            ], compact(
-            'data_sbkhewan',
-        ));
-        // return view('admin.th22.SaranaBidang' , [
-        //     "title" => 'Sarana Bidang Kesehatan Hewan | SIMANTU'
-        // ]);
-    }
+        if ($request->isMethod('post')) {
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        $model = new Sbkhewan;
+            //CREATE
+            $data_sbkhewan  = new Sbkhewan;
+            $data_sbkhewan->Bulan = $request->Bulan;
+            $data_sbkhewan->Target = $request->Target;
+            $data_sbkhewan->Realisasi = $request->Realisasi;
+            $data_sbkhewan->Tahun = '2023';
+            $data_sbkhewan->updateAll = '1';
+            $data_sbkhewan ->save();
+            return redirect('/v23/SaranaBidang');
 
-        return view('admin.th22.SaranaBidang', [
-            "title" => 'Sarana Bidang Kesehatan Hewan | SIMANTU'
-        ], compact(
-        'model',
-    ));
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        $model = new Sbkhewan;
-        $model->Bulan = $request->Bulan;
-        $model->Target = $request->Target;
-        $model->Realisasi = $request->Realisasi;
-
-        $model->save();
-
-        return redirect('/SaranaBidang')->with('success' , 'Data berhasil ditambah');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-         //
-         $model = Sbkhewan::find($id);
-
-    //      return view('admin.th22.SaranaBidang', [
-    //          "title" => 'Sarana Bidang Kesehatan Hewan | SIMANTU'
-    //      ], compact(
-    //      'model',
-    //  ));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        if($request->get('forUpdateAll') == "forUpdateAllValue"){
-            $question = Sbkhewan::where('updateAll',$id)
-                ->update([
-                    'Target' => $request->get('valueUpdateAll')
-                ]);
-                return redirect('/SaranaBidang');
-        }else {
-            //other code ( update for unique record ) 
-            $model = Sbkhewan::find($id);
-            $model->Bulan = $request->Bulan;
-            $model->Target = $request->Target;
-            $model->Realisasi = $request->Realisasi;
-    
-            $model->save();
-    
-            return redirect('/SaranaBidang')->with('success' , 'Data berhasil diUpdate');
+        } elseif ($request->isMethod('get')) {
+            //READ
+            $tahun ='2023';
+            $data_sbkhewan = Sbkhewan::where('Tahun', $tahun)->get();
+            
+            return view('admin.th23.SaranaBidang', [
+                    "title" => 'Sarana Bidang Kesehatan Hewan | SIMANTU'
+                ], compact(
+                'data_sbkhewan','tahun'
+            ));
+        } elseif ($request->isMethod('patch')) {
+            $tahun ='2023';
+            if($request->get('forUpdateAll') == "forUpdateAllValue"){
+                $question = Sbkhewan::where('updateAll',1)
+                ->where('Tahun', $tahun)
+                    ->update([
+                        'Target' => $request->get('valueUpdateAll')
+                    ]);
+                    return redirect('/v23/SaranaBidang');
+                }else {
+                    $model = Sbkhewan::find($request->id);
+                    $model->Bulan = $request->Bulan;
+                    $model->Target = $request->Target;
+                    $model->Realisasi = $request->Realisasi;
+            
+                    $model->save();
+                    return redirect('/v23/SaranaBidang');
+                }
+        } else {
+            // Handle other methods
+            return response()->json(['message' => 'Method not allowed'], 405);
         }
-
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function index24 (Request $request)
     {
-        //
+        if ($request->isMethod('post')) {
+
+            //CREATE
+            $data_sbkhewan  = new Sbkhewan;
+            $data_sbkhewan->Bulan = $request->Bulan;
+            $data_sbkhewan->Target = $request->Target;
+            $data_sbkhewan->Realisasi = $request->Realisasi;
+            $data_sbkhewan->Tahun = '2024';
+            $data_sbkhewan->updateAll = '1';
+            $data_sbkhewan ->save();
+            return redirect('/v24/SaranaBidang');
+
+        } elseif ($request->isMethod('get')) {
+            //READ
+            $tahun ='2024';
+            $data_sbkhewan = Sbkhewan::where('Tahun', $tahun)->get();
+            
+            return view('admin.th24.SaranaBidang', [
+                    "title" => 'Sarana Bidang Kesehatan Hewan | SIMANTU'
+                ], compact(
+                'data_sbkhewan','tahun'
+            ));
+        } elseif ($request->isMethod('patch')) {
+            $tahun ='2024';
+            if($request->get('forUpdateAll') == "forUpdateAllValue"){
+                $question = Sbkhewan::where('updateAll',1)
+                ->where('Tahun', $tahun)
+                    ->update([
+                        'Target' => $request->get('valueUpdateAll')
+                    ]);
+                    return redirect('/v24/SaranaBidang');
+                }else {
+                    $model = Sbkhewan::find($request->id);
+                    $model->Bulan = $request->Bulan;
+                    $model->Target = $request->Target;
+                    $model->Realisasi = $request->Realisasi;
+            
+                    $model->save();
+                    return redirect('/v24/SaranaBidang');
+                }
+        } else {
+            // Handle other methods
+            return response()->json(['message' => 'Method not allowed'], 405);
+        }
     }
 }

@@ -5,7 +5,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      SARANA BIDANG KESEHATAN HEWAN TAHUN
+      SARANA BIDANG KESEHATAN HEWAN TAHUN {{ $tahun }}
       <?php ?>
     </h1>
     <p>Update at :
@@ -230,7 +230,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ url('SaranaBidang/1') }}" method="POST">
+        <form action="{{ url('SaranaBidang') }}" method="POST">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="form-group row mb-3">
@@ -314,7 +314,7 @@
           document.getElementById("TargetEdit").value = result.Target;
           document.getElementById("RealisasiEdit").value = result.Realisasi;
 
-          $('#editForm').attr('action', '/SaranaBidang/' + id)
+          $('#editForm').attr('action', 'SaranaBidang')
         }
 </script>
 
