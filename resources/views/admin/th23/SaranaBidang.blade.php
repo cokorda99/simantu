@@ -5,8 +5,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      SARANA BIDANG KESEHATAN HEWAN TAHUN 2023
-      <?php ?>
+      SARANA BIDANG KESEHATAN HEWAN TAHUN
+      <?php echo $tahun?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -99,7 +99,7 @@
                     Edit Target
                   </button>  
                   @endif
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                     Tambah
                   </button>
                 </div>
