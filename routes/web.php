@@ -177,6 +177,7 @@ Route::prefix('v23')->group(function () {
     Route::match(['GET', 'POST' ,'PATCH'], 'LayananManajemenKinerja', [LayanankinerjaController::class, 'index23']);
 
     Route::match(['GET','POST' ,'PATCH'], 'SaranaBidang', [SbkhewanController::class, 'index23']);
+    Route::match(['GET','POST' ,'PATCH'], 'KepuasanLayananInternal', [KepuasanlayananinternalController::class, 'index23']);
 
 
 
@@ -230,6 +231,8 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'LayananManajemenKinerja', [LayanankinerjaController::class, 'index24']);
     Route::match(['GET','POST' ,'PATCH'], 'SaranaBidang', [SbkhewanController::class, 'index24']);
 
+    Route::match(['GET','POST' ,'PATCH'], 'KepuasanLayananInternal', [KepuasanlayananinternalController::class, 'index24']);
+
 });
 
 
@@ -237,4 +240,4 @@ Route::prefix('v24')->group(function () {
 Route::resource('/SaranaBidang',SbkhewanController::class);
 Route::resource('/KeamananProduk',KeamananprodukController::class);
 Route::resource('/LayananDukungan',LayananController::class);
-Route::resource('/kepuasanlayanan_internal', KepuasanlayananinternalController::class);
+// Route::resource('/kepuasanlayanan_internal', KepuasanlayananinternalController::class);

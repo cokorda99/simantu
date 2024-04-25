@@ -6,135 +6,106 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Kepuasaninternal;
 
-class Kepuasanlayananinternal23Controller extends Controller
+class KepuasanlayananinternalController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index23 (Request $request)
     {
-        //
-        $data_internal= Kepuasaninternal::all();
-        return view('admin.th23.IndeksKepuasanLayananInternal', [
-                "title" => 'Indeks Kepuasan Layanan Internal | SIMANTU'
-            ], compact(
-            'data_internal',
-        ));
-        // return view('admin.th23.serapan_anggaran.KesehatanVeteriner' , [
-        //     "title" => 'Kesehatan Veteriner | SIMANTU'
-        // ]);
-    }
+        if ($request->isMethod('post')) {
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        $model = new Kepuasaninternal;
+            //CREATE
+            $data_internal  = new Kepuasaninternal;
+            $data_internal->Bulan = $request->Bulan;
+            $data_internal->Target = $request->Target;
+            $data_internal->Realisasi = $request->Realisasi;
+            $data_internal->Tahun = '2023';
+            $data_internal->updateAll = '1';
+            $data_internal ->save();
+            return redirect('/v23/KepuasanLayananInternal');
 
-        return view('admin.th23.IndeksKepuasanLayananInternal', [
-            "title" => 'Indeks Kepuasan Layanan Internal | SIMANTU'
-        ], compact(
-        'model',
-    ));
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        $model = new Kepuasaninternal;
-        $model->Bulan = $request->Bulan;
-        $model->Target = $request->Target;
-        $model->Realisasi = $request->Realisasi;
-
-        $model->save();
-
-        return redirect('/kepuasanlayanan_internal')->with('success' , 'Data berhasil ditambah');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-         //
-         $model = Kepuasaninternal::find($id);
-
-    //      return view('admin.th23.serapan_anggaran.KesehatanVeteriner', [
-    //          "title" => 'Kesehatan Veteriner | SIMANTU'
-    //      ], compact(
-    //      'model',
-    //  ));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-
-        if($request->get('forUpdateAll') == "forUpdateAllValue"){
-            $question = Kepuasaninternal::where('updateAll',$id)
-                ->update([
-                    'Target' => $request->get('valueUpdateAll')
-                ]);
-                return redirect('/kepuasanlayanan_internal');
-        }else {
-            //other code ( update for unique record ) 
-            $model = Kepuasaninternal::find($id);
-            $model->Bulan = $request->Bulan;
-            $model->Target = $request->Target;
-            $model->Realisasi = $request->Realisasi;
-            // $model->akrual = $request->akrual;
-            // $model->sp2d = $request->sp2d;
-    
-    
-            $model->save();
-            return redirect('/kepuasanlayanan_internal');;
-    
-            // return redirect('/kepuasanlayanan_internal')->with('success' , 'Data berhasil diUpdate');;
+        } elseif ($request->isMethod('get')) {
+            //READ
+            $tahun ='2023';
+            $data_internal = Kepuasaninternal::where('Tahun', $tahun)->get();
+            
+            return view('admin.th23.IndeksKepuasanLayananInternal', [
+                    "title" => 'Nilai Indeks Kepuasan Layanan Internal Pegawai | SIMANTU'
+                ], compact(
+                'data_internal','tahun'
+            ));
+        } elseif ($request->isMethod('patch')) {
+            $tahun ='2023';
+            if($request->get('forUpdateAll') == "forUpdateAllValue"){
+                $question = Kepuasaninternal::where('updateAll',1)
+                ->where('Tahun', $tahun)
+                    ->update([
+                        'Target' => $request->get('valueUpdateAll')
+                    ]);
+                    return redirect('/v23/KepuasanLayananInternal');
+                }else {
+                    $model = Kepuasaninternal::find($request->id);
+                    $model->Bulan = $request->Bulan;
+                    $model->Target = $request->Target;
+                    $model->Realisasi = $request->Realisasi;
+            
+                    $model->save();
+                    return redirect('/v23/KepuasanLayananInternal');
+                }
+        } else {
+            // Handle other methods
+            return response()->json(['message' => 'Method not allowed'], 405);
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function index24 (Request $request)
     {
-        //
+        if ($request->isMethod('post')) {
+
+            //CREATE
+            $data_internal  = new Kepuasaninternal;
+            $data_internal->Bulan = $request->Bulan;
+            $data_internal->Target = $request->Target;
+            $data_internal->Realisasi = $request->Realisasi;
+            $data_internal->Tahun = '2024';
+            $data_internal->updateAll = '1';
+            $data_internal ->save();
+            return redirect('/v24/KepuasanLayananInternal');
+
+        } elseif ($request->isMethod('get')) {
+            //READ
+            $tahun ='2024';
+            $data_internal = Kepuasaninternal::where('Tahun', $tahun)->get();
+            
+            return view('admin.th24.IndeksKepuasanLayananInternal', [
+                    "title" => 'Nilai Indeks Kepuasan Layanan Internal Pegawai | SIMANTU'
+                ], compact(
+                'data_internal','tahun'
+            ));
+        } elseif ($request->isMethod('patch')) {
+            $tahun ='2024';
+            if($request->get('forUpdateAll') == "forUpdateAllValue"){
+                $question = Kepuasaninternal::where('updateAll',1)
+                ->where('Tahun', $tahun)
+                    ->update([
+                        'Target' => $request->get('valueUpdateAll')
+                    ]);
+                    return redirect('/v24/KepuasanLayananInternal');
+                }else {
+                    $model = Kepuasaninternal::find($request->id);
+                    $model->Bulan = $request->Bulan;
+                    $model->Target = $request->Target;
+                    $model->Realisasi = $request->Realisasi;
+            
+                    $model->save();
+                    return redirect('/v24/KepuasanLayananInternal');
+                }
+        } else {
+            // Handle other methods
+            return response()->json(['message' => 'Method not allowed'], 405);
+        }
     }
 }

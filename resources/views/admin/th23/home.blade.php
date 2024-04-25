@@ -1943,7 +1943,7 @@
               </thead>
               <tbody>
                 <td class="table-warning">1</td>
-                <td class="table-light"><a href="\kepuasanlayanan_internal">Nilai Indeks Kepuasan Layanan Internal Pegawai</a></td>
+                <td class="table-light"><a href="\KepuasanLayananInternal">Nilai Indeks Kepuasan Layanan Internal Pegawai</a></td>
                 <td>
                   <?php echo "<script>document.writeln(tampil_totalTarget_Internal);</script>"; ?>Likert
                 </td>

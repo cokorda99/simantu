@@ -31,7 +31,7 @@
         <li><a href="anggaran_KesehatanVeteriner" class="text-decoration-none"><i class="fa fa-circle-o"></i> <span>Peningkatanan Kesehatan Masyarakat Veteriner</span></a></li>
         <li><a href="anggaran_DukunganManajemen" class="text-decoration-none"><i class="fa fa-circle-o"></i> <span>Dukungan Manajemen dan Dukungan Teknis Lainnya Ditjen Peternakan dan Kesehatan Hewan</span></a></li>
         <li class="header">INDEKS KEPUASAN LAYANAN INTERNAL</li>
-        <li><a href="kepuasanlayanan_internal" class="text-decoration-none"><i class="fa fa-circle-o"></i> <span>Nilai Indeks Kepuasan Layanan Internal Pegawai</span></a></li>
+        <li><a href="KepuasanLayananInternal" class="text-decoration-none"><i class="fa fa-circle-o"></i> <span>Nilai Indeks Kepuasan Layanan Internal Pegawai</span></a></li>
         <li class="header">SDM</li>
         <li><a href="sdm_sdm" class="text-decoration-none"><i class="fa fa-circle-o"></i> <span>Jumlah Pegawai</span></a></li>
         <li><a href="sdm_dinasluar" class="text-decoration-none"><i class="fa fa-circle-o"></i> <span>Dinas Luar</span></a></li>
