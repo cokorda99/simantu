@@ -47,7 +47,7 @@
               echo "<script>document.writeln(tampil_totalRealisasi);</script>";
               ?>
             </h5>
-            <p>REALISASI PELAYANAN KESEHATAN HEWAN</p>
+            <p>REALISASI KEAMANAN PRODUK & MUTU HEWAN</p>
             <hr>
             {{-- <h5>Rp. 13.832.000.000</h5>
             <p>PIUTANG PNBP PENJUALAN</p>
