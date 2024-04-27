@@ -5,7 +5,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      DATA PENYAKIT Asf TAHUN
+      Data penyakit ASF TAHUN
       <?php echo $tahun ?>
     </h1>
     <p>Update at :
@@ -90,7 +90,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-lg-6">
-                  <h5>Data Penyakit Asf</h5>
+                  <h5>Data penyakit ASF</h5>
               </div>
               <div class="col-lg-6">
                 <div class="float-end">
@@ -152,7 +152,7 @@
     <div class="col-lg-7">
       <div class="card">
         <div class="card-header">
-          <h5>Grafik Realisasi Penyakit Asf</h5>
+          <h5>Grafik Realisasi Penyakit ASF</h5>
         </div>
         <div class="card-body">
           <canvas id="myChart" width="100" height="50"></canvas>
