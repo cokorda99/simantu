@@ -5,8 +5,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      LAYANAN DUKUNGAN MANAJEMEN KINERJA INTERNAL TAHUN 2023
-      <?php ?>
+      LAYANAN ORGANISASI DAN TATA KELOLA INTERNAL TAHUN 
+      <?php echo $tahun ?>
     </h1>
     <p>Update at :
       <?php echo $tgl=date('l, d-m-Y');;?>
@@ -47,7 +47,7 @@
               echo "<script>document.writeln(tampil_totalRealisasi);</script>";
               ?>
             </h5>
-            <p>REALISASI LAYANAN DUKUNGAN MANAJEMEN KINERJA INTERNAL </p>
+            <p>REALISASI LAYANAN ORGANISASI DAN TATA KELOLA INTERNAL </p>
             <hr>
             {{-- <h5>Rp. 13.832.000.000</h5>
             <p>PIUTANG PNBP PENJUALAN</p>

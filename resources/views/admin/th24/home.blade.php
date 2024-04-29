@@ -1768,6 +1768,26 @@
                             <?php echo "<script>document.writeln(tampil_totalTarget_Layanankinerja );</script>"; ?> Dokumen
                           </td>
                         </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_totalTarget_Layanan );</script>"; ?> Layanan
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_totalTarget_Layanan );</script>"; ?> Layanan
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_totalTarget_Layanan );</script>"; ?> Layanan
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_totalTarget_Layanan );</script>"; ?> Layanan
+                          </td>
+                        </tr>
                       </table>
                     </td>
                     <td class="table-danger">
@@ -1782,6 +1802,26 @@
                             <?php echo "<script>document.writeln(tampil_totalRealisasi_Layanankinerja );</script>"; ?> Dokumen
                           </td>
                         </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_Layanan );</script>"; ?> Layanan
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_Layanan );</script>"; ?> Layanan
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_Layanan );</script>"; ?> Layanan
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_Layanan );</script>"; ?> Layanan
+                          </td>
+                        </tr>
                       </table>
                     </td>
                     <td class="table-secondary">
@@ -1794,6 +1834,26 @@
                         <tr>
                           <td>
                             <?php echo "<script>document.writeln(tampil_PersentaseFix_Layanankinerja);</script>"; ?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_PersentaseFix_Layanan);</script>"; ?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_PersentaseFix_Layanan);</script>"; ?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_PersentaseFix_Layanan);</script>"; ?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <?php echo "<script>document.writeln(tampil_PersentaseFix_Layanan);</script>"; ?>
                           </td>
                         </tr>
                       </table>

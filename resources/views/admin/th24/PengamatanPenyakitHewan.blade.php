@@ -5,7 +5,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header mb-5">
     <h1 class="text-uppercase">
-      PENGAMATAN DAN IDENTIFIKASI PENYAKIT HEWAN TAHUN
+      Sampel Penyakit Hewan Yang Teramati dan Teridentifikasi TAHUN
       <?php echo $tahun?>
     </h1>
     <p>Update at :
