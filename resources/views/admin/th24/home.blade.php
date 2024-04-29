@@ -1562,14 +1562,14 @@
                   </tr>
                   <tr>
                     <td class="table-warning">B</td>
-                    <td class="table-success">Meningkatnya Layanan Pengendalian dan Penanggulangan Penyakit Hewan</td>
+                    <td class="table-success">Peningkatan Layanan Pengendalian dan Penanggulangan Penyakit Hewan</td>
                     <td>
                       <table>
                         <tr>
                           <td><a href="PelayananKesehatanHewan">2. Pelayanan Kesehatan Hewan</a></td>
                         </tr>
                         <tr>
-                          <td><a href="PengamatanPenyakitHewan">3. Pengamatan dan Identifikasi Penyakit Hewan</a></td>
+                          <td><a href="PengamatanPenyakitHewan">3. Sampel Penyakit Hewan Yang Teramati dan Teridentifikasi</a></td>
                         </tr>
                         <tr>
                           <td><a href="SaranaBidang">4. Sarana Bidang Kesehatan Hewan</a></td>
@@ -1636,7 +1636,7 @@
                   </tr>
                   <tr>
                     <td class="table-warning">C</td>
-                    <td class="table-success">Meningkatnya Layanan Penyediaan Benih dan Bibit serta Peningkatan Produksi
+                    <td class="table-success">Peningkatan Layanan Penyediaan Benih dan Bibit serta Peningkatan Produksi
                     </td>
                     <td>
                       <table>
@@ -1693,11 +1693,11 @@
                   </tr>
                   <tr>
                     <td class="table-warning">D</td>
-                    <td class="table-success">Meningkatnya Layanan Kesehatan Masyarakat Veteriner</td>
+                    <td class="table-success">Peningkatan Layanan Kesehatan Masyarakat Veteriner</td>
                     <td>
                       <table>
                         <tr>
-                          <td><a href="KeamananProduk">7. Keamanan Produk dan Mutu Produk Hewan</a></td>
+                          <td><a href="KeamananProduk">7. Keamanan dan Mutu Produk Hewan</a></td>
                         </tr>
                       </table>
                     </td>
@@ -1733,14 +1733,26 @@
                   </tr>
                   <tr>
                     <td class="table-warning">E</td>
-                    <td class="table-success">Meningkatnya Layanan Dukungan Manajemen dan Dukungan Teknis Lainnya Ditjen Peternakan dan Kesehatan Hewan</td>
+                    <td class="table-success">Peningkatan Layanan Dukungan Manajemen dan Dukungan Teknis Lainnya Ditjen Peternakan dan Kesehatan Hewan</td>
                     <td>
                       <table>
                         <tr>
-                          <td><a href="LayananDukungan">8. Layanan Dukungan Manajemen Internal</a></td>
+                          <td><a href="LayananDukungan">8. Layanan BMN</a></td>
                         </tr>
                         <tr>
-                          <td><a href="LayananManajemenKinerja">9. Layanan Manajemen Kinerja Internal</a></td>
+                          <td><a href="LayananManajemenKinerja">9. Layanan Organisasi dan Tata Kelola Internal</a></td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">10. Layanan Perkantoran</a></td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">11. Layanan Perencanaan dan Penganggaran</a></td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">12. Layanan Pemantauan dan Evaluasi</a></td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">13. Layanan Manajemen Keuangan</a></td>
                         </tr>
                       </table>
                     </td>
