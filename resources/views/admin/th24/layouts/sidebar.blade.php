@@ -25,10 +25,10 @@
         <li><a href="KeamananProduk" class="text-decoration-none"><i class="fa fa-book"></i> <span>Keamanan dan Mutu Produk Hewan</span></a></li>
         <li><a href="LayananDukungan" class="text-decoration-none"><i class="fa fa-book"></i><span>Layanan BMN</span></a></li>
         <li><a href="LayananManajemenKinerja" class="text-decoration-none"><i class="fa fa-book"></i><span>Layanan Organisasi dan Tata Kelola Internal</span></a></li>
-        <li><a href="LayananManajemenKinerja" class="text-decoration-none"><i class="fa fa-book"></i><span>Layanan Perkantoran</span></a></li>
-        <li><a href="LayananManajemenKinerja" class="text-decoration-none"><i class="fa fa-book"></i><span>Layanan Perencanaan dan Penganggaran</span></a></li>
-        <li><a href="LayananManajemenKinerja" class="text-decoration-none"><i class="fa fa-book"></i><span>Layanan Pemantauan dan Evaluasi</span></a></li>
-        <li><a href="LayananManajemenKinerja" class="text-decoration-none"><i class="fa fa-book"></i><span>Layanan Manajemen Keuangan</span></a></li>
+        <li><a href="LayananPerkantoran" class="text-decoration-none"><i class="fa fa-book"></i><span>Layanan Perkantoran</span></a></li>
+        <li><a href="LayananPerencanaanDanPenganggaran" class="text-decoration-none"><i class="fa fa-book"></i><span>Layanan Perencanaan dan Penganggaran</span></a></li>
+        <li><a href="LayananPemantauanDanEvaluasi" class="text-decoration-none"><i class="fa fa-book"></i><span>Layanan Pemantauan dan Evaluasi</span></a></li>
+        <li><a href="LayananManajemenKeuangan" class="text-decoration-none"><i class="fa fa-book"></i><span>Layanan Manajemen Keuangan</span></a></li>
         <li class="header">REALISASI SERAPAN ANGGARAN</li>
         <li><a href="anggaran_PengendalianPenyakit" class="text-decoration-none"><i class="fa fa-circle-o"></i> <span>Pengendalian dan Penanggulangan Penyakit Hewan</span></a></li>
         <li><a href="anggaran_PenyedianBenih" class="text-decoration-none"><i class="fa fa-circle-o"></i> <span>Penyediaan Benih dan Bibit Serta Peningkatanan Produksi Ternak</span></a></li>

@@ -40,24 +40,21 @@ use App\Http\Controllers\anggaran\DukunganmanajemenController;
 
 use App\Http\Controllers\TernakpotongController;
 use App\Http\Controllers\TernakunggasController;
+use App\Http\Controllers\SbkhewanController;
+use App\Http\Controllers\LayananController;
+use App\Http\Controllers\LayanankinerjaController;
+use App\Http\Controllers\KepuasanlayananinternalController;
+
 
 
 // Profile Admin
 use App\Http\Controllers\ProfileController;
 
-
-// CONTROLLER BISA LANGSUNG DIPAKAI 
-// Sarana Bidang Kesehatan Hewan
-use App\Http\Controllers\SbkhewanController;
-
-// Layanan Dukungan Manajemen Internal
-use App\Http\Controllers\LayananController;
-
-// KHUSUS DI VERSI 2023 dan 2024
-// Layanan Manajemen Kinerja Internal
-use App\Http\Controllers\LayanankinerjaController;
-// Nilai Indeks Kepuasan Layanan Internal Pegawai
-use App\Http\Controllers\KepuasanlayananinternalController;
+// CONTOLLER MENU BARU
+use App\Http\Controllers\LayananperkantoranController;
+use App\Http\Controllers\LayananperencanaanController;
+use App\Http\Controllers\LayananpemantauanController;
+use App\Http\Controllers\LayanankeuanganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -234,10 +231,3 @@ Route::prefix('v24')->group(function () {
     Route::match(['GET','POST' ,'PATCH'], 'KepuasanLayananInternal', [KepuasanlayananinternalController::class, 'index24']);
 
 });
-
-
-// YANG BELUM DI SEMUA VERSI
-Route::resource('/SaranaBidang',SbkhewanController::class);
-Route::resource('/KeamananProduk',KeamananprodukController::class);
-Route::resource('/LayananDukungan',LayananController::class);
-// Route::resource('/kepuasanlayanan_internal', KepuasanlayananinternalController::class);
