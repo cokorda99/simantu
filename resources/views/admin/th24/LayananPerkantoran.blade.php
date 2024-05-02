@@ -6,8 +6,7 @@
     <!-- Content Header (Page Header) -->
     <section class="content-header mb-5">
         <h1 class="text-uppercase">Layanan Perkantoran {{ $tahun }}</h1>
-        <p>Update At:</p>
-        <?php echo $tgl=date('l, d-m-y'); ?>
+        <p>Update At: <?php echo $tgl=date('l, d-m-y'); ?></p>
     </section>
 
     <section class="content">
@@ -100,7 +99,7 @@
                                     Edit Target
                                 </button>
                                 @endif
-                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                                     Tambah
                                 </button>
                                 </div>
