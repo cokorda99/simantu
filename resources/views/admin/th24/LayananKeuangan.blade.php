@@ -5,7 +5,7 @@
 <div class="content-wrapper">
     <!-- Content Header (Page Header) -->
     <section class="content-header mb-5">
-        <h1 class="text-uppercase">Layanan Keuangan {{ $tahun }}</h1>
+        <h1 class="text-uppercase">Layanan Manajemen Keuangan {{ $tahun }}</h1>
         <p>Update At: <?php echo $tgl=date('l, d-m-y'); ?></p>
     </section>
 
@@ -45,7 +45,7 @@
                             <?php echo "<script>document.writeln(tampil_totalRealisasi);</script>"; ?>
                         </h5>
                         <br>
-                        <p>REALISASI INDEKS KEPUASAN INTERNAL</p>
+                        <p>REALISASI LAYANAN MANAJEMEN INTERNAL</p>
                         <hr>
                         {{-- <h5>Rp. 13.832.000.000</h5>
                         <p>PIUTANG PNBP PENJUALAN</p>
@@ -90,7 +90,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-lg-6">
-                                <h5>Layanan Keuangan</h5>
+                                <h5>Layanan Manajemen Keuangan</h5>
                             </div>
                             <div class="col-lg-6">
                                 <div class="float-end">
@@ -99,7 +99,7 @@
                                     Edit Target
                                 </button>
                                 @endif
-                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                                     Tambah
                                 </button>
                                 </div>
@@ -152,7 +152,7 @@
             <div class="col-lg-7">
                 <div class="card">
                     <div class="card-header">
-                    <h5>Grafik Realisasi Keuangan</h5>
+                    <h5>Grafik Realisasi Layanan Manajemen Keuangan</h5>
                     </div>
                     <div class="card-body">
                     <canvas id="myChart" width="100" height="50"></canvas>

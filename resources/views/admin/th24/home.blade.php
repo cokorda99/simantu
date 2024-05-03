@@ -1775,17 +1775,17 @@
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalTarget_Layanan );</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalTarget_LayananPerencanaan);</script>"; ?> Layanan
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalTarget_Layanan );</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalTarget_LayananPemantauan );</script>"; ?> Layanan
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalTarget_Layanan );</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalTarget_LayananKeuangan);</script>"; ?> Layanan
                           </td>
                         </tr>
                       </table>
@@ -1809,17 +1809,17 @@
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalRealisasi_Layanan );</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_LayananPerencanaan );</script>"; ?> Layanan
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalRealisasi_Layanan );</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_LayananPemantauan );</script>"; ?> Layanan
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalRealisasi_Layanan );</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_LayananKeuangan);</script>"; ?> Layanan
                           </td>
                         </tr>
                       </table>
@@ -1843,17 +1843,17 @@
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_PersentaseFix_Layanan);</script>"; ?>
+                            <?php echo "<script>document.writeln(tampil_PersentaseFix_LayananPerencanaan);</script>"; ?>
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_PersentaseFix_Layanan);</script>"; ?>
+                            <?php echo "<script>document.writeln(tampil_PersentaseFix_LayananPemantauan);</script>"; ?>
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_PersentaseFix_Layanan);</script>"; ?>
+                            <?php echo "<script>document.writeln(tampil_PersentaseFix_LayananKeuangan);</script>"; ?>
                           </td>
                         </tr>
                       </table>
@@ -3002,6 +3002,60 @@ var realisasibulan12_asf = parseInt(data_asf[11].Realisasi);
   console.log(tampil_totalTarget_LayananPerkantoran, tampil_totalRealisasi_LayananPerkantoran)
   var tampil_Persentase = (parseInt(total_Realisasi_LayananPerkantoran) / parseInt(rata_totalTarget_LayananPerkantoran)) * 100;
   var tampil_PersentaseFix_LayananPerkantoran= tampil_Persentase.toFixed(2) + ' %'
+
+  // LAYANAN Perencanaan
+  var data_layananperencanaan = {!!json_encode($data_layananperencanaan -> toArray()) !!};
+  var total_Target_LayananPerencanaan= 0;
+  var total_Realisasi_LayananPerencanaan= 0;
+  for (let index = 0; index < data_layananperencanaan.length; index++) {
+    var Target_LayananPerencanaan= parseInt(data_layananperencanaan[index].Target);
+    var Realisasi_LayananPerencanaan= parseInt(data_layananperencanaan[index].Realisasi);
+    total_Target_LayananPerencanaan+= Target_LayananPerencanaan;
+    total_Realisasi_LayananPerencanaan+= Realisasi_LayananPerencanaan;
+  }
+
+  var rata_totalTarget_LayananPerencanaan= total_Target_LayananPerencanaan/ 12;
+  var tampil_totalTarget_LayananPerencanaan= String(rata_totalTarget_LayananPerencanaan);
+  var tampil_totalRealisasi_LayananPerencanaan= String(total_Realisasi_LayananPerencanaan);
+  console.log(tampil_totalTarget_LayananPerencanaan, tampil_totalRealisasi_LayananPerencanaan)
+  var tampil_Persentase = (parseInt(total_Realisasi_LayananPerencanaan) / parseInt(rata_totalTarget_LayananPerencanaan)) * 100;
+  var tampil_PersentaseFix_LayananPerencanaan= tampil_Persentase.toFixed(2) + ' %'
+
+  // LAYANAN PEMANTAUAN
+  var data_layananpemantauan = {!!json_encode($data_layananpemantauan -> toArray()) !!};
+  var total_Target_LayananPemantauan= 0;
+  var total_Realisasi_LayananPemantauan= 0;
+  for (let index = 0; index < data_layananpemantauan.length; index++) {
+    var Target_LayananPemantauan= parseInt(data_layananpemantauan[index].Target);
+    var Realisasi_LayananPemantauan= parseInt(data_layananpemantauan[index].Realisasi);
+    total_Target_LayananPemantauan+= Target_LayananPemantauan;
+    total_Realisasi_LayananPemantauan+= Realisasi_LayananPemantauan;
+  }
+
+  var rata_totalTarget_LayananPemantauan= total_Target_LayananPemantauan/ 12;
+  var tampil_totalTarget_LayananPemantauan= String(rata_totalTarget_LayananPemantauan);
+  var tampil_totalRealisasi_LayananPemantauan= String(total_Realisasi_LayananPemantauan);
+  console.log(tampil_totalTarget_LayananPemantauan, tampil_totalRealisasi_LayananPemantauan)
+  var tampil_Persentase = (parseInt(total_Realisasi_LayananPemantauan) / parseInt(rata_totalTarget_LayananPemantauan)) * 100;
+  var tampil_PersentaseFix_LayananPemantauan= tampil_Persentase.toFixed(2) + ' %'
+
+  // LAYANAN Keuangan
+  var data_layanankeuangan = {!!json_encode($data_layanankeuangan -> toArray()) !!};
+  var total_Target_LayananKeuangan= 0;
+  var total_Realisasi_LayananKeuangan= 0;
+  for (let index = 0; index < data_layanankeuangan.length; index++) {
+    var Target_LayananKeuangan= parseInt(data_layanankeuangan[index].Target);
+    var Realisasi_LayananKeuangan= parseInt(data_layanankeuangan[index].Realisasi);
+    total_Target_LayananKeuangan+= Target_LayananKeuangan;
+    total_Realisasi_LayananKeuangan+= Realisasi_LayananKeuangan;
+  }
+
+  var rata_totalTarget_LayananKeuangan= total_Target_LayananKeuangan/ 12;
+  var tampil_totalTarget_LayananKeuangan= String(rata_totalTarget_LayananKeuangan);
+  var tampil_totalRealisasi_LayananKeuangan= String(total_Realisasi_LayananKeuangan);
+  console.log(tampil_totalTarget_LayananKeuangan, tampil_totalRealisasi_LayananKeuangan)
+  var tampil_Persentase = (parseInt(total_Realisasi_LayananKeuangan) / parseInt(rata_totalTarget_LayananKeuangan)) * 100;
+  var tampil_PersentaseFix_LayananKeuangan= tampil_Persentase.toFixed(2) + ' %'
 
   // LAYANAN KINERJA
 var data_layanankinerja = {!!json_encode($data_layanankinerja -> toArray()) !!};

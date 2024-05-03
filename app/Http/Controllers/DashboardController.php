@@ -46,6 +46,9 @@ use App\Models\Kepuasaninternal;
 
 // LOAD MODEL 2024
 use App\Models\Layananperkantoran;
+use App\Models\Layananperencanaan;
+use App\Models\Layananpemantauan;
+use App\Models\Layanankeuangan;
 
 
 class DashboardController extends Controller
@@ -203,13 +206,16 @@ class DashboardController extends Controller
         $data_layanankinerja= Layanankinerja::where('Tahun', $tahun)->get();
 
         $data_layananperkantoran= Layananperkantoran::where('Tahun', $tahun)->get();
+        $data_layananperencanaan= Layananperencanaan::where('Tahun', $tahun)->get();
+        $data_layananpemantauan= Layananpemantauan::where('Tahun', $tahun)->get();
+        $data_layanankeuangan= Layanankeuangan::where('Tahun', $tahun)->get();
 
 
         $data_penyakit5year= Penyakit5year::all();
         return view('admin.th24.home', [
             "title" => 'Home | SIMANTU 2024'
             ], compact(
-            'data_ikm','data_internal','data_pkhewan','data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk','data_parasiter', 'data_lsd', 'data_inveswabah','data_sbkhewan','data_ternakpotong','data_ternakunggas','data_keamananproduk','data_layanan','data_layanankinerja','data_pengendalianpenyakit','data_penyediaanbenih','data_kesehatanventeriner','data_dukunganmanajemen', 'data_sdm' ,'data_penyakit5year','data_amrnasional','data_keamananprodukhewan','data_layananperkantoran'
+            'data_ikm','data_internal','data_pkhewan','data_piphewan','data_rabies','data_avian','data_brucellosis','data_anthraxs','data_hcholera','data_asf','data_penyakitviral','data_penyakitbakterial','data_pmk','data_parasiter', 'data_lsd', 'data_inveswabah','data_sbkhewan','data_ternakpotong','data_ternakunggas','data_keamananproduk','data_layanan','data_layanankinerja','data_pengendalianpenyakit','data_penyediaanbenih','data_kesehatanventeriner','data_dukunganmanajemen', 'data_sdm' ,'data_penyakit5year','data_amrnasional','data_keamananprodukhewan','data_layananperkantoran','data_layananperencanaan','data_layananpemantauan','data_layanankeuangan'
         ));
     }
 }

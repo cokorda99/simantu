@@ -90,7 +90,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-lg-6">
-                  <h5>Data Layananan Dukungan Meananjemen Kinerja Internal</h5>
+                  <h5>Data Layananan Organisasi & Tata Kelola Internal</h5>
               </div>
               <div class="col-lg-6">
                 <div class="float-end">
@@ -151,7 +151,7 @@
     <div class="col-lg-7">
       <div class="card">
         <div class="card-header">
-          <h5>Grafik Realisasi Layananan Dukungan Meananjemen Kinerja Internal</h5>
+          <h5>Grafik Realisasi Layananan Organisasi & Tata Kelola Internal</h5>
         </div>
         <div class="card-body">
           <canvas id="myChart" width="100" height="50"></canvas>

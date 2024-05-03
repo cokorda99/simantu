@@ -48,7 +48,7 @@
               echo "<script>document.writeln(totalRealisasi_tampil);</script>";
               ?>
             </h5>
-            <p>REALISASI PENGAMATAN & IDENTIFIKASI PENYAKIT</p>
+            <p>REALISASI SAMPEL PENYAKIT TERAMATI & TERIDENTIFIKASI</p>
             <hr>
             {{-- <h5>Rp. 13.832.000.000</h5>
             <p>PIUTANG PNBP PENJUALAN</p>
@@ -91,7 +91,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-lg-12">
-                <h5>Data Pengamatan & Identifikasi Penyakit Hewan </h5>
+                <h5>Data Sampel Penyakit Hewan Yang Teramati dan Teridentifikasi </h5>
               </div>
               <div class="col-lg-6">
                 <div class="float-end">
@@ -204,7 +204,7 @@
     <div class="col-lg-7">
       <div class="card">
         <div class="card-header">
-          <h5>Grafik Realisasi Pengamatan & Identifikasi Penyakit Hewan</h5>
+          <h5>Grafik Realisasi Sampel Penyakit Hewan Yang Teramati dan Teridentifikasi</h5>
         </div>
         <div class="card-body">
           <canvas id="myChart" width="100" height="50"></canvas>
@@ -215,7 +215,7 @@
         <div class="card-header">
           <div class="row">
             <div class="col-lg-6">
-              <h5>Data Pengamatan & Identifikasi Penyakit Hewan </h5>
+              <h5>Data Sampel Penyakit Hewan Yang Teramati dan Teridentifikasi </h5>
             </div>
             {{-- <div class="col-lg-6">
               <div class="float-end">

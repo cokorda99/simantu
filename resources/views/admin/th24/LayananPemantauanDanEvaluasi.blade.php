@@ -24,7 +24,7 @@
                             <?php echo "<script>document.writeln(tampil_totalTarget);</script>"; ?>
                         </h5>
                         <br>
-                        <p>Target Tahunan</p>
+                        <p>TARGET TAHUNAN</p>
                         <hr>
                         {{-- <hr>
                         <br>
@@ -45,7 +45,7 @@
                             <?php echo "<script>document.writeln(tampil_totalRealisasi);</script>"; ?>
                         </h5>
                         <br>
-                        <p>REALISASI INDEKS KEPUASAN INTERNAL</p>
+                        <p>REALISASI LAYANAN PEMANTAUAN & EVALUASI</p>
                         <hr>
                         {{-- <h5>Rp. 13.832.000.000</h5>
                         <p>PIUTANG PNBP PENJUALAN</p>
@@ -99,7 +99,7 @@
                                     Edit Target
                                 </button>
                                 @endif
-                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah">
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modal_tambah" hidden>
                                     Tambah
                                 </button>
                                 </div>

@@ -24,7 +24,7 @@
                             <?php echo "<script>document.writeln(tampil_totalTarget);</script>"; ?>
                         </h5>
                         <br>
-                        <p>Target Tahunan</p>
+                        <p>TARGET TAHUNAN</p>
                         <hr>
                         {{-- <hr>
                         <br>
@@ -45,7 +45,7 @@
                             <?php echo "<script>document.writeln(tampil_totalRealisasi);</script>"; ?>
                         </h5>
                         <br>
-                        <p>REALISASI INDEKS KEPUASAN INTERNAL</p>
+                        <p>REALISASI LAYANAN PERKANTORAN</p>
                         <hr>
                         {{-- <h5>Rp. 13.832.000.000</h5>
                         <p>PIUTANG PNBP PENJUALAN</p>
@@ -90,7 +90,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-lg-6">
-                                <h5>Data Indeks Kepuasan Internal</h5>
+                                <h5>Data Layanan Perkantoran</h5>
                             </div>
                             <div class="col-lg-6">
                                 <div class="float-end">
@@ -152,7 +152,7 @@
             <div class="col-lg-7">
                 <div class="card">
                     <div class="card-header">
-                    <h5>Grafik Realisasi Indeks Kepuasan Masyarakat</h5>
+                    <h5>Grafik Realisasi Layanan Perkantoran</h5>
                     </div>
                     <div class="card-body">
                     <canvas id="myChart" width="100" height="50"></canvas>
