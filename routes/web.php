@@ -232,4 +232,10 @@ Route::prefix('v24')->group(function () {
 
     Route::match(['GET','POST' ,'PATCH'], 'LayananPerkantoran', [LayananperkantoranController::class, 'index24']);
 
+    Route::match(['GET','POST' ,'PATCH'], 'LayananPerencanaanDanPenganggaran', [LayananperencanaanController::class, 'index24']);
+
+    Route::match(['GET','POST' ,'PATCH'], 'LayananPemantauanDanEvaluasi', [LayananpemantauanController::class, 'index24']);
+
+    Route::match(['GET','POST' ,'PATCH'], 'LayananManajemenKeuangan', [LayanankeuanganController::class, 'index24']);
+
 });
