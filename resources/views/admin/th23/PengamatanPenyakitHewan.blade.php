@@ -426,7 +426,7 @@
           <div class="form-group row mb-3">
             <label for="inputEmail3" class="col-xl-2 col-form-label">Jumlah Target</label>
             <div class="col-xl-10">
-              <input type="text" name="Target" class="form-control" id="TargetEdit" value="">
+              <input type="text" name="Target" class="form-control" id="TargetEdit" value="" readonly>
             </div>
           </div>
           <div class="form-group row mb-3">

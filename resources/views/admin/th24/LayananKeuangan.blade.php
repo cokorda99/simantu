@@ -330,27 +330,22 @@
 {{-- SCRIPT BAGIAN ATAS --}}
 <script>
    var data_internal = {!! json_encode($data_layanankeuangan -> toArray())!!};
-  //  console.log('TES', data_ikm);
+  //  console.log('TES', data_layanan);
   var total_Target = 0;
   var total_Realisasi = 0 ;
-  var jumlahRealisasinow = 0;
    for (let index = 0; index < data_internal.length; index++) {
-    var Target = parseFloat(data_internal[index].Target);
-    var Realisasi = parseFloat(data_internal[index].Realisasi);
+    var Target = parseInt(data_internal[index].Target);
+    var Realisasi = parseInt(data_internal[index].Realisasi);
     // console.log(Realisasi);
     total_Target += Target;
     total_Realisasi += Realisasi;
-
-    if (Realisasi != 0) {
-      jumlahRealisasinow  +=1;
-    }
    }
-   var rata_totalRealisasi = total_Realisasi/jumlahRealisasinow;
+
    var rata_totalTarget = total_Target/12;
-   var tampil_totalTarget = String(rata_totalTarget.toFixed(2));
-   var tampil_totalRealisasi = String(rata_totalRealisasi.toFixed(2));
-  //  console.log( tampil_totalTarget  , tampil_totalRealisasi)
-   var tampil_Persentase = (parseFloat(rata_totalRealisasi) / parseFloat(rata_totalTarget)) * 100;
+   var tampil_totalTarget = String(rata_totalTarget);
+   var tampil_totalRealisasi = String(total_Realisasi);
+   console.log( tampil_totalTarget  , tampil_totalRealisasi)
+   var tampil_Persentase = (parseInt(total_Realisasi) / parseInt(rata_totalTarget)) * 100;
    var tampil_PersentaseFix = tampil_Persentase.toFixed(2)+' %'
   //  console.log(tampil_Persentase.toFixed(2)+' %')
    
@@ -361,20 +356,20 @@
 {{-- SCRIPT GRAFIK --}}
 <script>
   var data_internal = {!! json_encode($data_layanankeuangan -> toArray())!!};
-  console.log('TES', data_internal);
+  // console.log('TES', data_internal);
   document.addEventListener("DOMContentLoaded", function (event) {
-    var Januari = parseFloat(data_internal[0].Realisasi);
-    var Febuari = parseFloat(data_internal[1].Realisasi);
-    var Maret = parseFloat(data_internal[2].Realisasi);
-    var April = parseFloat(data_internal[3].Realisasi);
-    var Mei = parseFloat(data_internal[4].Realisasi);
-    var Juni = parseFloat(data_internal[5].Realisasi);
-    var Juli = parseFloat(data_internal[6].Realisasi);
-    var Agustus = parseFloat(data_internal[7].Realisasi);
-    var September = parseFloat(data_internal[8].Realisasi);
-    var Oktober = parseFloat(data_internal[9].Realisasi);
-    var November = parseFloat(data_internal[10].Realisasi);
-    var Desember = parseFloat(data_internal[11].Realisasi);
+    var Januari = parseInt(data_internal[0].Realisasi);
+    var Febuari = Januari + parseInt(data_internal[1].Realisasi);
+    var Maret = Febuari + parseInt(data_internal[2].Realisasi);
+    var April = Maret + parseInt(data_internal[3].Realisasi);
+    var Mei = April + parseInt(data_internal[4].Realisasi);
+    var Juni = Mei + parseInt(data_internal[5].Realisasi);
+    var Juli = Juni + parseInt(data_internal[6].Realisasi);
+    var Agustus = Juli + parseInt(data_internal[7].Realisasi);
+    var September = Agustus + parseInt(data_internal[8].Realisasi);
+    var Oktober = September + parseInt(data_internal[9].Realisasi);
+    var November = Oktober + parseInt(data_internal[10].Realisasi);
+    var Desember = November + parseInt(data_internal[11].Realisasi);
 
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart_jalur = new Chart(ctx, {
@@ -434,3 +429,4 @@
     });
   });
 </script>
+
