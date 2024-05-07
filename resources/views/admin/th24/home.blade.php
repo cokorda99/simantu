@@ -1765,7 +1765,7 @@
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalTarget_Layanankinerja );</script>"; ?> Dokumen
+                            <?php echo "<script>document.writeln(tampil_totalTarget_Layanankinerja );</script>"; ?> Layanan
                           </td>
                         </tr>
                         <tr>
@@ -1775,17 +1775,17 @@
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalTarget_LayananPerencanaan);</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalTarget_LayananPerencanaan);</script>"; ?> Dokumen
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalTarget_LayananPemantauan );</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalTarget_LayananPemantauan );</script>"; ?> Dokumen
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalTarget_LayananKeuangan);</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalTarget_LayananKeuangan);</script>"; ?> Dokumen
                           </td>
                         </tr>
                       </table>
@@ -1799,7 +1799,7 @@
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalRealisasi_Layanankinerja );</script>"; ?> Dokumen
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_Layanankinerja );</script>"; ?> Layanan
                           </td>
                         </tr>
                         <tr>
@@ -1809,17 +1809,17 @@
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalRealisasi_LayananPerencanaan );</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_LayananPerencanaan );</script>"; ?> Dokumen
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalRealisasi_LayananPemantauan );</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_LayananPemantauan );</script>"; ?> Dokumen
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <?php echo "<script>document.writeln(tampil_totalRealisasi_LayananKeuangan);</script>"; ?> Layanan
+                            <?php echo "<script>document.writeln(tampil_totalRealisasi_LayananKeuangan);</script>"; ?> Dokumen
                           </td>
                         </tr>
                       </table>
