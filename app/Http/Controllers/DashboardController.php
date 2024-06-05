@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Ikm;
-use App\Models\pkhewan;
+use App\Models\Pkhewan;
 use App\Models\Piphewan;
 // MODEL TURUNAN PIP HEWAN
 use App\Models\penyakits\Rabies;
