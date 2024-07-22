@@ -19,7 +19,7 @@
       <div class="col col-lg-5" style="background-color: rgba(131, 89, 163, 0.5); height: 100vh;">
         <div class="container" style="margin-top: 15vh;">
           <h5 style="text-align: center; color: white;">Selamat Datang Di</h5>
-            <h3 style="text-align: center; font-weight: bold; color: white;">Simantu BBVET Denpasar</h3>
+            <h3 style="text-align: center; font-weight: bold; color: white;">SIMANTU BBVET Denpasar</h3>
             <p style="text-align: center; color: white;">Sistem Pemantauan Kinerja Balai Besar Veteriner Denpasar</p>
             <h4 style="text-align: center; font-weight: bold; color: white;">Login</h4>
             <br>
